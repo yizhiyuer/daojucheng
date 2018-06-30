@@ -10,7 +10,7 @@ window.onload = function (ev) {
     hourHtml = document.getElementById('hour');
     minuteHtml = document.getElementById('minute');
     secondHtml = document.getElementById('second');
-    // countDown(864000);//倒计时 E
+    countDown(864000);//倒计时 E
 
     //轮播图 B
     deviation = 0;

@@ -1,7 +1,7 @@
 .r-box {
     width: 950px;
-    height: 850px;
-    background: #b5b5b5;
+    height: 720px;
+    background: #ffffff;
     margin-left: 10px;
     float: left;
 }
@@ -9,7 +9,7 @@
 .add-box {
     width: 800px;
     height: 40px;
-    background: #ffc162;
+    /*background: #ffc162;*/
     margin: 10px 20px;
     line-height: 40px;
     font-size: 15px;
@@ -19,7 +19,7 @@
     width: 100px;
     height: 26px;
     background: #cee4b8;
-    display: inline-block;
+    display: inline-block;/*转换元素不占一行*/
     line-height: 26px;
     border: solid 1px #71b247;
 }
@@ -42,5 +42,42 @@
     height: 284px;
     /*background: #71b2a5;*/
     margin-left: 20px;
-    border: 1px solid #e6e9ef;
+    border: 1px solid #e5e8ee;
+}
+
+.name_addr {
+    width: 880px;
+    height: 40px;
+    /*background: #71b2a5;*/
+    margin-left: 20px;
+    border-bottom: 1px solid #e6e9ef;
+    line-height: 40px;
+    font-size: 15px;
+}
+
+.delete {
+    float: right;
+}
+
+.delete:hover {
+    color: #cb0000;
+    text-decoration: underline;
+}
+
+.detail {
+    width: 850px;
+    height: 35px;
+    /*background-color: #ffe0fb;*/
+    margin-left: 40px;
+    font-size: 15px;
+    line-height: 35px;
+
+}
+
+.detail span {
+    width: 150px;
+    height: 35px;
+    /*background-color: #ffc162;*/
+    display: inline-block;
+
 }
