@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-form表单.html</title>
+</head>
+<body>
+<h5>method如果不控制或者不设置，表单默认以get方式提交</h5>
+<h5>地址栏url:问号左边是路径（域名），
+    右边是提交的参数列表=>参数名称1=参数值1&参数名称2=参数值2</h5>
+<h5>post提交参数在地址栏中不可见，
+    但是可以通过浏览器工具中的NetWork抓包查看网页headers(请求头)的Form Data</h5>
+<!--baidu.com?account=wes.luo&passwd=123456-->
+<form action="http://baidu.com" method="post">
+    账号：<input type="text" name="account" placeholder="请输入账号">
+    <br>
+    密码：<input type="password" name="passwd" placeholder="请输入密码">
+    <br>
+    <!--<input type="submit" value="登录">-->
+    <!--emmet:btn-->
+    <button>登录</button>
+    <button type="reset">重置</button>
+</form>
+</body>
+</html>

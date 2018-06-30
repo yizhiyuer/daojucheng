@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    //text-decoration: none
+}
+
+.wrapper {
+    width: 780px;
+    height: 950px;
+/ / background-color: #efbcde;
+    margin: 0 auto;
+}
+
+.banner {
+    width: 780px;
+    height: 150px;
+}
+
+.nav {
+    width: 780px;
+    height: 45px;
+    margin-top: 5px;
+    background: url("images/button1.jpg")repeat-x;
+    background-size: 780px 45px;
+}
+
+.nav ul li {
+    float: left;
+    width: 70px;
+    height: 45px;
+    /*background: #9f9ca3;*/
+    margin-left: 6px;
+    text-align: center;
+    line-height: 45px;
+    list-style-type: none; /*去掉点号*/
+    font-size: 15px;
+}
+
+.nav ul li a {
+    display: inline-block;
+    width: 70px;
+    height: 45px;
+    color: #004A87;
+}
+.nav ul li a:hover {
+    background: url("images/button1_bg.jpg")no-repeat;
+    background-size: cover;
+}
+
+.main {
+    width: 780px;
+    height: 700px;
+    /*background-color: #aeaeae;*/
+    margin-top: 5px;
+}
+
+.left {
+    width: 200px;
+    height: 690px;
+    background-color: #5ea6eb;
+    float: left;
+    border: 4px solid #ffffff;
+}
+
+.left-1 ul li {
+    list-style-type: none;
+    font-size: 13px;
+    line-height: 30px;
+    margin-left: 10px;
+    background: url("images/icon1.gif") no-repeat left center;
+    text-indent: 10px;
+}
+
+.left-1 img {
+    margin-right: 7px;
+}
+
+.left-1 {
+    width: 200px;
+    height: 210px;
+    /*background: #5ea6eb;*/
+}
+
+.tianqi {
+    width: 200px;
+    height: 47px;
+    background: url("images/weather.jpg") no-repeat -5px center;
+    background-size: 210px 47px;
+
+}
+
+.left-2 {
+    width: 200px;
+    height: 480px;
+    /*background: #5ea6eb;*/
+}
+
+.left-2-icon {
+    background: #bbddff;
+}
+
+.left-2 h5 {
+    height: 25px;
+    line-height: 26px;
+    padding-left: 5px;
+    background: url("images/icon2.gif") no-repeat 10px center;
+    text-indent: 15px;
+}
+
+.left-2 h5 img {
+    margin-right: 5px;
+}
+
+.left-2 ul li {
+    list-style-type: none;
+    width: 171px;
+    margin: 10px auto;
+
+}
+
+.left-2 img {
+    border: 1px solid #ffffff;
+    transition: all 1s;
+}
+.left-2 img:hover{
+    margin-top: -20px;
+    box-shadow: 0 0 2px 2px #888888;
+}
+
+.left-2 p {
+    text-align: center;
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.center {
+    width: 390px;
+    height: 690px;
+    background-color: #ffffff;
+    float: left;
+    margin-left: 2px;
+    border: 4px solid #ffffff;
+}
+
+.center-1 {
+    width: 390px;
+    height: 260px;
+    background: #ffffff;
+    transition: all 1s;
+}
+.center-1 img:hover{
+    margin-top: -20px;
+    box-shadow: 0 0 2px 2px #888888;
+}
+.img {
+    margin-top: 20px;
+}
+
+.center-2 {
+    width: 390px;
+    height: 160px;
+    background: #ffffff;
+    margin-top: 5px;
+}
+
+.center-2 ul li {
+    list-style-type: none;
+    float: left;
+    margin-left: 12px;
+}
+
+.center-2 img {
+    border: 1px solid #0c7abc;
+}
+
+.center-3 {
+    width: 390px;
+    height: 170px;
+    background: #ffffff;
+}
+
+.center-3 ul li {
+    font-size: 12px;
+    line-height: 22px;
+    margin-left: 15px;
+    list-style-type: none;
+    margin-top: 5px;
+}
+
+.center-3 img {
+    margin-right: 10px;
+}
+
+.right {
+    width: 160px;
+    height: 692px;
+    background-color: #5ea6eb;
+    float: left;
+    margin-left: 2px;
+    border: 4px solid #ffffff;
+}
+
+.right-1 {
+    width: 160px;
+    height: 230px;
+    /*background: #ff9e82;*/
+}
+
+.right h5 {
+    background: #bbddff;
+    height: 25px;
+    padding-left: 5px;
+    line-height: 25px;
+}
+
+.right h5 img {
+    margin-right: 10px;
+}
+
+.right-1 img {
+    border: 1px solid #0c7abc;
+    margin-left: 5px;
+}
+
+.right-1 ul li {
+    margin-top: 7px;
+    list-style-type: none;
+}
+
+.right-2 {
+    width: 156px;
+    height: 190px;
+    /*background: #ff9e82;*/
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.right-2 ul li {
+    border-bottom: 1px dashed silver;
+    list-style-type: none;
+    width: 142px;
+    line-height: 30px;
+    margin-left: 4px;
+    margin-top: 5px;
+}
+
+.right-2 span {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.right-3 {
+    width: 160px;
+    height: 230px;
+    /*background: #ff9e82;*/
+    margin-top: 5px;
+}
+
+.right-3 ul li {
+    border-bottom: 1px dashed silver;
+    list-style-type: none;
+    width: 142px;
+    line-height: 20px;
+    margin-left: 4px;
+    margin-top: 5px;
+}
+
+.right-3 span {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.bottom {
+    width: 770px;
+    height: 38px;
+    background: #5ea6eb;
+    border: 4px solid #f2f2f2;
+    text-align: center;
+    line-height: 42px;
+}

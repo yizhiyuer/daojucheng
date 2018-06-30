@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-可见性选择器.html</title>
+    <style>
+        .hasclass{
+            display: none; /*隐藏*/
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>内容1</li>
+    <li class="hasclass">内容2</li>
+    <li>内容3</li>
+    <li class="hasclass">内容4</li>
+    <li>内容5</li>
+    <li>内容6</li>
+</ul>
+
+<ul>
+    <li>内容21</li>
+    <li class="hasclass">内容22</li>
+    <li>内容23</li>
+    <li id="con24">内容24</li>
+    <li>内容25</li>
+    <li class="hasclass">内容26</li>
+    <li></li>
+</ul>
+<ul></ul>
+<div id="content">
+</div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        content = $("#content");
+        console.log("li中可见元素个数："
+            ,$("li:visible").length,
+            ",li中不可见元素个数:",$("li:hidden").length);
+    });
+</script>
+</body>
+</html>

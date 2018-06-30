@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-函数调用.html</title>
+</head>
+<body>
+
+
+<script>
+    function calc(numArr,mycalc){
+        // mycalc();
+        mycalc.apply(window,numArr)
+    }
+    //2个数字相加
+    calc([2,3],function(num1,num2){
+        document.write("<br>计算结果:",num1+num2);
+    })
+    //3个数字相减
+    calc([2,3,4],function(num1,num2,num3){
+        document.write("<br>计算结果:",num1-num2-num3);
+    })
+    //4个数字相乘
+    calc([2,3,4,10],function(num1,num2,num3,num4){
+        document.write("<br>计算结果:",num1*num2*num3*num4);
+    });
+
+    /*定义一个函数，实现将输入的数字转换成繁体中文*/
+
+
+</script>
+
+
+
+
+</body>
+</html>

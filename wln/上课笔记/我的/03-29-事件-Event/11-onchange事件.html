@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A11-onchange事件.html</title>
+</head>
+<body>
+<h2>onchange:监听内容发生改变时触发；如果是输入文本，要失去焦点才触发</h2>
+<input type="text" onchange="alert('onchange触发')">
+<br>
+<br>
+<select onchange="alert('选中的值：'+this.value)">
+    <option value="a">A</option>
+    <option value="b">B</option>
+    <option value="c">C</option>
+</select>
+<br>
+<br>
+<input type="file" onchange="alert('文件已选好，自动触发提交')">
+<br>
+<br>
+<input type="checkbox" value="复选值"
+       checked="checked" onchange="getcheck(this)">复选框
+<script>
+    function getcheck(obj){
+        if(obj.getAttribute("checked") == "checked"){
+            obj.removeAttribute("checked");
+            alert("值："+null);
+        }else{
+            obj.setAttribute("checked","checked");
+            alert("值："+obj.value);
+        }
+        // alert(obj.getAttribute("checked"));
+    }
+</script>
+
+</body>
+</html>

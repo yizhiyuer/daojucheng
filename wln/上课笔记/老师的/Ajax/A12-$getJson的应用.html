@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A12-$getJson的应用.html</title>
+</head>
+<body>
+<div class="box"></div>
+<script src="./jq/jquery.js"></script>
+<script>
+    $(function(){
+        var box=$(".box");
+        str="";
+        $.getJSON("./test.json",{},function(res){
+            console.log(res);
+            for(i in res.compilerOptions){
+                str+="<p>"+res.compilerOptions[i]+"</p>";
+            }
+            box.append(str);
+        });
+    })
+</script>
+</body>
+</html>

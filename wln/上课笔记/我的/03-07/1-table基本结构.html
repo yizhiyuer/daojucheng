@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-table基本结构</title>
+</head>
+<body>
+<h3>border="1":数值决定边框的粗细，为table和td设置边框</h3>
+<h3>cellspacing="5":设置单元格边框到内容的距离</h3>
+<table border="1">
+ <tr>
+     <td>1行1列</td>
+     <td>1行2列</td>
+     <td>1行3列</td>
+     <td>1行4列</td>
+ </tr>
+    <tr>
+        <td>2行1列</td>
+        <td>2行2列</td>
+        <td>2行3列</td>
+        <td>2行4列</td>
+    </tr>
+    <tr>
+        <td>3行1列</td>
+        <td>3行2列</td>
+        <td>3行3列</td>
+        <td>3行4列</td>
+    </tr>
+</table>
+
+<!--table>tr*4>(td{单元格内容})*3-->
+<h3>colspan="2":指定设置该属性单元格跨国（水平方向）的列数（包括自己本身）</h3>
+<h3>rowspan="2":指定设置该属性单元格跨国（水平方向）的行数（包括自己本身）</h3>
+<table>
+    <tr>
+        <td>单元格内容</td>
+        <td>单元格内容</td>
+        <td>单元格内容</td>
+    </tr>
+    <tr>
+        <td>单元格内容</td>
+        <td>单元格内容</td>
+        <td>单元格内容</td>
+    </tr>
+    <tr>
+        <td>单元格内容</td>
+        <td>单元格内容</td>
+        <td>单元格内容</td>
+    </tr>
+    <tr>
+        <td>单元格内容</td>
+        <td>单元格内容</td>
+        <td>单元格内容</td>
+    </tr>
+</table>
+</body>
+</html>

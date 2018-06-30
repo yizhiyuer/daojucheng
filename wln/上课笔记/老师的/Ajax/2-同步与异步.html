@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-同步与异步.html</title>
+</head>
+<body>
+
+<script>
+    /*异步有哪些：
+    * 1.ajax
+    * 2.setTimeOut();
+    * 3.setInterval();
+    * */
+var varname="改变前的值：111111111111";
+
+    // setTimeout(function(){
+    //     varname = 22222222222;
+    //     alert(varname);
+    //     newvar = "定义新的变量"
+    // },0);
+    var st=setInterval(function(){
+        varname = "setInterval:"+22222222222;
+        alert(varname);
+        clearInterval(st);
+    },0)
+
+    alert(varname);//改变前的值：111111111111
+
+</script>
+
+</body>
+</html>

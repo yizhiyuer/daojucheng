@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-节点基本访问方式-2.html</title>
+</head>
+<body>
+<ul id="unlist">
+    <li id="item1">列表1</li>
+    <li class="item">列表2</li>
+    <li>列表3</li>
+    <li class="item">列表4</li>
+    <li>列表5</li>
+</ul>
+<h2>innerHTML:获取的是标签中的所有内容(子标签，文本)</h2>
+<h2>innerText:获取的是标签中的所有文本(不包括标签)</h2>
+<button onclick="getHtml()">获取id="unlist"中的内容</button>
+<button onclick="getText()">获取id="unlist"中的文本节点</button>
+<button onclick="setStyle()">设置class="item"元素对象的样式</button>
+<button onclick="setClass_1()">为id="unlist"设置一个pink类</button>
+<button onclick="setClass_2()">为id="unlist"设置一个bga类</button>
+<style>
+    .pink{
+        color:pink;
+    }
+    .bga{
+        background: #aaa;
+    }
+</style>
+<script>
+    function setClass_1(){
+        var unlist = document.getElementById("unlist");
+        hasattr = unlist.getAttribute("class");
+        unlist.setAttribute("class",hasattr+" pink"); //class属性值的拼接一定考虑空格
+    }
+    function setClass_2(){
+        var unlist = document.getElementById("unlist");
+        hasattr = unlist.getAttribute("class");
+        unlist.setAttribute("class",hasattr+" bga");
+    }
+
+function getHtml() {
+    var unlist = document.getElementById("unlist");
+    var html = unlist.innerHTML;//
+    alert(html);
+}
+function getText() {
+    var unlist = document.getElementById("unlist");
+    var text = unlist.innerText;
+    alert(text);
+}
+function setStyle(){
+    items = document.getElementsByClassName("item");//数组
+    // alert(items[0].innerHTML);
+    for(i in items){
+        items[i].style.cssText = "background:#ff0;font-size:36px";//设置样式
+    }
+}
+
+/*练习：建立一个盒模型块，加上背景色，加上点击事件和触发函数，
+* 函数相应点击事件：每次点击 向右向下移动各10px的距离
+* */
+</script>
+</body>
+</html>

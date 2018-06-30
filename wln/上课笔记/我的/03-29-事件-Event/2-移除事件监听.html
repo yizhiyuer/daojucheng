@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-移除事件监听.html</title>
+</head>
+<body>
+<h2>移除事件：对象.removeEventListener(内容与添加监听所写的内容完全一致)</h2>
+<h2 style="color: red">注意：移除事件的触发函数体不能直接写在移除事件函数参数中</h2>
+<button>双击事件</button>
+
+<script>
+    button = document.querySelector("button");
+    func = function(){
+        alert("双击事件");
+    }
+    button.addEventListener("dblclick",func);
+    //移除事件监听；
+    button.removeEventListener("dblclick",func);
+
+    button.addEventListener("click",function (ev) {  });
+
+    /*事件函数类似定义*/
+    function myevent(eventname , func) {
+        eventname+="事件预处理系列...";
+        func.apply(window,[eventname]);
+    }
+
+    myevent("click",function(ev){
+        document.write("监听者：",ev);
+    });
+</script>
+</body>
+</html>

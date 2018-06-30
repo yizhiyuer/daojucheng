@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-新闻滚动.html</title>
+    <style>
+        #ulist{
+            height: 150px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<!--<button onclick="dodetach()">detach删除</button>-->
+<ul id="ulist">
+</ul>
+<script src="../jq/jquery.js"></script>
+<script>
+    $(function(){
+        ulist = $("#ulist");
+        for(var i=0;i<=10;i++){
+            li=$("<li>无序列表内容(jq)："+i+"</li>");
+            if(i%2){
+                li.css({"color":"green"});
+            }else{
+                //偶数
+                li.css({"background":"#eee"});
+            }
+            ulist.append(li);//追加
+        }
+    });
+    function dodetach(){
+        var detnode = $("li:eq(0)").detach();
+        //将每次删除的节点追加到结尾
+        ulist.append(detnode);
+    }
+    setInterval(dodetach,1200);
+    /*
+    * 作业：新闻滚动效果,利用定时器去操作：
+    * 1.获取删除的对象：detach()；
+    * 2.将删除的对象追加到父级容器结尾；
+    * */
+
+</script>
+
+</body>
+</html>

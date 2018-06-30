@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-练习-1.html</title>
+    <style>
+        #box{
+            width:  200px;
+            height: 200px;
+            background: #F37A04;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+<div id="box" onclick="movebox()"></div>
+<script>
+    box = document.getElementById("box");
+    i=0;//增量
+    function movebox(){
+        i+=10;
+        box.style.cssText="top:"+i+"px;left:"+i+"px;";
+    }
+</script>
+
+</body>
+</html>

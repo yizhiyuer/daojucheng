@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-属性节点操作.html</title>
+    <style>
+        .bdred{
+            border: solid 5px #f00;
+        }
+        .bgblue{
+            background: aqua;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<p><input  type="text" name="" id="uname"></p>
+
+<button onclick="addcls()">添加class</button>
+<button onclick="rmcls()">删除class</button>
+<button onclick="showhide()">显示/隐藏</button>
+<button onclick="showhide_2()">显示/隐藏toggleClass()</button>
+
+<script src="../jq/jquery.js"></script>
+<script>
+    $(function(){
+        uname = $("#uname");
+        // uname.attr("type") ==> getAttribute()
+        $("body").append("<br/>1.获取uname的type属性值：",uname.attr("type") );
+        //attr("value","2018-04-25")  ==> setAttribute("value","2018-04-25");
+        uname.attr("value","2018-04-25");
+        $("body").append(
+            "<br/>2.设置uname的value属性值：uname.attr(\"value\",\"2018-04-25\")" );
+        uname.attr({"name":"un","myattr":"我的属性设置"});
+        $("body").append(
+            "<br/>3.设置uname的多个属性值：uname.attr({\"name\":\"un\",\"myattr\":\"我的属性设置\"});" );
+        uname.removeAttr("myattr");
+        //removeAttr("myattr")  ==> removeAttribute("myattr");
+        $("body").append(
+            "<br/>4.删除uname的myattr属性：uname.removeAttr(\"myattr\");" );
+    });
+
+    function addcls(){
+        // uname.addClass("bdred");
+        // uname.addClass("bgblue");
+        uname.addClass("bdred bgblue");
+        //uname.attr("class","bdred bgblue")
+    }
+    function rmcls(){
+        uname.removeClass("bdred bgblue");
+    }
+    /*练习：一个按钮点击事件触发函数做标签的显示隐藏：addClass ,removeClass */
+    i=0;//变量去计算点击次数
+    function showhide(){
+        // if(i%2==0){
+        //     uname.addClass("hide");
+        // }else{
+        //     uname.removeClass("hide");
+        // }
+        // i++;
+        if(uname.hasClass("hide")){
+            uname.removeClass("hide");
+        }else{
+            uname.addClass("hide");
+        }
+    }
+    function showhide_2(){
+        uname.toggleClass("hide");
+    }
+</script>
+
+</body>
+</html>

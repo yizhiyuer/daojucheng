@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-jquery选择器.html</title>
+    <!--css-->
+</head>
+<body>
+<h1 class="title">jquery选择器</h1>
+<ul>
+    <li>标签选择器</li>
+    <li id="idselector">id选择器</li>
+    <li class="title">class选择器</li>
+    <li id="taggroup">组合选择器
+        <h3>h3内容</h3>
+        <h4>h4内容</h4>
+        <p class="ptext">段落内容</p>
+    </li>
+    <li>关系选择器</li>
+    <p>段落内容</p>
+</ul>
+<p class="ptext">段落内容2222222222</p>
+<content></content>
+
+<script src="../jq/jquery.js"></script>
+<script>
+    $(function(){
+        var content = $("content");
+
+        var lihtml = $("li").html();
+        console.log($("li"),lihtml);
+        content.append("<h2>1.标签选择器获取内容:"+
+            lihtml+",选择器选择结果有多个对象.html(),只会获取第一个对象的内容<h2>");
+
+        $("#idselector").css( {"color":"blue"} );
+        content.append("<h2>2. $('#idselector')ID选择器，字体颜色为蓝色</h2>");
+
+        $(".title").css( {"background":"#eee"} );
+        content.append("<h2>3. $('.title')类选择器，背景色为灰色</h2>");
+
+        var len = $("*").length;
+        console.log($("*"));
+        content.append("<h2>4. $('*').length 获取文档中全部的标签数量:"+len+"</h2>");
+
+        // alert($("#taggroup,h3,h4").length);
+        var group =  $("h3,h4");
+        group.css({"text-align":"center"});
+        content.append("<h2>5. 改变$('h3,h4')组合选择器选中标签的内容居中</h2>");
+
+        var ulp = $('ul p');
+        ulp.css( {"font-size":"32px","font-weight":"900"} );
+        content.append("<h2>6. 将$('ul p')后代选择器选中标签的字体设置为32px,加粗</h2>");
+
+        var ul_p = $('ul>p');
+        ul_p.text("p属于ul的子代标签"); //innerText
+        content.append("<h2>7. 改变$('ul>p')子代选择器中的文本内容</h2>");
+
+        var ul_next_p = $('ul+p');
+        ul_next_p.get(0).style.cssText = "color:red;background:#000";
+        //ul_next_p.get(0) == ul_next_p[0]
+        content.append("<h2>8. 改变$('ul+p')选择器得到对象的文字颜色red,背景色#000</h2>");
+
+        var siblings = $("#idselector~li");
+        var slen = siblings.length;
+        content.append("<h2>9. $('#idselector~li')选择器得到的对象个数:"+slen+"</h2>");
+
+    })
+</script>
+</body>
+</html>

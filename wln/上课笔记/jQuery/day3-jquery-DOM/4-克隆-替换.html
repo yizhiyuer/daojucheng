@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-克隆-替换.html</title>
+</head>
+<body>
+<button onclick="doclone(false)">克隆</button>
+<button onclick="doclone(true)">深度克隆</button>
+<button onclick="doreplaceWith()">替换方式-replaceWith</button>
+<button onclick="doreplaceAll()">替换方式-replaceAll</button>
+<ul id="ulist">
+</ul>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        ulist = $("#ulist");
+        for(var i=0;i<=30;i++){
+            li=$("<li>无序列表内容(jq)："+i+"</li>");
+            if(i%2){
+                li.css({"color":"green"});
+            }else{
+                //偶数
+                li.css({"background":"#eee"});
+            }
+            ulist.append(li);//追加
+        }
+        $("li:eq(15)").mouseover(function(){
+            $(this).css({"background":"blue"});
+        }).mouseout(function(){
+            $(this).css({"background":"none"});
+        });
+    });
+    function doclone(isdeep){
+        $("li:eq(15)").clone(isdeep).appendTo(ulist);
+    }
+
+    function doreplaceWith(){
+        $("li:eq(0)").replaceWith("<h3>replaceWith替换标签节点</h3>");
+    }
+    function doreplaceAll(){
+        $("<h3>replaceAll替换标签节点</h3>").replaceAll($("li"));
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-其他表单元素.html</title>
+</head>
+<body>
+<fieldset>
+   <legend>个人信息</legend>
+    <label for="name">姓名</label>
+    <input type="text" name="name" id="name">
+    <label for="addr">地址
+    <input type="addr" name="addr" id="addr"></label>
+    <br>
+    <br>
+    <br>
+    <label for="avtar">
+        头像上传:
+        <img id="show" src="lu.png" width="200px" >
+        <input type="file" name="avtar" hidden id="avtar" onchange="img()">
+        <!--1.当上传的文件改变时，触发onchange=""内的img()方法-->
+    </label>
+</fieldset>
+
+<input type="text" name="test" id="test" oninput="test()">
+<!--oninput改变即触发test()方法-->
+<p>你变我变：<span id="test2"></span></p>
+
+<script>
+    function test() {
+        var a = document.getElementById('test').value;
+        document.getElementById('test2').innerHTML=a;
+    }
+    function img() {
+
+        var fil = document.getElementById('avtar').files[0];// 2.获取到上传的文件信息
+        var reader = new FileReader();// 3.NEW一个文件对象
+        reader.readAsDataURL(fil);// 4.将上传的文件传入对象的方法内
+        reader.onload = function (ev) { // 5.当文件在对象内处理完成时触发方法
+            console.log(ev);
+            document.getElementById('show').src = this.result;
+            // 6.取得图片的base64编码并赋值到img src属性上
+        };
+    }
+</script>
+
+<hr>
+<h5>下拉列表</h5>
+<!--select>option*5-->
+
+<form action="http://baidu.com">
+<select name="city-sigle1">
+    <option value="gz">广州</option>
+    <option value="sz">深圳</option>
+    <option value="nn">南宁</option>
+    <option value="xg">香港</option>
+    <option value="sh">上海</option>
+</select>
+<select name="city-sigle2" size="3">
+    <option value="gz">广州</option>
+    <option value="sz">深圳</option>
+    <option value="nn">南宁</option>
+    <option value="xg">香港</option>
+    <option value="sh">上海</option>
+</select>
+<select name="city-multi[]" size="3" multiple>
+    <option value="gz">广州</option>
+    <option value="sz">深圳</option>
+    <option value="nn">南宁</option>
+    <option value="xg">香港</option>
+    <option value="sh">上海</option>
+</select>
+    <!--select>optgroup*2>option*2-->
+    <select name="yifu" size="6">
+        <optgroup>
+            <option labe1="女装" >
+            <option value="sy">上衣</option>
+            <option value="xb">鞋包</option>
+        </optgroup>>
+            <option labe1="男装" >
+            <option value="msy">上衣</option>
+            <option value="xz">西装</option>
+        </optgroup>
+    </select>
+    <button>提交</button>
+</form>
+<h5>文本域/多行文本框</h5>
+<textarea name="article" id="" cols="30" rows="5">
+  vue-cli是一个官方发布vue.js项目脚手架，
+    使用vue-cli可以快速创建vue项目，
+    GitHub地址是：https://github.com/vue-cli
+</textarea>
+</body>
+</html>

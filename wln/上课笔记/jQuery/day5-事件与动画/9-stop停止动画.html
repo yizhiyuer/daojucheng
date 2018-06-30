@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-stop停止动画.html</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background: #6642ff;
+            color:#fff;
+            /*transition:all 5s linear;*/
+        }
+    </style>
+</head>
+<body>
+<button id="stop_ani">停止动画</button>
+<div id="box">
+</div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        $("#box").click(function(){
+            $(this).animate({width:"500px",height:"500px"},3000)
+                .animate({"margin-left":"600px"},3000)
+        })
+        $("#stop_ani").click(function(){
+            //$("#box").stop();
+            // 1.暂停动画;2.多重动画，会暂停当前动画，执行下一个动画;
+
+            //$("#box").stop(true);//清空动画队列
+            //1.暂停动画;2.多重动画，会暂停当前动画，也不执行下一个动画;
+
+            //$("#box").stop(false,true);
+            //1.停止动画，直接到达动画终点；
+            // 2.多重动画，直接到达当前动画终点，下一个动画会正常；
+
+            $("#box").stop(true,true);
+            //1.停止动画，直接到达动画终点；
+            // 2.多重动画，直接到达当前动画终点，终止后面的动画；
+        });
+    })
+</script>
+</body>
+</html>

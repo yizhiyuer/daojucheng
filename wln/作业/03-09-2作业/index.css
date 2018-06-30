@@ -1,0 +1,311 @@
+* {
+    padding: 0;
+    margin: 0;
+
+    list-style-type: none;/*去掉点号*/
+
+    text-decoration: none;/*去掉下划线*/
+    color: #414141;
+}
+
+.wrapper {
+    width: 100%;
+    height: 45px;
+    background-color: #8cb486;
+}
+
+.nva {
+    /*background-color: #ffcbea;*/
+    width: 1300px;
+    height: 45px;
+    margin: 0 auto;
+}
+
+.logo {
+    /*background-color: #a7c3cd;*/
+    width: 300px;
+    float: left;
+    height: 45px;
+}
+
+.logo img {
+    width: 280px;
+    height: 45px;
+}
+
+.sub-nav {
+    /*background-color: #9ccd9c;*/
+    width: 750px;
+    float: left;
+    height: 45px;
+    margin-left: 20px;
+}
+
+.sub-nav ul li {
+    float: left;
+    width: 110px;
+    margin-left: 10px;
+    line-height: 45px;
+    /*background-color: #3ace36;*/
+    text-align: center;
+}
+
+.sub-nav ul li a {
+    transition: all 2s;
+    /*css3过度*/
+}
+.sub-nav ul li a:hover {
+    background: #328320;
+    display:inline-block; /*转换为块级元素*/
+    border-radius: 20px;/*圆角属性*/
+    width: 100px;
+    height: 45px;
+    font-size:20px;
+}
+
+.registered {
+    width: 200px;
+    height: 45px;
+    /*background-color: #1c31ce;*/
+    float: left;
+    margin-left: 20px;
+}
+
+.registered ul li {
+    width: 75px;
+    float: left;
+    margin-left: 10px;
+    background-color: #fefffa;
+    line-height: 30px;
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.registered ul li a:hover {
+    color: #4a674a;
+}
+
+.header {
+    width: 100%;
+    height: 150px;
+    /*background: #ff702f;*/
+    background-image: url("../images/luobo-x.png");
+}
+
+.nav-link {
+    width: 100%;
+    height: 25px;
+    background-color: #9ba9a8;
+}
+
+.nav-link span {
+    margin-left: 137px;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.nav-link img {
+    height: 19px;
+}
+
+.main {
+    width: 1300px;
+    height: 780px;
+    /*background-color: #357b3d;*/
+    margin: 10px auto 0;
+}
+
+.hot {
+    width: 1300px;
+    height: 45px;
+    /*background-color: #7b642f;*/
+
+}
+
+.hot-1 a:hover {
+    color: #2383a4;
+}
+
+.hot-2 a:hover {
+    color: #2383a4;
+}
+
+.hot-3 a:hover {
+    color: #2383a4;
+}
+
+.hot-4 a:hover {
+    color: #2383a4;
+}
+
+.hot-1 {
+    width: 300px;
+    height: 45px;
+    background-color: #93b68f;
+    float: left;
+    border-radius: 25px;
+    /*圆角化*/
+    margin-left: 32px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.hot-2 {
+    width: 300px;
+    height: 45px;
+    background-color: #93b68f;
+    float: left;
+    border-radius: 25px;
+    margin-left: 10px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.hot-3 {
+    width: 300px;
+    height: 45px;
+    background-color: #93b68f;
+    float: left;
+    border-radius: 25px;
+    margin-left: 10px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.hot-4 {
+    width: 300px;
+    height: 45px;
+    background-color: #93b68f;
+    border-radius: 25px;
+    float: left;
+    margin-left: 10px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.filter {
+    width: 1300px;
+    height: 100px;
+    background-color: #ffffff;
+    margin-top: 15px;
+
+}
+
+.filter ul li {
+    float: left;
+    width: 100px;
+    line-height: 30px;
+    margin-top: 10px;
+    margin-left: 25px;
+    /*background-color: #b48095;*/
+    text-align: center;
+}
+
+.filter ul li a:hover {
+    background-color: #328320;
+    display:inline-block; /*转换为块级元素*/
+    width: 100px;
+    border-radius: 20px;
+}
+
+.msg {
+    background-color: #b48095;
+    border-radius: 25px
+}
+
+.content {
+    width: 1300px;
+    height: 720px;
+    /*background-color: #909e9d;*/
+    margin-top: 6px;
+}
+
+.content ul li {
+    float: left;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    padding-left: 60px;
+    overflow: hidden;
+}
+
+.content img {
+    width: 250px;
+    height: 190px;
+    transition: all 2s;/*css3过渡*/
+    }
+.content img:hover {
+    width: 280px;
+    height: 200px;
+}
+
+.content span {
+    font-size: 10px;
+    margin-left: 55px;
+}
+
+.more {
+    width: 100%;
+    height: 42px;
+    margin-top: 120px;
+    /*background-color: #1a81ce;*/
+}
+
+.more-btn {
+    width: 120px;
+    height: 42px;
+    background-color: #85a881;
+    margin: 0 auto;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 10px;
+}
+
+.footer {
+    width: 100%;
+    height: 350px;
+    /*background-color: #cecd30;*/
+    margin-top: 35px;
+
+}
+
+.siteinfo {
+    width: 60%;
+    height: 350px;
+    background-color: #27cebf;
+    float: left;
+background-image: url("../images/b3.png");
+    /*background-repeat: no-repeat;*/
+    background-size:contain;
+    /*背景图填满不重叠*/
+}
+.message {
+    width: 40%;
+    height: 350px;
+    background-color: #fcf7f1;
+    float: left;
+    text-align: center;
+}
+.message input{
+    width: 280px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.message-2{
+    width: 400px;
+    height: 350px;
+    /*background-color: #f2c0e1;*/
+}
+.message-2 textarea{
+    width: 280px;
+    margin-top: 20px;
+    margin-left:20px;
+}
+.message-2 button{
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+}
+

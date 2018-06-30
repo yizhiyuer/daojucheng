@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-其他方式事件移除.html</title>
+</head>
+<body>
+<h2>onclick属性添加的事件监听，可以通过removeAttribute("属性名称")去移除事件监听</h2>
+<button onclick="cliOnAttr(this)">属性-点击</button>
+<h2>在javascript通过 对象.onclick=绑定函数 注册的时间，可以通过 对象.onclick=null去移除事件监听 </h2>
+<button id="objclick">点击-对象监听</button>
+<script>
+    function cliOnAttr(obj){
+        alert("在属性上添加事件监听！即将删除");
+        obj.removeAttribute("onclick");//删除属性
+    }
+    objclick = document.getElementById("objclick");
+    objclick.onclick = function(){
+        alert("在javascript通过 对象.onclick=绑定函数!即将删除");
+        // objclick.onclick=null;
+        this.onclick=null;
+    }
+
+</script>
+
+</body>
+</html>

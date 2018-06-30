@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-ajax的应用.html</title>
+</head>
+<body>
+<div class="box"></div>
+<script src="../../jQuery/day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function () {
+      var box = $(".box");//容器
+      //ajax
+      $.ajax({//url可以直接配置到options中
+          url:"",//请求路径
+          dataType:"html",//响应的数据类型：html,xml,json,script,text
+          //以上参数是发送请求必须的；
+          //发送后，需要得到响应；
+          success:function (response,textStatus,jqXHP) {//
+          //todo:自定义功能
+              box.append(response);//response响应结果
+              console.log(textStatus,jqXHP);
+          }
+      })
+    })
+</script>
+</body>
+</html>

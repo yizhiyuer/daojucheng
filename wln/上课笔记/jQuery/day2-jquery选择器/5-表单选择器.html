@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-表单选择器.html</title>
+</head>
+<body>
+<form action="">
+    <p><label for="uname">姓名：</label>
+        <input type="text" name="uname" id="uname"></p>
+    <p><label for="email">邮箱：</label>
+        <input type="text" disabled name="email" id="email" value="邮箱不可用"></p>
+    <p><label for="phone">手机：</label>
+        <input type="text" readonly name="phone" id="phone" value="手机只读"></p>
+    <p><label for="passwd">密码：</label>
+        <input type="password" name="passwd" id="passwd"></p>
+    <p><label for="repasswd">确认密码：</label>
+        <input type="password" name="repasswd" id="repasswd"></p>
+    <p><label >性别：</label>
+        <input type="radio" name="gender"  value="0">男
+        <input type="radio" name="gender"  value="1">女
+        <input type="radio" name="gender" checked  value="2">保密
+    </p>
+    <p><label >爱好：</label>
+        <input type="checkbox" name="hobby[]" checked value="运动">运动
+        <input type="checkbox" name="hobby[]"  value="爬山">爬山
+        <input type="checkbox" name="hobby[]"  value="音乐">音乐
+        <input type="checkbox" name="hobby[]" checked value="电影">电影
+    </p>
+    <p>
+        <label for="city">城市：</label>
+        <select name="city" id="city">
+            <option value="北京">北京</option>
+            <option value="上海">上海</option>
+            <option value="深圳" selected>深圳</option>
+            <option value="广州">广州</option>
+            <option value="杭州">杭州</option>
+        </select>
+    </p>
+    <p>
+        <label for="pic">头像：</label>
+        <input type="file" name="pic" id="pic">
+    </p>
+    <p>
+        <label for="city">自我介绍：</label>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </p>
+    <p>
+        <button type="reset">重置</button>
+        <button type="submit">提交</button>
+        <input type="image" src="./123.png">
+    </p>
+</form>
+
+<h3 id="note"></h3>
+
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        var note = $("#note");
+        note.append("<br/>$(':input')获取元素个数是多少："+$(':input').length);
+        note.append("<br/>$(':text')获取元素个数是多少："+$(':text').length);
+        note.append("<br/>$(':password')获取元素个数是多少："+$(':password').length);
+        $(':password').val("123456");
+        note.append("<br/>$(':radio')获取元素个数是多少："+$(':radio').length);
+        note.append("<br/>$(':checkbox')获取元素个数是多少："+$(':checkbox').length);
+        note.append("<br/>$(':button')获取元素个数是多少："+$(':button').length);
+        note.append("<br/>$(':reset')获取元素个数是多少："+$(':reset').length);
+        note.append("<br/>$(':submit')获取元素个数是多少："+$(':submit').length);
+        note.append("<br/>$(':image')获取元素个数是多少："+$(':image').length);
+        note.append("<br/>$(':file')获取元素个数是多少："+$(':file').length);
+        note.append("<br/>$(':disabled').val()获取元素中的值："+$(':disabled').val() );//obj.value=
+        $("input[readonly]").css({"background":"#ff0"});
+        console.log($(':checked'));
+        note.append("<br/>$(':checked')获取元素个数(包括option选中)是多少："+$(':checked').length);
+        note.append("<br/>$(':selected').val()获取元素的值："+$(':selected').val());
+    });
+</script>
+</body>
+</html>

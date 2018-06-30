@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-if-分支结构.html</title>
+</head>
+<body>
+<input type="radio" name="gender" value="0" onclick="res(this.value)">男
+<input type="radio" name="gender" value="1" onclick="res(this.value)">女
+<!--<button onclick="res()">确认选择</button>-->
+<hr>
+<!--onblur:失去焦点时触发-->
+<input type="number" min="0" max="23" value="8" onblur="getwish(this.value)">
+<script>
+    function getwish(mytime){
+        // var  mytime = 22;
+        mytime=parseInt(mytime);//强转为整型
+        if(mytime>6 && mytime<10){
+            console.log("早上好！");
+        }else if(mytime>=10 && mytime<14){
+            console.log("中午好！");
+        }else if(mytime>=14 && mytime<19){
+            console.log("下午好！");
+        }else if(mytime>=19 && mytime<24){
+            console.log("晚上好！");
+        }else{
+            console.log("夜深了！");
+        }
+    }
+    function res(gender) {
+        // alert(gender);
+        // var gender = 1;
+        //parseInt(gender)
+        if(gender == "1"){  //0代表的是false, 非0数字代表的是true
+            alert("女");
+        }else{
+            alert("男");
+        }
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

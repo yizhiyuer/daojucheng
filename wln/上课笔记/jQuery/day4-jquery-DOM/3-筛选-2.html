@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-筛选-查找.html</title>
+</head>
+<body>
+
+<ul>
+    <li>列表内容--1</li>
+    <p>列表内容--2</p>
+    <li>列表内容--3</li>
+    <li>列表内容--4</li>
+    <h1>列表内容-h1
+        <ul>
+            <li>列表内容-h1-1</li>
+            <li>列表内容-h1-2</li>
+            <li>列表内容-h1-3</li>
+        </ul>
+    </h1>
+    <li>列表内容--6</li>
+    <p>列表内容--7</p>
+    <li>列表内容--8</li>
+</ul>
+
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        ul = $("ul");
+        len = ul.children().length;
+        console.log("ul.children():",ul.children());
+        $("body").append('<h3>ul.children()获取子节点个数：'+len+'</h3>')
+        $("body").append('<h3>ul.get(0).children获取子节点个数：'
+            +ul.get(0).children.length+'</h3>');
+
+        h1_next_text = $("h1").next().text();
+        $("body").append('<h3>$("h1")的下一个节点的内容，$("h1").next().text()：'+
+            h1_next_text+'</h3>');
+
+        $("body").append('<h3>$("h1")的下一个的下一个' +
+            '节点的内容，$("h1").next().next().text()：'+
+            $("h1").next().next().text()+'</h3>');
+
+        h1_prev_text = $("h1").prev().text();
+        $("body").append('<h3>$("h1")的上一个节点的内容，$("h1").prev().text()：'+
+            h1_prev_text+'</h3>');
+
+
+        var h1_2 =$("li:contains('h1-2')");
+        $("body").append('<h3>h1_2的父级标签:'+ h1_2.parent().text() +'</h3>');
+        $("body").append('<h3>h1_2的父级的父级标签:'+ h1_2.parent().parent().text() +'</h3>');
+        console.log('h1_2的所有的祖先元素:', h1_2.parents());
+
+        $("body").append('<h3>h1_2的前后同辈元素的个数:'+ h1_2.siblings().length +'</h3>');
+        $("body").append('<h3>内容包含"--4"标签的前后同辈p标签元素的个数:'+
+            $("li:contains('--4')").siblings("p").length +'</h3>');
+
+        // console.log( $("li:contains('h1-2')") );
+
+        console.log( h1_2.closest("ul") );
+        //注意：closest("selector")类似parent(),
+        // closest("selector")有可能找到自身
+    })
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+.join-us-title {
+    font-size: 28px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.join-us-letter p {
+    font-size: 60px;
+    font-weight: bold;
+    color: #363941;
+}
+.join-us-letter span {
+    color: rgb(102, 102, 102);
+    font-size: 12px;
+}
+.join-us-content-img {
+    margin-bottom: 50px;
+}
+.join-us-content-img2 {
+    height: 400px;
+    background: url('../images/mobike-join-3.jpg')no-repeat center center;
+    background-size: cover;
+}
+.join-us-content-img2-txt {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    letter-spacing: 10px;
+}
+.join-us-list {
+
+}
+.join-us-list div {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    height: 250px;
+    padding-top: 100px;
+}
+.join-us-list p {
+    font-size: 25px;
+    font-weight: bold;
+}
+.join-us-list a {
+    color: #f05b48;
+}

@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none
+}
+
+.wrapper {
+    width: 800px;
+    height: 800px;
+    background-color: #ffffff;
+    margin-left: 25%;
+}
+
+.title {
+    color: coral;
+    margin-left: 150px;
+    padding-top: 60px;
+}
+
+.header {
+    font-size: 10px;
+    margin-left: 240px;
+    line-height: 30px;
+}
+
+.message {
+    width: 630px;
+    height: 30px;
+    /*background-color: #f2c0e1;*/
+    float: right;
+}
+
+.message-1 {
+    width: 510px;height: 30px;float: left;
+
+}
+.message-2{
+    width: 120px;height: 30px;float: left;
+
+
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-函数的定义.html</title>
+</head>
+<body>
+<h2>形式参数(形参)：在函数定义中出现的参数</h2>
+<h2>实际参数(实参)：在函数调用时出现的参数，是实际内容或存在值的变量</h2>
+<h2>如果在函数体中出现return, 说明函数有返回值，可以在调用时赋值给变量</h2>
+<h2>函数定义的三种形式：1.命名函数(常用)；
+    2.匿名函数(常用,重点)；
+    3.Function类构造匿名函数(了解)
+</h2>
+<a href="javascript:alert('超链接')">超链接</a>
+<script>
+    //1-命名函数
+    function plus(num1,num2){ //函数的定义
+        console.log(num1,num2);
+        return num1+num2; //返回值
+    }
+    var result = plus(55,23); //函数调用
+    document.write("<br>加法结果为：",result);
+    document.write("<br>加法结果为：",plus(11,23));
+    document.write("<br>加法结果为：",plus());
+    function cheng(num1,num2){
+        return num1*num2; //返回值
+    }
+    res = cheng(10,plus(10,10));
+    document.write("<br>计算结果为：",res);
+    /*练习:写出加，减，乘，除，求余 四个功能函数，并打印调用后的结果*/
+    var pp =plus;
+    console.log(pp(1,1));
+    //2-匿名函数：
+    var yu = function (num1,num2) {
+        return num1 % num2;
+    }
+    document.write("<br>求余结果为：",yu(99,5));
+    var yy =yu;
+    document.write("<br>求余结果为：",yy(99,10));
+    
+    //3-Function类构造匿名函数
+    var f = new Function('canshu1','canshu2',"alert('参数1'+canshu1+',参数2'+canshu2);");
+    f(111,222);
+</script>
+</body>
+</html>

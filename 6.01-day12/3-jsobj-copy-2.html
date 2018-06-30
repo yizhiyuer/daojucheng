@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-jsobj-copy.html</title>
+</head>
+<body>
+
+<script>
+    var myfunc = function(flag){
+        document.write(flag+".访问name属性："+ this.name+"<br/>");
+    }
+    var obj_1={
+        name:"jackwang",
+        myfunc:"myfunc"
+    }
+    obj1str =JSON.stringify(obj_1); //对象 => 字符串
+    console.log("json对象转字符串：",obj1str);
+    var obj_22 = obj1str;
+    //对象赋值是引用赋值，赋值后，某一个对象中值变化会影响所有的对象
+    obj_22 = JSON.parse(obj_22); //字符串 => 对象
+    obj_22.name="cavinkang";
+    console.log(obj_1,obj_22);
+    obj_22.myfunc();
+</script>
+</body>
+</html>

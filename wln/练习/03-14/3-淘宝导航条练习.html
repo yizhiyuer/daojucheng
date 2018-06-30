@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-淘宝导航条练习.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+        }
+
+        .wrap {
+            width: 550px;
+            height: 100px;
+            border: 1px solid #9f9ca3;
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: #cc5500;
+        }
+
+        .wrap li {
+            float: left;
+            margin-top: 50px;
+            padding: 0 10px;
+            position: relative;
+        }
+
+        .wrap ul {
+            border-bottom: 3px solid #ff6800;
+        }
+
+        .wrap li > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 13px;
+            padding: 2px 6px;
+            text-align: center;
+        }
+
+        .wrap li a:hover, .active {
+            background-color: #de7200;
+            color: white;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .tmall {
+            position: absolute;
+            top: -22px;
+            left:10px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li><a href="" class="active">首页</a></li>
+        <li><a href="">天猫</a><img src="taobao.gif" class="tmall"></li>
+        <li><a href="">聚划算</a></li>
+        <li><a href="">电器</a></li>
+        <li><a href="">良无限</a></li>
+        <li><a href="">吃喝玩乐</a></li>
+        <div style="clear: both;border: none"></div>
+    </ul>
+    <div style="clear: both;border: none"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="click">点击事件</button>
+<button id="dbclick">双击事件</button>
+
+<h3 class="hover_mouse">鼠标移进移出</h3>
+
+<div>
+    <input type="text" name="uname" id="uname">
+</div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function () {
+        $("#click").bind("click",function () {
+            alert("点击事件");
+        });
+        $("#dbclick").bind("dbclick",function () {
+            alert("双击事件");
+            $("#dbclick").unbind("dbclick");
+        });
+        $(".hover_mouse").mouseenter(function () {
+            $(this).css({"background":"#ffb369","border":"none"});
+        }).mouseleave(function () {
+            ramcolor = "rgb("+
+                parseInt(Math.random()*255)+"," +
+                parseInt(Math.random()*255)+", "+
+                parseInt(Math.random()*255)+
+                ")";
+            $(this).css({"background":"none","border":"solid 2px red"});
+            $(this).unbind("mouseenter mouseleave");
+        })
+        $("#uname").blue(function () {
+            alert("失去焦点:"+$(this).val());
+            $(this).unbind("blur");
+        }).focus(function () {
+            $(this).val();
+        });
+        $(window).resize(function () {
+            console.log("改变窗口大小触发:",
+                $(this).height(),$(this).width());
+        })
+    });
+</script>
+</body>
+</html>

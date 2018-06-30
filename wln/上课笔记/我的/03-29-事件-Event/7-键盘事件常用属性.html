@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7-键盘事件常用属性.html</title>
+</head>
+<body>
+<form action="http://baidu.com" id="form_1">
+    <textarea name="" id="content" cols="30" rows="10"></textarea>
+</form>
+<script>
+    //键盘事件
+   /* window.onkeydown = function(event){
+        console.log("按键的值:",event.key,
+            ",序号：",event.keyCode,
+            "代码:",event.code);
+    }*/
+    /*练习：设计一个表单，表单内有一个文本域，没有button,
+    * 要求：输入完文本后，按回车键提交表单；
+    * onkeydown , form.submit */
+    content = document.getElementById("content");
+    form_1 =document.getElementById("form_1");
+    var keystr="";//收集按键event.key
+    content.onkeydown = function(event){
+        /*console.log("按键的值:",event.key,
+            ",序号：",event.keyCode,
+            "代码:",event.code);*/
+        keystr+=event.key;
+        console.log("组合按键的结果：",keystr);
+        if(keystr =="ControlEnter"){ //判断组合按键的结果
+            //做表单提交
+            form_1.submit();
+            //扩展：思考文本域回车换行与回车提交的冲突
+        }
+    }
+    content.onkeyup = function(event){ /*键盘按键松开时触发*/
+        /*console.log("onkeyup按键的值:",event.key,
+            ",序号：",event.keyCode,
+            "代码:",event.code);*/
+        keystr="";//清空组合按键的结果
+    }
+    content.onkeypress = function(event){
+        /*onkeypress:无法监听到中文输入和某些功能键（ctrl,alt,shift,delete...）*/
+        /*console.log("onkeypress按键的值:",event.key,
+            ",序号：",event.keyCode,
+            "代码:",event.code);*/
+    }
+</script>
+
+</body>
+</html>

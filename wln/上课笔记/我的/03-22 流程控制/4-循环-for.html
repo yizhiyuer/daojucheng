@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-循环-for.html</title>
+</head>
+<body>
+<h2>循环必须具备的条件：1.循环变量(计算) ；2.必须要有终断条件；3.必须要有循环条件</h2>
+<h2>while(1):死循环；while(0):一次不执行</h2>
+<h2>while在一开始的条件不满足的情况下不执行</h2>
+<h2>do-while在一开始的条件不满足的情况还是会执行一次（至少执行一次）</h2>
+<h2>for可以将小括号中的循环变量放到循环结构之前定义，
+    可以把计算循环变量放到循环体中执行，
+    但是两个分号不能省略</h2>
+<h2>数组在打印时可以自动转换为字符串,元素内容以逗号隔开</h2>
+<script>
+
+    /*for(i=0;i<100;i++){
+        document.write("<p>for打印"+i+"</p>");
+    }*/
+    /*i=100;
+    for(;i<200;){
+        document.write("<p>for打印"+i+"</p>");
+        i++;
+    }*/
+    var arrs =["子串",null,555.55,["js","php"]];
+    /*for(i=0;i<arrs.length;i++){
+        document.write("<p>"+arrs[i]+"</p>");
+    }*/
+    for(pos in arrs){
+        document.write("<p>for in:"+arrs[pos]+"</p>");
+    }
+    /*练习要求：使用 for 和 for in 输出下标为0和3的元素内容*/
+
+    for(i=0;i<arrs.length;i+=3){
+        document.write("<p>for输出下标为0和3:"+arrs[i]+"</p>");
+    }
+
+    for(p in arrs){
+        if(p==0 || p==3){
+            document.write("<p>for in输出下标为0和3:"+arrs[p]+"</p>");
+        }
+    }
+    /*练习要求：使用 for in 输出下标为偶数的元素内容*/
+    for(myeven in arrs){
+        if(!(myeven%2)){
+            document.write("<p>for in输出下标为偶数:"+arrs[myeven]+"</p>");
+        }
+    }
+
+
+</script>
+</body>
+</html>

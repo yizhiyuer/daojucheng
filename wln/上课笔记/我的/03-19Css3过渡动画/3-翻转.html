@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翻转动画</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 100px;
+            margin: 20px auto;
+            background: #b171cd;
+            color: white;
+            text-align: center;
+            animation: ani_name 5s linear infinite; /*1000ms*/
+            animation-delay: 3s; /*动画延迟三秒*/
+        }
+        .box:hover {
+            animation-play-state: paused;
+            /*paused:暂停动画 :running:继续播放动画*/
+        }
+        @keyframes ani_name{
+        0%    {
+            transform: rotate(360deg);
+            background: #4bca62;
+        }
+
+        }
+        .left-right {
+            width:100px;
+            animation: left-right 5s linear infinite alternate-reverse;
+            /*animation-di*/
+        }
+        @keyframes left-right {
+         0%{
+             margin-left: 0;
+         }
+            45%{
+                margin-left: 550px;
+                transform: scale(1.2);
+            }
+            50%{
+            margin-left: 650px;
+                transform: scale(2);
+        }
+           100%{
+             margin-left: 1300px;
+               transform: scale(1);
+           }
+        }
+    </style>
+</head>
+<body>
+<div class="box ">单曲循环</div>
+<hr>
+
+<h3 class="left-right">文字的运动</h3>
+</body>
+</html>

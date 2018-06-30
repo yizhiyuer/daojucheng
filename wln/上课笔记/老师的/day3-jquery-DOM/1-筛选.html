@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-筛选.html</title>
+</head>
+<body>
+<h3 id="h31">$("*").index( $("body") ) : 获取body标签所在$("*")数组索引的第几位;</h3>
+<h3 id="h32">add():给原有的集合添加元素 </h3>
+<h3 id="h33">链式操作：连续使用多个点语法进行操作 </h3>
+<h3 id="h34">not()：去除元素对象数组中的某些指定的对象 </h3>
+<h3 filter="filter">filter()：在元素对象数组中过滤出特定的元素 </h3>
+<h3>
+    find():查找当前对象的后代元素
+    <ol>
+        <li>h3的后代节点</li>
+    </ol>
+</h3>
+<ol>
+    <li>不是h3的后代节点</li>
+</ol>
+<script src="../jq/jquery.js"></script>
+<script>
+    $(function(){
+        // alert( $("*").length );
+       // var pos = $("*").index( $("html") );//html标签所在数组索引的第几位
+        var pos = $("*").index( $("body") );
+        console.log( "body标签所在数组索引的第几位:",pos );
+        // $("#h31,#h32");
+        //练习:先给 id=h31 的标签添加背景色，再给 h31 和 h32统一设置字体颜色；
+        $("#h31").css({"background":"#eee"}).add("#h32").css({"color":"red"});
+        $("#h33,#h34").css({"color":"green"}).not("#h33").css({"background":"#fac6b0"});
+        //练习:先给所有的h3标签加上边框，再去除指定的h3元素的边框；
+        $("h3").css({"border":"solid 1px #000"})
+            .filter("[filter='filter']").css({"border":"none"});
+
+        $("h3").find("li").css({"color":"blue"});
+
+        $("h3").each(function(i){
+            console.log("下标：",i,"原生js对象：",this);
+            // this：上下文
+        });
+
+    });
+</script>
+</body>
+</html>

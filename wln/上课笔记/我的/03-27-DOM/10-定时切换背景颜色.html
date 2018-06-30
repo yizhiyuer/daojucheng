@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A10-定时切换背景颜色.html</title>
+</head>
+<body>
+
+<script>
+    body = document.querySelector("body");
+    colorArr = ["darkred","#abe1f8", "#f8e09a","#c17df8","#7635f8","white","black"];
+    i = 0;
+    setInterval(function(){
+        console.log("i对7求余：",(i%7));
+        body.style.cssText = "background:"+colorArr[(i%7)];
+        i++;
+    },2000);
+</script>
+
+</body>
+</html>

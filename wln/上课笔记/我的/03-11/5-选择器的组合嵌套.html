@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>-5选择器的组合嵌套.html</title>
+    <style>
+        h1,#sumary,.li3{
+          background-color: #328320;
+        }
+        ol.ol-1>p{
+            /*ol.ol-1:带有ol-l的class的ol的标签*/
+            background-color: #fc510e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>5-选择器的组合嵌套</h1>
+<p id="sumary">段落内容</p>
+<ol class="ol-1">
+    <li>有序表</li>
+    <li>
+        <p>p属于li的子标签</p>
+    </li>
+    <li class="li3">有序表</li>
+    <li>有序表</li>
+    <li>有序表</li>
+</ol>
+<hr>
+<ol>
+    <li>有序表</li>
+    <li><p>有序表222</p></li>
+    <li>有序表</li>
+</ol>
+</body>
+</html>

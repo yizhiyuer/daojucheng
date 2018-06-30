@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <style>
+        *{margin: 0;padding: 0}
+        #dv1,#dv1>img,#bigger{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left:200px;
+        }
+        #dv1>img{left:0}
+        #bigger{overflow: hidden;left:620px;}
+        #zz{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            /*background: rgba(255,0,0,0.2);*/
+            z-index: 80;
+        }
+        #grid{
+            width: 90px;
+            height: 90px;
+            position: absolute;
+            background: rgba(200,200,200,0.3);
+            z-index: 60;
+        }
+    </style>
+</head>
+<body>
+<div id="dv1">
+    <img src="./timg.jpg">
+    <div id="grid"></div>
+    <!--网格存在于图片与遮罩之间-->
+    <div id="zz"></div>
+</div>
+<div id="bigger">
+    <img src="./timg.jpg">
+</div>
+<script src="./jquery.js"></script>
+<script>
+    $(function(){
+        $("#zz").mousemove(function(mve){
+            //console.log(mve.offsetX,mve.offsetY);
+            if(mve.offsetX>=45 && mve.offsetX<=255){
+                $("#grid").css({"left":(mve.offsetX-45)+"px"});
+                console.log(  (mve.offsetX-50)*(10/3)  );
+                $("#bigger>img").css({"margin-left": -((mve.offsetX - 45) * (10 / 3)) + "px"});
+            }
+            if(mve.offsetY>=45 && mve.offsetY<=255){
+                $("#grid").css({"top":(mve.offsetY-45)+"px"});
+                $("#bigger>img").css({"margin-top": -((mve.offsetY - 45) * (10 / 3)) + "px"});
+            }
+        });
+        $("#zhenzhao").mouseout(function(){
+
+        })
+    })
+</script>
+</body>
+</html>

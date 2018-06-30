@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-mouseenter与mouseover的区别.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        #mou_en{
+            width: 240px;
+            height: 270px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.5);
+            color:#fff;
+            /*padding: 0 20px;*/
+            position: relative;
+        }
+        #mou_en li{
+            height: 90px;
+            border-bottom: solid 1px #eeeeee;
+        }
+        .menu_layout{
+            width: 500px;height: 270px;background: #eeaf8d;
+            position: absolute;
+            top:0;
+            left:240px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mou_en">
+        <ul>
+            <li>
+                <div class="menu_layout">
+                    11111
+                </div>
+            </li>
+            <li>
+                <div class="menu_layout">
+                    2222
+                </div>
+            </li>
+            <li>
+                <div class="menu_layout">
+                    3333
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="../day1-jquery/jq/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#mou_en li").mouseover(function(){
+                // $(".menu_layout").hide();
+                $(this).find(".menu_layout").show();
+            }).mouseout(function(){
+                $(this).find(".menu_layout").hide();
+            });
+        })
+    </script>
+
+</body>
+</html>

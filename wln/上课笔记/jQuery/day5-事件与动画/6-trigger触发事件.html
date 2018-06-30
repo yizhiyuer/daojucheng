@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-trigger触发事件.html</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background: #6642ff;
+            color:#fff;
+            transition:all 5s linear;
+        }
+        #box.bgchge{  /* #box:hover */
+            background: green;
+            color:#f00;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+</div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        $("#box").click(function(ev , text){
+            if(undefined == text){
+                text ="点击触发";
+            }
+            alert(text);
+        });
+        /*等待三秒后自动触发*/
+        setTimeout(function(){
+            $("#box").trigger(
+                "click",["trigger触发的事件"]);
+        },2000);
+        /*函数调用的3种方式：
+        1.func()
+        2.func.apply(window,[arg1,...,argN])
+        2.func.call(window, arg1,...,argN )
+        */
+        /* $(document).ready() 文档就绪*/
+        $(window).bind("myready",function (){
+            /*自定义事件：不参与硬件交互，
+            只能通过 trigger */
+            alert("窗口就绪");
+        });
+        setTimeout(function(){
+            $("#box").trigger("myready");
+        },5000);
+    })
+</script>
+</body>
+</html>

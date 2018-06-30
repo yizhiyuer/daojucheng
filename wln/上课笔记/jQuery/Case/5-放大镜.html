@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-放大镜.html</title>
+
+    <style>
+        .box{
+            position: absolute;
+            top:100px;
+            left: 300px;
+        }
+        .small,.big{
+            width: 250px;
+            height: 250px;
+            border: solid 5px red;
+            float: left;
+            margin: 0 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        .small>img{
+            width: 100%;
+        }
+        .grid{
+            width:90px;
+            height:90px;
+            background: rgba(250,250,250,0.5);
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .canvas{
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /*background: rgba(250,0,0,0.5);*/
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+<div class="small">
+<img src="timg.jpg" alt="">
+    <div class="grid"></div>
+    <div class="canvas"></div>
+</div>
+<div class="big">
+<img src="timg.jpg" alt="">
+</div>
+</div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script> 
+   $(function () {
+      $(".canvas").mousemove(function (evt) {
+         console.log(evt.offsetX,evt.offsetY) ;
+         if (evt.offsetX>=31.25 && evt.offsetX<=(250-31.25)){//31.25= 62.5/2
+             $(".big>img").css({marginLeft:-(evt.offsetX-31.25)*(1000/250)+"px"});
+         }
+         $(".grid").css({left:(evt.offsetX-31.25)+"px",top:(evt.offsetY-31.25)+"px"});
+          if (evt.offsetY>=31.25 && evt.offsetY<=(250-31.25)){
+              $(".big>img").css({marginTop:-(evt.offsetY-31.25)*(1000/250)+"px"});
+          }
+      });
+      $(".canvas").mouseout(function () {
+         $(".big") .hide();
+      });
+   })
+</script>
+</body>
+</html>

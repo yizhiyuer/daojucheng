@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7-ajax的应用.html</title>
+</head>
+<body>
+<div class="box"></div>
+<script src="./jq/jquery.js"></script>
+<script>
+    $(function(){
+        var box=$(".box");
+        var str="";
+        $.ajax({
+            url:"./test.json",
+            data:"",
+            type:"get",
+            dataType:"json",//ajax 会自动把 响应的数据转化成 json 对象
+            success:function(res){
+                console.log(res);
+                for(i in res.compilerOptions){
+                    str+="<p>"+res.compilerOptions[i]+"</p>";
+                }
+                box.append(str);
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-练习-2.html</title>
+</head>
+<body>
+<h2>
+    <ol>
+        <li>判断1个数字是否大于1万，条件成立，则将数字转为万的单位;
+            <p>评论:100000 => 1万，12345 =>1.23万</p>
+        </li>
+        <li>
+            把一个手机号中间4位设置成*号；
+            <p>18169797896 => 181****7896</p>
+        </li>
+        <li>
+            把一个字符串倒序显示；
+            <p>今天是周六，要补课~  =>~课...天今</p>
+        </li>
+    </ol>
+</h2>
+
+<script>
+    function exec2(num) {
+        if(num>=10000){
+            if(num%10000 == 0){
+                return (num/10000)+"万";
+            }
+            return (num/10000).toFixed(2)+"万";
+        }
+        return num;
+    }
+    document.write("<br>练习2：",exec2(10000));
+
+    function exec3(phonestr){
+        phonestr= phonestr+"";
+        var newstr="";
+        for(var i=0;i<phonestr.length;i++){
+            if(i>=3 && i<=6){
+                newstr+="*";
+                continue;
+            }
+            newstr+=phonestr[i];
+        }
+        return newstr;
+    }
+    document.write("<br>练习3：",exec3(18677985692));
+
+    //今天是周六，要补课~
+    function  exec4_1(str) {
+        var newstr="";
+        for(var i=str.length-1;i>=0;i--){
+            newstr+=str[i];
+        }
+        return newstr;
+    }
+    document.write("<br>练习4：",exec4_1("今天是周六，要补课~"));
+
+    function  exec4_2(str){
+        var temp="";//交换的缓冲变量
+        var strarr = str.split(""); //将字符串按照一定的规则拆分为数组
+        for(var i=0;i<(strarr.length/2);i++){
+            temp = strarr[i];
+            strarr[i]=strarr[strarr.length-1-i];
+            strarr[strarr.length-1-i] = temp;
+            console.log("<br>"+i+"次",strarr);
+        }
+        return strarr.join("");//将数组元素按照一定的规则组合成字符串
+    }
+    document.write("<br>练习4_2：",exec4_2("今天是周六，要补课~"));
+</script>
+</body>
+</html>

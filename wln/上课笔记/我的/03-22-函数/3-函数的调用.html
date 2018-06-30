@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-函数的调用.html</title>
+</head>
+<body>
+<h2>
+    (函数)闭包：
+    <ol>
+        <li>封闭(装)性:程序的安全性，不允许外部直接调用功能；</li>
+        <li>灵活(框架)：在一定的规则内，允许开发者自定义函数功能</li>
+    </ol>
+    涵盖的知识点：
+    <ol>
+        <li>变量的作用域（局部变量）</li>
+        <li>局部函数的访问权限</li>
+        <li>匿名函数的定义</li>
+        <li>函数的三种调用方式</li>
+    </ol>
+</h2>
+
+<script>
+    function func_init(act,num){
+        document.write("<h2>函数调用的方式："+act+":"+num+"</h2>")
+    }
+    func_init("window直接调用",1);
+    func_init.call(window,"window使用call调用",2);
+    func_init.apply(window,["window使用apply调用",3]);
+
+    function out(login,passwd,numsarr,func){
+        //numsarr 是一个数组;
+        //func函数名称(引用)，接收传递过来的实参
+        if(login!="123" && passwd!="321"){
+            //在执行局部函数前做一些权限判断
+            document.write("<br/>没有权限操作运算！");
+            return;
+            //函数执行过程中，一旦遇到return马上终止并返回
+        }
+        var res=numsarr[0]+numsarr[1];
+        //调用局部函数计算
+        // document.write("<br/>最终结算结果："
+        // ,func.call(window,res));
+        document.write("<br/>最终结算结果：",func(res,numsarr[2]));
+    }
+    // function inner(result){
+    //     return Math.pow(result,2);//平方计算
+    // }
+    // out(2,5,inner);
+    // 把 函数inner 当作一个参数传入 out函数中
+    out("123","321",[5,5,2],function(result,secnum){
+        return Math.pow(result,secnum);
+    });
+    out("123","321",[5,5,0],function(result,secnum){
+        return Math.sqrt(result);//平方根
+    });
+    /*调用out函数做 乘法和除法*/
+    out("123","321",[5,5,15],function(result,secnum){
+        return result*secnum;//乘法
+    });
+    out("123","321",[5,5,15],function(result,secnum){
+        return result/secnum;//除法
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-CSS操作-2.html</title>
+    <style>
+        .div1{
+            width: 3000px;height: 3150px;border: solid #eeaf8d 5px;margin: 0 auto
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+</div>
+<div style="position: fixed;top: 0">
+    <button onclick="jsscrollto()">js操作滚动条to</button>
+    <button onclick="jsscrollby()">js操作滚动条by</button>
+    <button onclick="jqscroll()">jq操作滚动条</button>
+</div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    function jsscrollto(){
+        window.scrollTo(300,500);
+        /*获取滚动条所在的位置*/
+        alert("水平方向滚动条位置："+
+            window.scrollX
+            +",垂直方向滚动条位置："+
+            window.scrollY);
+    }
+    function jsscrollby(){
+        window.scrollBy(30,50);
+    }
+
+    function jqscroll(){
+        $(window).scrollTop(600);
+        $(window).scrollLeft(300);
+        alert("水平方向滚动条位置："+
+            $(window).scrollLeft()
+            +",垂直方向滚动条位置："+
+            $(window).scrollTop()  );
+    }
+    /*
+    * 作业：把之前用js实现回到顶部动画效果，用 jq 重写；
+    *  scrollTop()，scroll事件监听
+    **/
+    $(function(){
+        $(window).scroll(function(){
+            console.log("滚动事件");
+        })
+    })
+</script>
+</body>
+</html>

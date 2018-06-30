@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-Object-创建.html</title>
+</head>
+<body>
+<h2>
+    <ol>
+        <li>对象：通过计算机语言将一个实际的事物信息表达出来</li>
+        <li>对象：装载信息的载体、容器</li>
+        <li>对象成员：1.属性(变量)；2.方法(函数)</li>
+        <li>javascript中所有定义对象的方式，在控制台中打印的是JSON格式</li>
+        <li>JSON：轻量级交互(网络传输)数据格式(名(键)值对)</li>
+    </ol>
+</h2>
+<script>
+    //方式一：function
+    function Student(name,gender,age,score,lesson){
+        this.sname = name;
+        this.sgender = gender;
+        this.sage = age;
+        this.sscore = score;
+        this.slesson = lesson;
+        this.work = function(){
+            document.write("<br>"+this.sname+
+                "正在学习"+this.slesson+"课程");
+        }
+    }
+    var stu = new Student("张xxx","男",20,99,"语文");
+    var stu_2 = new Student("王xxx","男",26,60,"数学");
+    document.write("<br>张xxx 的成绩：",stu.sscore);
+    console.log("stu",stu);
+    stu.work();
+    stu_2.work();
+
+    //方式二：Object;
+    var car_1 = new Object();
+    car_1.wheelnum = 1;
+    car_1.lunzinum = 4;
+    car_1.color="黑色";
+    car_1.brand="奔驰";
+    document.write("<br>car_1对象:",car_1.brand);
+    console.log("car_1对象:",car_1);
+
+    //方式三：JSON； 冒号相当于变量赋值符号
+    var teacher ={
+        name:"teacher_1",
+        lesson:"软件开发",  //对象属性，成员属性
+        worktime:"09:00--18:00",
+        work:function(){  //对象方法（函数），成员方法（函数）
+            document.write("<br>"+this.name+
+                "正在教授"+this.lesson+"课程");
+        }
+    }
+    teacher.work();console.log("teacher",teacher);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-轮播图-焦点图.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        .slidebox{
+            width: 600px;
+            height:300px;
+            border: solid 2px red;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;/*容器溢出隐藏*/
+        }
+        .slidebox li{
+            width: 600px;
+            height:300px;
+            position: absolute;
+        }
+        .slidebox li:nth-child(1){
+            background: #3d48ff;
+            top:0;
+            left:0;
+            z-index: 88;
+        }
+        .slidebox li:nth-child(2){
+            background: #dfffc8;
+            top:0;
+            left:0;
+            z-index: 66;
+        }
+        .slidebox li:nth-child(3){
+            background: #ff64c8;
+            top:0;
+            left:0;
+            z-index: 55;
+        }
+    </style>
+</head>
+<body>
+<ul class="slidebox">
+    <li>111111111111</li>
+    <li>222222222222</li>
+    <li>333333333333</li>
+</ul>
+<div style="text-align: center">
+    <button onclick="prevpage()" >上一页</button>|<button onclick="nextpage()">下一页</button>
+</div>
+<script>
+    //获取容器元素的对象
+    slidebox = document.querySelector(".slidebox");
+    //取出容器中子节点对象（数组）
+    childs = slidebox.children;
+    console.log(childs);
+    //点击操作函数
+    curpos = 0; //进入页面首先看到的第一页
+    stime=null; //动画定时器变量
+    console.log("获取节点对象的宽度：",slidebox.clientWidth,",高度：",slidebox.clientHeight);
+    var boxwidth = 600; //slidebox.clientWidth
+    function nextpage(){
+        clearInterval(stime);//停止正在运行的动画，防止不断点击时动画混乱
+        zindexset0(childs); //强制将所有li的z-index还原0；
+        childs[curpos].style.cssText +="z-index:99;left:0";
+        curpos++; //位置计算，下一张
+        if(curpos>(childs.length-1)){  //2 数组最大下标，判断如果大于，返回第一张
+            curpos=0;
+        }
+        // childs[curpos].style.cssText +="z-index:100;left:"+boxwidth+"px";
+        myanimation(-1); //右-->左
+    }
+    function prevpage(){
+        clearInterval(stime);
+        zindexset0(childs);
+        childs[curpos].style.cssText +="z-index:99;left:0";
+        curpos--; //位置计算，上一张
+        if(curpos<0){  //2 数组下标，判断如果小于0，返回最后一张
+            curpos=(childs.length-1);
+        }
+        // childs[curpos].style.cssText +="z-index:100;left:"+boxwidth+"px";
+        myanimation(1); //左-->右
+    }
+
+    function zindexset0(charr){
+        for(var i = 0 ;i <charr.length;i++){
+            charr[i].style.cssText +="z-index:0";
+        }
+    }
+    function myanimation(flag) {
+        var boxw = -(flag*boxwidth);
+        childs[curpos].style.cssText +="z-index:100;left:"+boxw+"px";
+        stime=setInterval(function(){
+            boxw += 5*flag;
+            childs[curpos].style.cssText+="left:"+boxw+"px";
+            if(boxw==0){
+                clearInterval(stime);
+                boxw=-(flag*boxw);//还原600
+            }
+        },5);
+    }
+    setInterval(nextpage,3000);
+</script>
+
+</body>
+</html>

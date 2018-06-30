@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-数组.html</title>
+</head>
+<body>
+<h2>数组的总长度是数组最大索引值(下标)+1</h2>
+<h2>数组的最大下标是多少?</h2>
+<h2>求数组的最后一个元素?</h2>
+<h2>arr_1.concat(arr_2):通过concat连接多个数组,返回连接后新的数组</h2>
+<h2>splice:可以在原数组中删除元素=>arr_3.splice(0, 1);</h2>
+<h2>splice:可以在原数组中新增元素=>arr_3.splice(2,0,"Css3动画","Css3变形");</h2>
+<h2>splice:可以在原数组中替换元素=> arr_3.splice(2,2,"前后端编程语言");</h2>
+<script>
+    var arr_1 = [];//定义一个空数组
+    arr_1 [0] = "0下标";
+    arr_1[1] = 1;
+    arr_1[2] = null;
+    //arr_1[3] 是 undefined;
+    arr_1[4] = true;
+    console.log("arr_1:", arr_1);
+    console.log("数组最大的下标是多少:", arr_1.length - 1);
+    console.log("求数组的最后一个元素:", arr_1[arr_1.length - 1]);
+    console.log("字符串的长度:", arr_1[0].length);
+    console.log("字符串的最后一个字符:", arr_1[0][arr_1[0].length_1]);
+    //var arr_2 = new Array();//定义一个空数组
+    var arr_2 = new Array("00下标", 99.99, null);
+    console.log(arr_2);
+    var newArr = arr_1.concat(arr_2);
+    console.log("连接数组:", newArr);
+    arr_1[3] = "3333";
+    console.log("替换后的数组:", arr_1);
+    var arr_3 = ["Html5", 'Css3', 'JavaScript', 'php', 'MySQL'];
+    //arr_3.splice(0, 1);//删除元素
+    //arr_3.splice(2,0,"Css3动画","Css3变形");//增加元素 下标2的元素前面加入一个元素
+    arr_3.splice(2,2,"前后端编程语言");
+    console.log("数组", arr_3);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>1.$符号是变量(函数)的合法命名</h2>
+<h2>2.在JQ框架中 $ 等于 jQuery </h2>
+<h2>3.在使用JQ语法之前必须先引入jquery.js库</h2>
+<h2>优化扩展:CDN的全称是Content Delivery Network，即内容分发网络</h2>
+<h2>3.1.访问CDN最近的服务器节点</h2>
+<h2>3.2.浏览器识别到不同路径，则会多开线程去工作：加载js资源</h2>
+<h2 id="ext_1">七牛云  、 又拍云</h2>
+<h2>4.文档准备就绪 的事件($(document).ready) 发生在 加载完成(window.onload) 之前</h2>
+<h2>5.$(document).ready可以多次使用，window.onload 不能多次使用</h2>
+<h2 id="ext_2">6.$ 作用1：文档就绪 ； $ 作用2：jquery对象工厂(获取节点对象数组)</h2>
+<h2>jq对象和js对象是可以互相转换的：</h2>
+<h2>jq对象=>js对象: $("#ext_1")[0] </h2>
+<h2>js对象=>jq对象: $(document.getElementById("ext_2"))</h2>
+
+<script src="../jq/jquery.js"></script>
+<script>
+    $(function(){
+        //todo:自定义功能，放在文档就绪后执行
+        // alert($("#ext_1").html());//html() 获取  innerHTML
+        $("#ext_1").html("常见云存储：七牛云  、 又拍云"); // innerHTML ="常见云存储：七牛云  、 又拍云"
+        console.log("jq对象:",$("#ext_1"),",js原生对象",$("#ext_1")[0]);
+        alert($("#ext_1")[0].innerHTML); //思考此处为什么是undefined ????
+        //$("#ext_1")是jq的对象，不能使用原生js属性
+        var ext_2 = document.getElementById("ext_2");
+        console.log("js原生对象:",ext_2,",jq对象",$(ext_2));
+        alert( $(ext_2).html() );
+
+        //练习：使用jq对象工厂获取所有 h2 标签对象，并将 所有 h2 标签对象背景改为 灰色；
+        //提示：1.$("h2") ;2.for()循环 ; 3. DOM .style.cssText=" 背景:灰色 " ;
+        var h2s = $("h2");
+        // console.log(h2s);
+        for(var i=0 ; i<h2s.length ; i++){
+            // h2s[i] 原生的dom
+            h2s[i].style.cssText="background:#eee";
+        }
+
+        //练习：使用js querySelector获取所有 h2 标签对象，并将 所有 h2 标签字体颜色 改成 红色；
+        //提示：1.querySelectorAll("h2") ;2.for()循环 ; 3. $(dom对象).css({"color":"red" });
+        var h2arr = document.querySelectorAll("h2");
+        for(var i=0 ; i<h2arr.length ; i++){
+            // $(h2arr[i]) jq对象
+            // $(h2arr[i]).css( "color","red" );
+            $(h2arr[i]).css( {"color":"red" , "text-align":"center"} );
+        }
+
+    })
+</script>
+
+</body>
+</html>

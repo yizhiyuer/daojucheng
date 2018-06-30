@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-$get的应用.html</title>
+</head>
+<body>
+<script src="./jq/jquery.js"></script>
+<script>
+    $(function(){
+        $.get("./test.txt",
+            {name:"oo7",age:"007"}
+            ,function(res){
+            alert(res);
+        },"text");
+        // url, data, callback, type
+    })
+</script>
+</body>
+</html>

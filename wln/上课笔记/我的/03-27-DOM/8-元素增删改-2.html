@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-元素增删改-2.html</title>
+</head>
+<body>
+    <ul id="fruit">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>菠萝</li>
+    </ul>
+<script>
+    fruit = document.getElementById("fruit");
+    lifq = document.createElement("li");
+    lifq.innerHTML = "番茄";
+    // fruit.appendChild(lifq);
+    fruit.insertBefore(lifq,fruit.children[1]);
+    /* 创建一个 li节点对象,文本内容为 草莓 ，并插入到 菠萝 之前 */
+    licm = document.createElement("li");
+    licm.innerHTML ="<h2>草莓</h2>";
+    fruit.insertBefore(licm,fruit.children[3]);
+
+    h5xl =document.createElement("h5");
+    h5xl.innerText = "雪梨";
+    fruit.replaceChild(h5xl , fruit.children[0]);
+    /* 创建一个 li节点对象,文本内容为 荔枝 ，并替换 菠萝*/
+    h4lz = document.createElement("h4");
+    h4lz.innerText="荔枝";
+    fruit.replaceChild(h4lz,fruit.children[4]);
+    console.log("删除前",fruit.children.length);
+    fruit.removeChild(fruit.children[2]);
+    console.log("删除后",fruit.children.length);
+
+</script>
+</body>
+</html>

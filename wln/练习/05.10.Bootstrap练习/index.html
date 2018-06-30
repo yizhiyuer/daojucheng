@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../上课笔记/Bootstrap/boots-1/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../上课笔记/Bootstrap/boots-1/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <script src="../../上课笔记/Bootstrap/boots-1/dist/js/jquery.js"></script>
+    <script src="../../上课笔记/Bootstrap/boots-1/dist/js/bootstrap.js"></script>
+    <style>
+        .content-txt {
+            height: 300px;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+        .del-padding {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation" class="active"><a href="#">页面 ①</a></li>
+                <li role="presentation"><a href="#">页面 ②</a></li>
+                <li role="presentation"><a href="#">页面 ③</a></li>
+                <li role="presentation"><a href="#">页面 ④</a></li>
+                <li role="presentation"><a href="#">页面 ⑤</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row del-padding">
+        <div class="col-md-12 content-txt">
+
+            //内容  html 页面加载到我这里面
+
+        </div>
+    </div>
+</div>
+<!--  id="wln" -> #wln | class="wln" -> .wln  -->
+<div id="wln" class="wln">我是笨娜娜</div>
+<script>
+   $(function () {
+       // $('这里填获取的元素');
+       // $('例如：.wln');
+       // $('例如：#wln');
+       // var a = $('.wln');
+       var a = $('.content-txt');
+       console.log(a);
+
+   })
+</script>
+<div id="wln1" class="wln1">我是猪娜娜</div>
+</body>
+</html>

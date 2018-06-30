@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-media媒体查询练习.html</title>
+    <style>
+        @media screen and (min-width: 800px){
+            .container{
+                width: 800px;
+                height: 200px;
+                /*border: darkred solid 1px;*/
+                margin: 0 auto;
+            }
+            .box{
+                width:calc(25% - 2px);
+                height: 100%;
+                background: pink;
+                margin: 0 1px;
+                float: left;
+            }
+        }
+        @media screen and (max-width: 800px){
+            .container{
+                width: 400px;
+                height: 200px;
+                /*border: darkred solid 1px;*/
+                margin: 0 auto;
+            }
+            .box{
+                width:calc(50% - 2px);
+                height: 100%;
+                background: pink;
+                margin: 10px 1px;
+                float: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+
+</body>
+</html>

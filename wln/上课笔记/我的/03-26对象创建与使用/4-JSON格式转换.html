@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-JSON格式转换.html</title>
+</head>
+<body>
+<h2>JSON 在参与网络传递时是字符串形式</h2>
+<script>
+    var teacher = {
+        name: "teacher_1",
+        lesson: "软件开发",  //对象属性，成员属性
+        worktime: "09:00--18:00",
+        work: function () {  //对象方法（函数），成员方法（函数）
+            document.write("<br>" + this.name +
+                "正在教授" + this.lesson + "课程");
+        }
+    }
+    console.log("JSON对象：", teacher);
+    document.write("JSON字符串：", JSON.stringify(teacher));
+
+    var weatherApi = '{' +
+        '"date":"20180326",' +
+        '"message":"Success !",' +
+        '"status":200,' +
+        '"city":"北京",' +
+        '"count":1092,' +
+        '"data":{' +
+        '"shidu":"29%",' +
+        '"pm25":89.0,' +
+        '"pm10":132.0,' +
+        '"quality":"轻度污染",' +
+        '"wendu":"19",' +
+        '"ganmao":"应减少长时间或高强度户外锻炼"}}';
+    var weatherObj = JSON.parse(weatherApi);// JSON字符串 转化 为对象；
+    console.log("天气API", weatherObj);
+    //通过  点语法  访问对象中的 属性；
+    document.write("<br>日期：" + weatherObj.date +
+        ",城市：" + weatherObj.city + ",温度：" + weatherObj.data.wendu);
+
+    document.write("<br>作业一<br> pm25：" + weatherObj.data.pm25 +
+        ",湿度：" + weatherObj.data.shidu);
+
+
+    /*第一题: 从天气json数据中取出 pm25 的值和 湿度的值*/
+
+
+
+</script>
+
+</body>
+</html>

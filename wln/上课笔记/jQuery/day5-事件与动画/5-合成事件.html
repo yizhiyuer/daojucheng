@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-合成事件.html</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background: #6642ff;
+        }
+    </style>
+</head>
+<body>
+<button id="toggle_btn">
+    toggle切换事件</button>
+<div id="box"></div>
+
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        $("#box").hover(function(){
+            //todo：鼠标进入响应
+            $(this).css({"background":"green"});
+        },function(){
+            //todo：鼠标出去响应
+            $(this).css({"background":"#6642ff"});
+        });
+        $("#toggle_btn").click(function(){
+            $("#box").toggle();//toggle注册响应点击事件的函数
+            // $("#box").toggle(function(){ /*新版本已经移除此用法*/
+            //     $(this).css({"background":"green"});
+            // } , function(){
+            //     $(this).css({"background":"red"});
+            // } , function(){
+            //     $(this).css({"background":"blue"});
+            // });
+        });
+    })
+</script>
+</body>
+</html>

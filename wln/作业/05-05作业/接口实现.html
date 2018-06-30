@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>接口实现.html</title>
+    <style>
+        input {
+            height: 30px;
+        }
+
+        button {
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<label><input id="city" type="text" placeholder="请输入需要查询天气的城市">
+    <button onclick="getWeather()">查询</button>
+</label>
+<div id="weather"></div>
+<br>
+<label><input id="getTranslation" type="text" placeholder="请输入需要翻译的文字">
+    <button onclick="getTranslation()">翻译英文</button>
+</label>
+<div id="translation"></div>
+
+<script src="./jq/jquery.js"></script>
+<script>
+
+    //作业一：利用给定的接口实现在线翻译；
+    //https://translate.yandex.net/api/v1.5/tr.json/translate
+    // ?text=你好&lang=en&key=trnsl.1.1.20171012T074239Z.b5c28c71eeb84871.d7fb94392f8420c8178c67a8b1d1effbbbea6d44
+    function getTranslation() {
+        var txt = $('#getTranslation').val();/*获取需要翻译的文字*/
+        $.getJSON(
+            "https://translate.yandex.net/api/v1.5/tr.json/translate",
+            "text="+txt+"&lang=en&key=trnsl.1.1.20171012T074239Z.b5c28c71eeb84871.d7fb94392f8420c8178c67a8b1d1effbbbea6d44",
+            function (res) {
+                console.log("翻译：", res);
+                if(res.code!==200){
+                    alert('对不起，翻译有误，请重试！');
+                    return
+                }
+                $('#translation').html(txt+" : "+res.text[0]);
+            }
+        )
+    }
+
+
+    //作业二：利用给定的接口实现当前天气及未来三天天气插件；
+    //https://free-api.heweather.com/v5/now?city=北海&key=99e7b51df6c54601883361ba8535c245
+    //https://free-api.heweather.com/v5/forecast?city=北海&key=99e7b51df6c54601883361ba8535c245
+    function getWeather() {
+        $('#weather').html('');/*清空页面上的天气内容*/
+        var city = $('#city').val();/*获取输入的城市*/
+        // 获取今天的天气
+        $.ajax({
+            url: "https://free-api.heweather.com/v5/now",
+            data: "city=" + city + "&key=99e7b51df6c54601883361ba8535c245",
+            type: "get",
+            dataType: "json",
+            success: function (res) {
+                if (res.HeWeather5[0].status !== 'ok') {/*请求错误（城市输入有误）*/
+                    alert("对不起，输入的城市有误，请重新输入");
+                    return
+                }
+                var b = res.HeWeather5[0].basic.city;
+                var c = res.HeWeather5[0].basic.update.loc;
+                var d = res.HeWeather5[0].now.cond.txt;
+                $('#weather').append('<p>今日天气：'+b+'----'+c+'----'+d+'</p>');/*拼接天气的数据*/
+            }
+        });
+        // 获取未来三天数据
+        $.ajax({
+            url: "https://free-api.heweather.com/v5/forecast",
+            data: "city=" + city + "&key=99e7b51df6c54601883361ba8535c245",
+            type: "get",
+            dataType: "json",
+            success: function (res) {
+                if (res.HeWeather5[0].status !== 'ok') {
+                    return
+                }
+                for(var a=0;a<res.HeWeather5[0].daily_forecast.length;a++){
+                    var b = res.HeWeather5[0].daily_forecast[a].date;
+                    var c = res.HeWeather5[0].daily_forecast[a].cond.txt_d;
+                    var d = res.HeWeather5[0].daily_forecast[a].cond.txt_n;
+                    $('#weather').append('<p>未来三天：'+b+'----'+c+'----'+d+'</p>');/*拼接天气的数据*/
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Css3文本字体.html</title>
+    <style>
+        .ww {
+            width: 150px;
+            border: 1px solid #000000;
+            word-wrap: break-word; /*将长单词超出范围自动折行 英文状态*/
+        }
+
+        .box {
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .bg-rgba {
+            background: rgba(0, 0, 0, 0.4); /*#号开头的颜色*/
+            color: rgb(255, 255, 0);
+            position: relative;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+<p class="ww">
+    it is very good! itis very good!is very good!is very good!
+</p>
+<hr>
+<div class="box bg-rgba">rgba设置背景</div>
+<div class="box" style="background: transparent;
+margin-top: -150px">可视内容
+    <p style="color: transparent">可视内容分段</p>
+    <p>transparent是透明色</p>
+</div>
+</body>
+</html>

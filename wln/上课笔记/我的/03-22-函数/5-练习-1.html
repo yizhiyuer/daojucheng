@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-练习-1.html</title>
+</head>
+<h2>定义一个函数，实现将输入的数字转换成繁体中文</h2>
+<body>
+
+<script>
+    function num2ch(num) {
+        var numstr="";
+        switch(num){
+            case 1:
+                numstr="壹";
+                break;
+            case 2:
+                numstr="贰";
+                break;
+            case 3:
+                numstr="叁";
+                break;
+            case 4:
+                numstr="肆";
+                break;
+            default:
+                numstr="零";
+                break;
+        }
+        return numstr;
+    }
+
+    function money(nums){
+        nums+="";//string; "1234"
+        var nums_str="";  //在循环中拼接转换结果
+        var danwei = ["亿","仟萬","佰萬","拾萬","萬","仟","佰","拾","圆"];
+        var startpos=danwei.length-nums.length; //在数组中取出单位的起始点
+        //for(i=0;i<nums.length;i++)
+        for(i=0;startpos<danwei.length;startpos++,i++){
+            var num = parseInt(nums[i]);
+            // document.write("<br>数字转化结果：",num2ch(num));
+            nums_str+=(num2ch(num)+danwei[startpos]);//数字转化函数
+        }
+        return nums_str
+    }
+
+    document.write("<br>数字转化结果：",money(12341234));
+    
+</script>
+
+</body>
+</html>

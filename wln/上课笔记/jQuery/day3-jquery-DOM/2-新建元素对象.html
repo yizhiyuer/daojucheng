@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-新建元素对象.html</title>
+</head>
+<body>
+<ul id="ulist">
+</ul>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        ulist = $("#ulist");
+        for(var i=0;i<=100;i++){
+            li=$("<li>无序列表内容(jq)："+i+"</li>");
+            if(i%2){
+                li.css({"color":"green"});
+            }else{
+                //偶数
+                li.css({"background":"#eee"});
+            }
+            // ulist.append(li);//追加
+            // li.appendTo(ulist);//追加到父级容器中
+            //ulist.prepend(li); //前置追加：最后加的元素在最前面；
+            li.prependTo(ulist);//前置追加到父级容器中
+        }
+        //练习：修改以上代码，要求：奇数行字体颜色为绿色，偶数行背景灰色
+
+        var afterE = $("<h3>after():在某个标签的后方插入新的节点：形成兄弟节点关系</h3>");
+        $("li:nth-child(50)").after(afterE);
+        var insertAfterE = $("<h3>insertafter():在某个标签的后方插入新的节点：" +
+            "形成兄弟节点关系</h3>");
+        insertAfterE.insertAfter( $("li:nth-child(20)") );
+
+        var beforeE = $("<h3>before():在某个标签的前方插入新的节点：形成兄弟节点关系</h3>");
+        $("li:nth-child(30)").before(beforeE);
+        var insertBeforeE = $("<h3>insertbefore():在某个标签的前方插入新的节点：" +
+            "形成兄弟节点关系</h3>");
+        insertBeforeE.insertBefore($("li:nth-child(70)"));
+
+
+    });
+
+
+
+
+    /*ulist = document.getElementById("ulist");
+    for(var i=0;i<=100;i++){
+        li = document.createElement("li");
+        li.innerHTML = "无序列表内容："+i;
+        ulist.appendChild(li);
+    }*/
+
+</script>
+
+</body>
+</html>

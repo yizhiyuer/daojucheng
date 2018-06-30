@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>1.$符号是变量(函数)的合法命名</h2>
+<h2>2.在JQ框架中 $ 等于 jQuery </h2>
+<h2>3.在使用JQ语法之前必须先引入jquery.js库</h2>
+<h2>优化扩展:CDN的全称是Content Delivery Network，即内容分发网络</h2>
+<h2>3.1.访问CDN最近的服务器节点</h2>
+<h2>3.2.浏览器识别到不同路径，则会多开线程去工作：加载js资源</h2>
+<h2>七牛云  、 又拍云</h2>
+<h2>4.文档准备就绪 的事件($(document).ready) 发生在 加载完成(window.onload) 之前</h2>
+<h2>5.$(document).ready可以多次使用，window.onload 不能多次使用</h2>
+<h2>6.$ 作用1：文档就绪 ； $ 作用2：对象工厂(获取节点对象数组)</h2>
+<script src="../jq/jquery.js"></script>
+<script>
+    window.onload = function(){
+        console.log("html加载完成！");
+    }
+    $(document).ready(function(){ //ready：文档就绪所触发的事件
+        console.log("文档准备就绪！");
+    });
+    $(function(){
+        console.log("$() 等于 $(document).ready()");
+    });
+    jQuery(function(){
+        console.log("$() 等于 $(document).ready() 等于 jQuery()");
+    });
+    $(function(){
+        console.log("JQ获取节点:",$("h2"),
+            "JS获取节点:",document.querySelectorAll("h2"));
+    })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-循环.html</title>
+</head>
+<body>
+<h2>循环必须具备的条件：1.循环变量(计算) ；2.必须要有终断条件；3.必须要有循环条件</h2>
+<h2>while(1):死循环；while(0):一次不执行</h2>
+<h2>while在一开始的条件不满足的情况下不执行</h2>
+<h2>do-while在一开始的条件不满足的情况还是会执行一次（至少执行一次）</h2>
+<script>
+    var i=0;//循环变量
+    /*while( i<100 ){ //true:循环条件 ; false:终断条件
+        document.write("<p>打印"+i+"</p>");
+        //i=100;//计算循环变量
+        i++;//计算循环变量
+    }*/
+   /* do{
+        document.write("<p>do-while打印"+i+"</p>");
+        i++;
+    }while(i<100);*/
+   while(0){
+       document.write("<p>while-打印"+i+"</p>");
+   }
+   do{
+       document.write("<p>do-while-打印"+i+"</p>");
+   }while(0)
+
+</script>
+</body>
+</html>

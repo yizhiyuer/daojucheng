@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-子元素过滤选择器.html</title>
+</head>
+<body>
+<ul>
+    <!--<p>子元素0</p>-->
+    <li>子元素1</li>
+    <li>子元素2</li>
+    <p>子元素3</p>
+    <li>子元素4</li>
+    <li>子元素5</li>
+    <p>子元素6</p>
+    <p>子元素7</p>
+    <div>子元素8</div>
+</ul>
+<div>
+    <div>子元素9</div>
+</div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        $("li:first-child").append(
+            "==>li:first-child:选择在父级元素中的第一个标签，并且是li；");
+        $("p:first-of-type").append(
+            "==>p:first-of-type:子标签按类型分组，并选择在p标签组中的第一个；");
+        $("div:only-child").append(
+            "==>div:only-child:选择父级标签中只有唯一一个子元素，并且该子元素是div;");
+        $("div:only-of-type").append(
+            "==>div:only-of-type:子标签按类型分组，" +
+            "选择分组后组内有唯一的一个标签，并且标签是div;");
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-window对象常用函数.html</title>
+</head>
+<body>
+
+<button onclick="winopen()">打开窗口</button>
+<button onclick="winmove()">移动窗口</button>
+<button onclick="winresize()">设置窗口大小</button>
+<script>
+    function winopen(){
+        newin = window.open('./1-BOM中的对象.html',
+            '窗口名称','width=200,height=200');
+        //有返回值：新窗口的对象
+        console.log("窗口对象：",newin);
+    }
+    function winmove(){
+        // window.moveTo(50,50);
+        // window.moveBy(50,50);
+        // IE浏览器有效,谷歌浏览器操作子窗口可用
+        newin.moveBy(100,200);
+    }
+
+    function winresize(){
+        //window.resizeTo(300,100);
+        // IE浏览器有效,谷歌浏览器操作子窗口可用
+        // newin.resizeTo(300,100);
+        newin.resizeBy(-10,-10);
+    }
+    /*window.alert("警告：...");
+    var isclose = window.confirm("您确定关闭窗口吗？");
+    //有返回值：确定=>true,取消=>false
+    if(isclose){
+        window.close();//关闭窗口
+    }else{ //取消
+        var passwd = window.prompt("请输入访问密码");
+        //返回输入的内容；
+        if(passwd != "123456"){
+            window.close();
+        }
+    }*/
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-结构伪类选择器.html</title>
+    <style>
+        li:nth-child(7) {
+            /*找被父级标签包裹的第7个元素,并且这个元素一定是li*/
+            color: #2252cd;
+        }
+
+        li:nth-child(1) {
+            /*找被父级标签包裹的第1个子元素,并且这个元素一定是li*/
+            background: #ffc9fe;
+        }
+
+        li:nth-child(2) {
+            /*找被父级标签包裹的第2个子元素,并且这个元素一定是li*/
+            color: #de7200;
+        }
+
+        :nth-child(5) {
+            border: black dotted 2px;
+        }
+
+        p:nth-child(odd) { /* odd=2n+1*/
+            background: #9a9a9a;
+        }
+
+        h6:nth-child(2n) { /*eve=2n*/
+            background: #fef2b3;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>子标签-1
+        <ul>
+            <li>子标签-1-1</li>
+            <li>子标签-1-2</li>
+        </ul>
+    </li>
+</ul>
+<ul>
+    >
+    <h6>子标签-2</h6>
+    <p>子标签-3</p>
+    <li>子标签-4</li>
+    <p>子标签-5</p>
+    <h6>子标签-6</h6>
+    <li>子标签-7</li>
+    <h6>子标签-8</h6>
+</ul>
+</body>
+</html>

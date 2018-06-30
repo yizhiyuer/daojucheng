@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>7-栅格系统练习.html</title>
+
+    <!-- Bootstrap -->
+    <link href="../../jQuery/day1-jquery/jq/jquery.js" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<style>
+    footer {
+        background: #000000;
+        width: 100%;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+    }
+
+    footer .row > div {
+        line-height: 30px; /*只有数字，没有单位，即是倍数  */
+    }
+
+    @media screen and (min-width: 768px) {
+        .tl {
+            text-align: left;
+        }
+
+        .tr {
+            text-align: right;
+        }
+
+        footer.row > div {
+            line-height: 68px; /*只有数字，没有单位，即是倍数*/
+        }
+
+    }
+</style>
+<footer class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-5">星巴克官网</div>
+        <div class="col-xs-12 col-sm-4 tr">隐私政策</div>
+        <div class="col-xs-12 col-sm-3 tl">条款和条件</div>
+    </div>
+</footer>
+
+<!--练习：仿写https://www.starbucks.com.cn/coffee-blog-->
+<!--网页底部排版-->
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="../../jQuery/day1-jquery/jq/jquery.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="../../jQuery/day1-jquery/jq/jquery.js"></script>
+</body>
+</html>

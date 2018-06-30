@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业2-天气插件.html</title>
+    <style>
+        .weatherbox{
+            width: 800px;
+            height: 260px;
+            margin: 0 auto;
+            border: darkred solid 1px;
+        }
+        .box{
+            width:calc(25% - 2px) ;
+            height: 100%;
+            border: 1px #fff solid;
+            text-align: center;
+            background: #eeeeee;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="weatherbox">
+
+    <div class="box now">
+        <h2></h2>
+        <h3 class="cloud"></h3>
+        <h3 class="tmp"></h3>
+        <h3 class="wind"></h3>
+    </div>
+    <div class="box">
+        <h2></h2>
+        <p class="sun"></p>
+        <p class="tmp"></p>
+        <p class="cond"></p>
+        <p class="wind"></p>
+    </div>
+    <div class="box">
+        <h2></h2>
+        <p class="sun"></p>
+        <p class="tmp"></p>
+        <p class="cond"></p>
+        <p class="wind"></p>
+    </div>
+    <div class="box">
+        <h2></h2>
+        <p class="sun"></p>
+        <p class="tmp"></p>
+        <p class="cond"></p>
+        <p class="wind"></p>
+    </div>
+
+</div>
+
+<script src="./jq/jquery.js"></script>
+<script>
+    url = "https://free-api.heweather.com/v5/now";
+    data="city=北海&key=99e7b51df6c54601883361ba8535c245";
+    url_2 = "https://free-api.heweather.com/v5/forecast";
+    $(function(){
+        $.get(url,data,function(res){
+            // console.log(res.HeWeather5[0].basic);
+            // console.log(res.HeWeather5[0].now);
+            $(".now>h2").html(res.HeWeather5[0].basic.city);
+            $(".now>.cloud").html(res.HeWeather5[0].now.cond.txt)
+            $(".now>.tmp").html("当前温度:"+res.HeWeather5[0].now.tmp+"℃");
+            var wind = res.HeWeather5[0].now.wind;
+            $(".now>.tmp").html(wind.dir+",风速"+wind.spd);
+        },"json");
+        // url, data, callback, type
+        $.ajax({
+            url:url_2,
+            data:data,
+            type:"get",
+            dataType:"json",
+            success:function (res) {
+                var forcarr = res.HeWeather5[0].daily_forecast;
+                console.log(forcarr);//长度为3的数组
+                // alert($(".box:not('.now')").length);
+                $(".box:not('.now')").each(function(i){
+                    console.log(i);
+                    $(this).find("h2").append(forcarr[i].date);
+                    $(this).find(".sun").append("日出："+forcarr[i].astro.sr);
+                    $(this).find(".sun").append(",日落："+forcarr[i].astro.ss);
+                    $(this).find(".tmp").append(forcarr[i].tmp.min+"℃~");
+                    $(this).find(".tmp").append(forcarr[i].tmp.max+"℃");
+                    $(this).find(".cond").append(forcarr[i].cond.txt_d+" 转 ");
+                    $(this).find(".cond").append(forcarr[i].cond.txt_n);
+                    $(this).find(".wind").append(forcarr[i].wind.dir);
+                    $(this).find(".wind").append(forcarr[i].wind.sc+"级");
+                })
+            }
+        });
+    })
+</script>
+
+
+</body>
+</html>

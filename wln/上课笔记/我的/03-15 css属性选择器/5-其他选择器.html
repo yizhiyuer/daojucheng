@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-其他选择器.html</title>
+    <style>
+        li:nth-child(2)+li{
+            /*s1 + s2 : s1后面相邻的s2选择器*/
+            color: red;
+        }
+        li:nth-child(2)~li{
+            border: solid 1px #fef2b3;
+            /*s1  s2 :后面同辈s2选择器*/
+        }
+        li:nth-child(2)~li:not(:last-child(1)){
+          /* : not(选择器):讲指定的选选择器排除*/
+          background: #2286c6;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>子标签--1</li>
+    <li>子标签--2</li>
+    <li>子标签--3</li>
+    <li>子标签--4</li>
+    <li>子标签--5</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A12-练习-点击删除下拉列表项.html</title>
+</head>
+<body>
+
+<input type="number">
+<!--this.previousElementSibling.value 直接获取number 输入框的值-->
+<button onclick="cli4del(this.previousElementSibling.value)">点击删除</button>
+<button onclick="cli4del_2()">删除选中</button>
+<br>
+<script>
+    with(document){ //创建select 和option
+        select = createElement("select");//下拉框对象
+        select.size=3;//<select size=3>
+        // select.type="select-multiple";
+        select.setAttribute("multiple","multiple");
+        // console.log(select.type);
+        //创建option
+        for(i=0;i<5;i++){
+            opt = new Option("城市-"+(i+1),(i+1));
+            if((i+1)%2==0){
+                opt = new Option("城市-"+(i+1),(i+1),true,true);
+            }
+            select.appendChild(opt);
+        }
+        body.appendChild(select);
+    }
+    function  cli4del(num) {
+        select.remove(num);
+    }
+    //添加改变值的监听事件
+    var choseindex=0;//全部变量
+    select.onchange = function () {
+        // alert(select.selectedIndex);//获取被选中的索引值
+        choseindex = this.selectedIndex; //this在此处代表select
+    }
+    function cli4del_2(){
+        select.remove(choseindex);
+    }
+</script>
+</body>
+</html>

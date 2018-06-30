@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-局部变量_函数.html</title>
+</head>
+<body>
+<h2>1.全局变量:在程序关联的任意地方都可以使用</h2>
+<h2>2.局部变量:在函数中使用 var关键字显式定义的变量，
+    并且变量只能在该函数中使用</h2>
+<h2>3.局部变量与全局变量同名时，
+    局部变量会被优先使用(覆盖全局变量)</h2>
+<h2>4.局部函数是定义在一个函数中的( 外部函数体中定义内部函数)</h2>
+<h2>5.局部函数内部可以使用外部函数的变量</h2>
+<script>
+    var gvar = "全局变量global";
+    document.write("<br>函数外部使用:",gvar);
+    function func1() {
+        document.write("<br>func1函数内部使用:",gvar);
+    }
+    func1();
+    function part_1(){
+        gpvar="<br>这是局部变量吗？";//不是局部变量
+        var pvar="<br>pvar是局部变量!!!";
+        document.write(gpvar,pvar);
+    }
+    part_1();
+    gpvar="<br>gpvar这不是局部变量，是一个全局变量！！！"
+    document.write(gpvar);
+    //document.write(pvar);//报错，pvar不存在
+
+    var samename="全局同名";
+    function pfunc(){
+        var samename="局部同名";
+        document.write("<br>pfunc:",samename);
+    }
+    pfunc();
+
+    function parent(){
+        function child(){
+            document.write("<br>局部函数");
+        }
+        child();//局部函数在函数内部中调用
+    }
+    parent();
+    var out;
+    function parent_1(){
+        out = function(){
+            document.write("<br>out局部函数");
+        }
+    }
+    parent_1();//必须先执行父级函数，才能执行out
+    out();
+    function parent_2(){
+        var pvar = "parent_2的变量";
+        function child_2(){
+            var chvar="child_2的变量";
+            document.write("<br>parent_2的局部函数:",pvar);
+        }
+        // document.write(chvar);
+        child_2();
+    }
+    window.parent_2(); // parent_2();
+    with(document){
+        write("不需要重复书写document");
+    }
+    console.log(window);
+</script>
+<script src="outer.js"></script>
+</body>
+</html>

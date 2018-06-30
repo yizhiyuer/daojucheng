@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+        #top{
+            width: 100px;
+            height: 100px;
+            background: black;
+            line-height: 100px;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="top">回到顶部</div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function () {
+        $("#top").click(function () {
+            var set =setInterval(function () {
+                curpos =$(window).scrollTop();//curpos获取当前位置
+                curpos -=20;
+                if(curpos <=0){
+                    clearInterval(set);
+                }
+                $(window).scrollTop(curpos);
+            },20);
+        });
+        $(window).scroll(function () {//监听位置，判断显示隐藏
+            curpos =$(window).scrollTop();
+            if(curpos>=600){
+                $("#top").show();
+            }else{
+                $("#top").hide();
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

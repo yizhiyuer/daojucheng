@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-漂浮回弹广告.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .adsbox{
+            width: 100px;
+            height: 100px;
+            background: darkred;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="adsbox"></div>
+<script>
+    adsbox = document.querySelector(".adsbox");
+    win_height = window.innerHeight; //获取屏幕高度
+    win_width =window.innerWidth;//获取屏幕宽度
+    console.log("窗口宽度：",win_width,"，窗口高度："+win_height);
+    // adsbox.style.cssText =  //边界测试
+    //     "top:"+(win_height-100)+"px;left:"+(win_width-100)+"px";
+    stepX = stepY = 0;
+    dirX = dirY =1;//方向判断
+    setInterval(function(){
+        if(stepX>=win_width-100){
+            dirX = -1; //到达右边坐标 回弹
+        }
+        if(stepX<=0){
+            dirX = 1;//到达左边坐标 回弹
+        }
+        if(stepY>=win_height-100){
+            dirY = -1; //到达下边坐标 回弹
+        }
+        if(stepY<=0){
+            dirY = 1; //到达上边坐标 回弹
+        }
+        stepX+=(2*dirX); //水平方向每次位移
+        stepY+=(2*dirY); //垂直方向每次位移
+        adsbox.style.cssText = "top:"+stepY+"px;left:"+stepX+"px;"
+    },1);
+</script>
+</body>
+</html>

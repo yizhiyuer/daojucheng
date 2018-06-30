@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A11-克隆节点.html</title>
+</head>
+<body>
+<ul id="fruit">
+    <li>苹果</li>
+    <li>香蕉</li>
+    <li>菠萝</li>
+</ul>
+
+<script>
+    with(document){
+        fruit = getElementById("fruit");
+        newNode = fruit.cloneNode();
+        console.log("克隆后的内容：",newNode);
+        newNode = fruit.cloneNode(true);//深度克隆
+        console.log("深度克隆后的内容：",newNode);
+        body = querySelector("body");
+        // body.appendChild(newNode);
+        //////////////////////////////////////////
+        select = createElement("select");
+        select.size=3;//<select size=3>
+        // select.type="select-multiple";
+        select.setAttribute("multiple","multiple");
+        // console.log(select.type);
+        //创建option
+        for(i=0;i<5;i++){
+            opt = new Option("城市-"+(i+1),(i+1));
+            if((i+1)%2==0){
+                opt = new Option("城市-"+(i+1),(i+1),true,true);
+            }
+            select.appendChild(opt);
+        }
+        // opt_1 = new Option("北京","beijing");
+        opt_1 = new Option("地点","地点-xxx",true,true);
+        select.options[2] = opt_1;//替换操作
+        ///////////删除选项
+        select.options[3]=null;
+        select.remove(3); //下拉菜单对象.remove(index)
+        body.appendChild(select);
+    }
+    /*练习：设计一个数字类型的input和一个按钮，
+           实现点击按钮删除相应位置的下拉菜单选项 */
+
+</script>
+</body>
+</html>

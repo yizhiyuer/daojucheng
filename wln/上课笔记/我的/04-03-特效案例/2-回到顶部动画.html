@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-回到顶部动画.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2500px;
+        }
+        .totop{
+            width: 95px;
+            height: 264px;
+            background: url('./img/0.png');
+            background-size: cover;
+            position: fixed;
+            bottom: 0;
+            right: 20px;
+            text-align: center;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+<div class="totop"></div>
+<script>
+    totop = document.querySelector(".totop");
+    //sy = window.scrollY; //获取垂直方向滚动条所在的位置
+    totop.onclick = function(){ //响应触发计时动画
+        console.log("获取垂直方向滚动条所在的位置:",window.scrollY);
+        //1732  877 0
+        var sitsy = setInterval(function(){
+            window.scrollBy(0,-10);//滚动条的位移
+            if(window.scrollY<1732 && window.scrollY>=1200){
+                totop.style.cssText += "background:url('./img/1.png')";
+            }else if(window.scrollY<1200 && window.scrollY>=877){
+                totop.style.cssText += "background:url('./img/2.png')";
+            }else if(window.scrollY<877){
+                totop.style.cssText += "background:url('./img/3.png')";
+            }
+            if(window.scrollY == 0){
+                //清除定时器
+                totop.style.cssText="";
+                clearInterval(sitsy);
+            }
+        },5);//控制滚动条的运动
+        //用两个定时器分别控制滚动条 和 按钮 的运动
+        console.log("回到顶部按钮所处的位置：",totop.offsetTop);
+        console.log("窗口高度：",window.innerHeight);
+        var curpos = 0; //当前距离底部的位置
+        var speed =0.2;
+        var sttop = setInterval(function(){
+            curpos +=(10*speed);
+            speed += 0.2;
+            totop.style.cssText +="bottom:"+curpos+"px";
+            if(curpos>= window.innerHeight){ //离开可视窗口
+                //清除定时器
+                clearInterval(sttop);
+            }
+        },20)
+    }
+    /* window.onscroll : 监听滚动条的事件*/
+    window.onscroll = function(){
+        console.log("获取垂直方向滚动条所在的位置:",window.scrollY);
+    }
+</script>
+
+</body>
+</html>

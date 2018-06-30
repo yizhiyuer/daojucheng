@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-鼠标事件.html</title>
+</head>
+<body>
+<button ondblclick="alert('双击事件')">双击事件</button>
+<br>
+<br>
+<button onmousedown="alert('鼠标按下时触发')">鼠标按下时触发</button>
+<button onmouseup="alert('鼠标松开时触发')">鼠标松开时触发</button>
+<br>
+<br>
+<button onmouseover="alert('鼠标悬停时触发')">鼠标悬停时触发</button>
+<button onmouseout="alert('鼠标移出时触发')">鼠标移出时触发</button>
+<button onmousemove="alert('鼠标移动时持续触发')">鼠标移动时持续触发</button>
+<!-- :hover -->
+<style>
+    #movediv{
+        height: 50px;width: 50px;
+        background: #F37A04;position: absolute;z-index: 9999;
+        display: none;
+    }
+</style>
+<div id="movediv">
+</div>
+<script>
+    /*鼠标跟随*/
+    movediv = document.getElementById("movediv");
+    window.onmousemove = function(event){
+        console.log("鼠标坐标:X=",event.clientX,",Y=",event.clientY);
+        /* left = X+1, top = Y+1*/
+        // movediv.style.cssText="top:20px;left:20px";
+        movediv.style.cssText="display:block;";
+        movediv.style.cssText+="top:"+(event.clientY+1)+"px;left:"+(event.clientX+1)+"px;";
+    }
+    window.onmouseout=function(){
+        movediv.style.cssText="";//移出时movediv 隐藏
+    }
+    /*扩展练习：一般情况下movediv 是隐藏 ，
+    鼠标移进时movediv 才出现并跟随鼠标移动，
+    鼠标移出时movediv 隐藏
+    */
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-ajax的应用.html</title>
+</head>
+<body>
+<div class="box"></div>
+<script src="./jq/jquery.js"></script>
+<script>
+    $(function(){
+        var box=$(".box");
+        $.ajax({
+            url:"./test.xml",
+            data:"",
+            type:"get",
+            dataType:"xml",
+            success:function(res){
+                console.log(res);
+                //用js DOM  去取出 xml的值
+                var totext = res.getElementsByTagName("to")[0].innerHTML;
+                var fromtext = res.getElementsByTagName("from")[0].innerHTML;
+                box.append(totext,"<br>",fromtext);
+            }
+        });
+    })
+</script>
+</body>
+</html>

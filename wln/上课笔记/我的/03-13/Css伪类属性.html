@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Css伪类属性.html</title>
+    <style>
+        *{
+            text-decoration: none;
+        }
+        a:link {
+            /*link:链接没有被访问过*/
+            color: #328320;
+        }
+
+        a:visited {
+            /* visited:链接已经被访问过*/
+            color: #fd78be;
+        }
+        a:active{
+            color: #851dbc;
+        }
+        .dl{
+            width: 50px;height: 30px;
+            text-align: center;
+            border-radius: 25px;
+
+        }
+        .dl:hover{
+          background: #851dbc;
+            color: #0c7abc;
+
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="http://baidu.com?v33">百度</a></li>
+    <li><a href="http://taobao.com?bbb">淘宝</a></li>
+    <li><a href="http://qq.com">QQ</a></li>
+</ul>
+<div class="dl"><a href="http://baidu.com">登录</a></div>
+</body>
+</html>

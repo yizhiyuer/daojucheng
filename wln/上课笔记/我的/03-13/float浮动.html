@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float浮动.html</title>
+</head>
+<body>
+<style>
+    .parent{
+        background: #b48095;
+    }
+    .child-1{
+        background: #00a5ff;
+        float: left;
+    }
+    .child-2{
+        background: #328320;
+        float:right;
+    }
+.clear{
+    clear: both;/*清除容器左右浮动  不会对原先浮动有影响*/
+}
+</style>
+<div class="parent">
+    <div class="child-1">内容1</div>
+    <div class="child-2">内容1</div>
+-<div class="clear"></div>
+</div>
+<div style="height: 100px;background: #fde840">略略略略略</div>
+</body>
+</html>

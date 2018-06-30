@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-运算符.html</title>
+</head>
+<body>
+<h2>"="是赋值符号，"=="比较符号(比较值是否相等)，
+    "==="严格比较(比较值和类型是否相等)</h2>
+<h2>逻辑运算(&&):当运算符左右两边的条件皆为true的时候，结果才是真(true)值</h2>
+<h2>逻辑运算(||):当运算符左右两边的条件皆为false的时候，结果才是真(false)值</h2>
+<h2>逻辑运算(!):对逻辑运算结果的取反</h2>
+<script>
+    var num1=2,num2=10,num3=3;
+    console.log("求余计算：",(num1 + num2) % num3);
+    console.log("计算："+num1 + num2);
+    console.log("计算："+(num1 + num2));
+    num4 = num2++;//先赋值，再做自增运算
+    console.log("自增1：",num4); //先打印，再做自增运算
+    console.log("自增1：",++num2);//先做自增运算，再打印
+    console.log("自减1：",--num2);
+    num4 = num2--;  //num2--  :    num2 = num2-1;
+    console.log("自减1(num4)：",num4);
+    console.log("自减1(num2)：",num2);
+    // num3 += 1;//num3++ ; num3=num3+1;
+    num3 *= 10;
+    console.log("计算:",num3);
+    console.log("比较:",num3 >= num1);
+    var str_1= "99"
+    var price=99;
+    console.log("比较(==):",str_1 == price);
+    console.log("比较(===):",str_1 === price);
+    console.log("比较(!=):",str_1 != price);
+    console.log("比较(!==):",str_1 !== price);
+    console.log("逻辑运算(&&):",str_1 === price && num3 >= num1);
+    console.log("逻辑运算(||):",str_1 === price || num3 < num1);
+    console.log("逻辑运算(!):",   !(str_1 === price || num3 < num1)   );
+</script>
+</body>
+</html>

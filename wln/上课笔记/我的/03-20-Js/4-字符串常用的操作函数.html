@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-字符串常用的操作函数.html</title>
+</head>
+<body>
+<h2>string.chaAt(n):根据数字索引(从0开始),获取string指定位置的字符</h2>
+<h2>字符串==字符串数组,可以通过中括号与下标取出单个字符</h2>
+<h2>字符串.toUpperCase()==转大写;字符串:toLowerCase()==小写</h2>
+<h2>words.indexof("a"):获取a字母首先出现在字符串中的位置</h2>
+<h2>words.lastIndexof("a"):获取a字母最后出现在字符串中的位置</h2>
+<h2>title.substring(6, 12):以6为开始位置,以12为结束位置,截取字符串</h2>
+<h2>title.substr(6, 2):6开始截取2个字符串长度</h2>
+<h2>title.slice(6, -2):以6为开始位置,以-2为结束位置,截取字符串</h2>
+<h2>title.concat(words, "周三", "2018-03-21"):连接多个字符串</h2>
+
+<h2>words.replace("a","bc"):将words字符串中的a替换成bc,
+    如果搜索不到则返回原来的字符串</h2>
+
+<h2>news_4.split("+",2):以"+"为界限分割newstr_4,
+    并返回包含2个字符串的数组</h2>
+
+<script>
+    var title = "4-字符串常用的操作函数.html";
+    console.log(title.charAt(4));
+    console.log(title[0]);//数组访问
+    var words = "Hello JavaScript";
+    console.log("大写", words.toUpperCase());
+    console.log("小写", words.toLowerCase());
+    console.log("a首先出现的位置", words.indexOf("a"));
+    console.log("a最后出现的位置", words.lastIndexOf("a"));
+    newstr = title.substring(6, 12);
+    console.log("substring截取字符串:6开始,12前结束:", newstr);
+    newstr_2 = title.substr(6, 2);
+    console.log("substr截取字符串:6开始截取2个字符长度:", newstr_2);
+    newstr_3 = title.slice(6, -2);
+    console.log("slice截取字符串:6开始,-2位置前结束:", newstr_3);
+    //console.log("连接字符串:",title+words+"周三","2018-03-21");
+    console.log("连接字符串:", title.concat(words, "周三", "2018-03-21"));
+    newstr_4 = words.replace("JavaScript", "Html5+Css+Js");
+    console.log("替换字符串:", newstr_4);
+    strArr = newstr_4.split("+");
+    console.log("split分割字符串:", strArr);
+</script>
+</body>
+</html>

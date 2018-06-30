@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>4-导航条.html</title>
+
+    <!-- Bootstrap -->
+    <link href="./dist/css/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .mynavbar.navbar{
+            border-radius:0;
+            background: #56b8e7;
+        }
+        .mynavbar.navbar a{
+            color:#fff;
+        }
+        .mynavbar .nav > li > a:hover, .nav > li > a:focus {
+            text-decoration: none;
+            background-color: #56b8ff;
+        }
+        .mynavbar .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+            background-color: #56b8ff;
+            border-color: #337ab7;
+        }
+        .mynavbar .navbar-toggle{
+            /*background: #6c9bee;*/
+            color: white;
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .mymenu{
+            width: 100%;height: 100%;
+            background: black;position: fixed;
+            top: 0;
+            margin-left: 100%;
+            z-index: 9999;color: white;
+            /*display: none;*/
+        }
+    </style>
+</head>
+<body style="padding-top: 60px">
+<div class="mymenu">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <h2 class="text-center">菜单项</h2>
+            </div>
+            <div class="col-xs-3">
+                <h2 class="text-right" onclick="closemenu()">关闭</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-fixed-top mynavbar">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    aria-expanded="fasle" onclick="openmenu()">
+                <!--data-target="#mynavbar"-->
+                <i class="glyphicon glyphicon-th-list"></i>
+            </button>
+            <img src="./logo.jpg" style="height: 50px;float:left" alt="">
+            <a class="navbar-brand" href="#" style="margin-left: 10px">
+                XXX网站标题
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">新闻</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       role="button" aria-haspopup="true" aria-expanded="false">
+                        产品
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">企业网站</a></li>
+                        <li><a href="#">电商平台</a></li>
+                        <li><a href="#">手机客户端</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">微信小程序</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">服务</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li>
+                    <button type="button" class="btn btn-success navbar-btn">
+                    登录/注册</button>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container" style="height: 1500px;border: 5px dashed red;">
+    文字内容.....文字内容.....文字内容.....文字内容.....文字内容.....
+    <h2>如果导航条设置固定，必要设置主体容器对顶部产生距离</h2>
+    <h3>body设置内边距：padding-top: 55px</h3>
+    <h3>nav的下一个容器设置外边距：margin-top: 55px</h3>
+    <nav class="navbar navbar-default navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#mynavbar_2"
+                        aria-expanded="fasle">
+                    <i class="glyphicon glyphicon-th-list"></i>
+                </button>
+                <img src="./logo.jpg" style="height: 50px;float:left" alt="">
+                <a class="navbar-brand" href="#" style="margin-left: 10px">
+                    XXX网站标题
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="mynavbar_2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">首页</a></li>
+                    <li><a href="#">新闻</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                           role="button" aria-haspopup="true" aria-expanded="false">
+                            产品
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">企业网站</a></li>
+                            <li><a href="#">电商平台</a></li>
+                            <li><a href="#">手机客户端</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">微信公众号</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">微信小程序</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">服务</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+</div>
+<!--margin-top: 55px-->
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="./dist/js/jquery.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="./dist/js/bootstrap.js"></script>
+<script>
+    function openmenu(){
+        // alert("openmenu");
+        //todo:显示遮罩层
+        $(".mymenu").show().animate({"margin-left":0},800);
+    }
+    function closemenu(){
+        //todo:隐藏遮罩层
+        $(".mymenu").animate({"margin-left":"100%"},800,function(){
+            $(this).hide();
+        });
+    }
+//    练习： 补充移动端自定义菜单项，仿照摩拜单车
+</script>
+</body>
+</html>

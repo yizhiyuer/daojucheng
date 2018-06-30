@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-wrap包裹节点.html</title>
+</head>
+<body>
+<button onclick="dowrap()">wrap():每个标签都包裹</button>
+<button onclick="dowrapAll()">wrapAll():整体包裹</button>
+<button onclick="rmParent()">移除父级节点</button>
+<button onclick="dowrapInner()">wrapInner():包裹每个标签子节点</button>
+<p>段落111</p>
+<p>段落222</p>
+<p>段落333</p>
+<p>段落444</p>
+<p>段落555</p>
+
+<script src="../jq/jquery.js"></script>
+<script>
+    function dowrap(){
+        $("p").wrap("<h2 style='border: darkred 5px solid'></h2>");
+    }
+    function dowrapAll(){
+        $("p").wrapAll("<h2 style='border: darkred 5px solid'></h2>");
+    }
+    function dowrapInner(){
+        $("p").wrapInner("<h2 style='border: #caf76e 5px solid'></h2>");
+    }
+    function rmParent(){
+        //移除父级节点
+        // console.log( $("p").parent() );
+        clone_p = $("p").clone(true);//先克隆
+        $("p").parent().remove(); //移除父节点
+        $("body").append(clone_p);
+    }
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

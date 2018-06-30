@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-Math.html</title>
+</head>
+<body>
+<a href="http://cloud.oracleoaec.com" id="mylink">海文在线</a>
+<script>
+    var aa = document.getElementById("mylink");//类似#mylink
+    var hrefstr = aa.getAttribute("href"); //通过函数获取href属性的值
+    hrefstr+="?v="+Math.random();
+    aa.setAttribute("href",hrefstr);//通过函数设置href属性的值
+    console.log(hrefstr);
+
+    document.write("<br>1、-10的绝对值：",Math.abs(-10));
+    document.write("<br>2、4.4的上舍入：",Math.ceil(4.4));
+    document.write("<br>3、-4.4的上舍入：",Math.ceil(-4.4));
+    document.write("<br>4、4.9的下舍入：",Math.floor(4.9));
+    document.write("<br>5、取5,8的较大值：",Math.max(5,8));
+    document.write("<br>6、取5,8的较小值：",Math.min(5,8));
+    document.write("<br>7、取5<sup>8</sup>次幂：",Math.pow(5,8));
+    document.write("<br>8、0-1随机数：",Math.random());
+    document.write("<br>9、0-10随机数：",Math.random()*10);
+    document.write("<br>10、5.4四舍五入：",Math.round(5.4));
+    document.write("<br>11、5.5四舍五入：",Math.round(5.5));
+    document.write("<br>12、12的平方根：",Math.sqrt(12));
+    // document.write("<br>13、tan(90)：",Math.atan(90));
+    console.log(new Date());
+    console.log(Math);
+</script>
+</body>
+</html>

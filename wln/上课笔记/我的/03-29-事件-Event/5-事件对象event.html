@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-事件对象event.html</title>
+</head>
+<body style="height: 2000px">
+<h2 onclick="h2click(event)">事件对象</h2>
+<form action="http://baidu.com" onsubmit="subm(event)">
+    <button>点击不提交</button>
+</form>
+<h2>
+    <ol>
+        <li>如何阻止事件冒泡: event.stopPropagation();</li>
+        <li>如何阻止标签的默认事件: event.preventDefault()
+            或者 return false(函数中无效);</li>
+    </ol>
+</h2>
+<script>
+    body = document.querySelector("body");
+    body.onclick = function(event){
+        console.log("点击body事件对象：",event);
+    }
+    function h2click(event){
+        console.log("点击h2事件对象：",event);
+        //利用事件对象，阻止事件冒泡行为
+        event.stopPropagation();//阻止事件冒泡
+    }
+    function subm(event){
+        // return false; //在函数中无法阻止事件默认行为
+        event.preventDefault();//阻止事件默认行为，等同于 return false;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>座位表</title>
+    <style>
+     td {
+         max-width: 50px;
+         min-width: 50px;
+     }
+.title{
+  font-size: 20px;
+}
+    </style>
+</head>
+<body style="text-align: center" >
+
+<table width="50%"  border="2" cellpadding="15" cellspacing="10" align="center">
+    <caption style="margin-bottom: 20px;
+     padding-top: 20px"><span class="title">座位表</span></caption>
+<tbody>
+<!--tr>(td{姓名})*12 -->
+<tr><!--   tr=行  td=列 -->
+    <td align="center" bgcolor=#8ab9ff>空调</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center" bgcolor="#63c659" rowspan="4">过道</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center" bgcolor="#63c659" rowspan="4">过道</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+</tr>
+<!--tr*3>(td[align="center"]{学员})*10-->
+<tr>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+</tr>
+<tr>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center" bgcolor="#ffcbea">我</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+</tr>
+<tr>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+    <td align="center">小猪</td>
+</tr>
+<!--tr>(td[align="center"]{讲台})*2-->
+<tr>
+    <td align="center" bgcolor=#c9b72f colspan="3">讲台（VIP)</td>
+    <td align="center" bgcolor="#63c659" colspan="8">过道</td>
+    <td align="center" bgcolor=#67c95f colspan="1">门口</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

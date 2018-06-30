@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-07简介表格.html</title>
+    <style>
+        .lol{
+            height: 30px;
+        }
+        td {
+            min-width: 50px;/* td 格子的最小宽度*/
+            text-align: center; /*文字居中*/
+            border: 1px dashed #6b6a8b;
+        }
+        body {
+            background: #f2f2f2;
+            /*border: dotted;*/
+        }
+    </style>
+</head>
+<body>
+<table  cellspacing="0" cellpadding="8" align="center">
+    <caption style="margin-bottom: 20px; margin-top: 20px"><b>简介表</b></caption>
+    <tbody>
+    <!--tr*20>(td[align="center"]{学员})*11-->
+    <tr>
+        <td rowspan="2" colspan="2">姓名</td>
+        <td rowspan="2" style="color: #ffa8d0">韦柳娜</td>
+        <td>性别</td>
+        <td>
+            <!--选择按钮-->
+            <select name="Gender">
+                <option vocab="">男</option>
+                <option vocab="">女</option>
+            </select>
+        </td>
+        <td>文化</td>
+        <td colspan="3"></td>
+        <td rowspan="5" colspan="3">照片</td>
+    </tr>
+    <tr>
+        <td>身高</td>
+        <td>1米8</td>
+        <td >政治面貌</td>
+        <td colspan="3"></td>
+        <!--<td colspan="3" rowspan="2"></td>-->
+    </tr>
+    <tr>
+        <td colspan="2">籍贯</td>
+        <td colspan="3"></td>
+        <td>出生年月日</td>
+        <td colspan="3">
+            <!--选择按钮-->
+            <p><input type="date" name="datetime"></p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="2" colspan="2" height="50px">户口所在地</td>
+        <td rowspan="2" colspan="3"></td>
+        <td rowspan="2">婚否</td>
+        <td rowspan="2">
+            <!--选择按钮-->
+            <select name="city">
+                <option vocab="">已婚</option>
+                <option vocab="">未婚</option>
+            </select>
+        </td>
+        <td rowspan="2">民族</td>
+        <td rowspan=""></td>
+
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td colspan="2">身份证号</td>
+        <td colspan="3"></td>
+        <td>现居住地</td>
+        <td colspan="5"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2">毕业院校</td>
+        <td colspan="3"></td>
+        <td>毕业时间</td>
+        <td colspan="5"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2">学习专业</td>
+        <td colspan="3"></td>
+        <td>爱好特长</td>
+        <td colspan="5"></td>
+    </tr>
+    <tr>
+        <td colspan="2" rowspan="3">个人简介</td>
+        <td colspan="9" height="50px"></td>
+    </tr>
+    <tr>
+
+    </tr>
+    <tr>
+
+    </tr>
+    <tr>
+        <td colspan="3">就业时间</td>
+        <td colspan="2">学校</td>
+        <td>学年</td>
+        <td>学历</td>
+        <td colspan="2">专业</td>
+        <td colspan="2">担任职务</td>
+
+    </tr>
+    <tr>
+        <td colspan="3" height="22px"></td>
+        <td colspan="2"></td>
+        <td></td>
+        <td ></td>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+    </tr>
+    <tr>
+        <td colspan="3" height="22px"></td>
+        <td colspan="2"></td>
+        <td></td>
+        <td></td>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="3">英语应用水平</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>职业期望</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3">计算机应用水平</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>住宿要求</td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+    </tr>
+    <tr>
+        <td colspan="2" rowspan="5" >工作经历</td>
+        <td colspan="2" >时间</td>
+        <td colspan="3">工作地点</td>
+        <td colspan="4">职务</td>
+    </tr>
+    <tr class="lol">
+        <td  colspan="2"></td>
+        <td colspan="3"></td>
+        <td colspan="4"></td>
+
+
+    </tr>
+    <tr class="lol">
+        <td colspan="2"></td>
+        <td colspan="3"></td>
+        <td colspan="4"></td>
+
+    </tr>
+    <tr class="lol">
+        <td colspan="2"></td>
+        <td colspan="3"></td>
+        <td colspan="4"></td>
+    </tr>
+    <tr>
+        <td colspan="2">待遇要求</td>
+        <td colspan="7"></td>
+
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="2">联系方式</td>
+        <td>移动电话</td>
+        <td colspan="3"></td>
+        <td>固定电话</td>
+        <td colspan="3"></td>
+    </tr>
+    <tr>
+        <td>邮箱</td>
+        <td colspan="3"></td>
+        <td>地址</td>
+        <td colspan="3"></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

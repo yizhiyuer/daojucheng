@@ -1,0 +1,11 @@
+<?php
+echo "<pre>";
+var_dump($_FILES);
+//$_FILES:预定义数组，专门用于接收文件传递的信息；
+echo "</pre>";
+$des= date("YmdHis")."_".rand(1000,9999).".png";
+move_uploaded_file($_FILES["fupload"]["tmp_name"],$des);
+
+//练习：
+//把上传的文件存放到指定目录Upload中，
+//没有目录则先创建

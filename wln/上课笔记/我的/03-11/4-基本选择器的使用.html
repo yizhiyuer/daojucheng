@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-基本选择器的使用.html</title>
+    <style>
+        h1{
+            background-color: #7e7e7e;
+        }
+        .fcwhite{
+            color: white;
+        }
+        .fs16px{
+            font-size:16px;
+        }
+        #box{
+            width: 400px;
+            height: 50px;
+            background-color: #f2c0e1;
+        }
+    </style>
+</head>
+<body>
+<h1>标签选择器:标签名称{...}</h1>
+<!--两个名称中间空格-->
+<h1 class="fcwhite fs16px">类选择器fcwhite(fontcolorwhite)
+    是class属性的值;.类名称{...}</h1>
+<h1 id="box">ID选择器:#id属性的值</h1>
+<h1>总结:
+    <ol>
+        <li>在标签中类class可以设置多个值(以空格隔开),
+            但不能为id设置多个值</li>
+        <li>相同名称的id是唯一的</li>
+    </ol>
+</h1>
+
+</body>
+</html>

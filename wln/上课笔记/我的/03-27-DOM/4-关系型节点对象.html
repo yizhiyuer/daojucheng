@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-关系型节点对象.html</title>
+</head>
+<body>
+
+<ul>
+    <li>内容-0</li>
+    <li>内容-1</li>
+    <li id="li2">内容-2</li>
+    <li>内容-3</li>
+    <li>内容-4</li>
+    <li>内容-5</li>
+</ul>
+<script>
+    li2 = document.getElementById("li2");
+    parofli2 = li2.parentNode;
+    console.log("li2:",li2);
+    document.write("li2的父节点:",parofli2);
+    console.log("li2的父节点:",parofli2);
+    /////////////////////////////////////////
+    prevSbli = li2.previousSibling; //如果标签之间换行，所获取到的兄弟节点是 文本节点
+    prevSbli_2 = li2.previousElementSibling; //上一个元素兄弟节点
+    console.log("li2的前一个兄弟节点:",prevSbli.previousSibling);
+    document.write("<br>li2的前一个兄弟节点:",prevSbli.previousSibling.innerHTML);
+    ///////////////////////////////////////
+    nextSbli = li2.nextSibling;
+    nextSbli_2 = li2.nextElementSibling;//下一个元素兄弟节点
+    console.log("li2的下一个兄弟节点:",nextSbli_2);
+    document.write("<br>li2的下一个兄弟节点:",nextSbli_2.innerHTML);
+    ///////////////////////////////////////
+    parofli2 = li2.parentNode;
+    allchild = parofli2.childNodes;//父节点下所有的子节点(包括文本节点)
+    allchild_2 = parofli2.children; //父节点下所有的子节点(元素、标签)
+    console.log("li2父节点下所有的子节点:",allchild_2);
+    firstChild = parofli2.firstChild;//包括文本节点
+    firstChild_2 = parofli2.firstElementChild;//元素节点
+    console.log("li2父节点下的第一个子节点:",firstChild_2);
+</script>
+
+</body>
+</html>

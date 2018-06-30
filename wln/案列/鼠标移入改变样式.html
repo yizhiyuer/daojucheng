@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移入改变样式.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        .list{
+            width: 300px;
+            height:600px;
+            border: solid 3px #00A1D9;
+            margin: 0 auto;
+        }
+        .list>ul{
+            height: 100%;
+        }
+        .list>ul>li{
+            height:20%
+        }
+        .list>ul>li>.content{
+            /*内容样式类*/
+            height:100%;
+            background: #0c63ee;
+            display: none;
+        }
+        .list>ul>li.active>h1{
+            display: none;
+        }
+        .list>ul>li.active>.content{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="list">
+    <ul>
+        <li>
+            <h1>标题1：......</h1>
+            <div class="content">标题111111：......</div>
+        </li>
+        <li>
+            <h1>标题2：......</h1>
+            <div class="content">标题222222：......</div>
+        </li>
+        <li>
+            <h1>标题3：......</h1>
+            <div class="content">标题333333：......</div>
+        </li>
+        <li>
+            <h1>标题4：......</h1>
+            <div class="content">标题444444：......</div>
+        </li>
+        <li>
+            <h1>标题5：......</h1>
+            <div class="content">标题5：......</div>
+        </li>
+    </ul>
+</div>
+<script>
+    items = document.querySelectorAll(".list li");
+    console.log(items);
+    for(i=0;i<items.length;i++){  //循环，为所有的列表项添加事件监听
+        items[i].onmouseover=function(){
+            for(j=0;j<items.length;j++){//循环，把所有的列表项选中样式去掉
+                items[j].removeAttribute("class");
+            }
+            this.setAttribute("class","active");//为当前列表项相加样式类
+        }
+    }
+</script>
+</body>
+</html>

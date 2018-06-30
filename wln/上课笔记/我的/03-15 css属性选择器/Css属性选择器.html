@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Css属性选择器.html</title>
+    <style>
+        a[href="par-1"]{
+            color: #de7200;
+        }
+        a[href^="h"]{/*  ^ :代表以什么字符串开头*/
+            background-color: #ae5c9e;
+        }
+        input[name$="tle"]{/*  $: 代表以什么字符串结尾*/
+            border: solid 5px #47a325;
+        }
+        input[name*="nte"]{/*  *: 属性值中包含什么字符串*/
+            border: solid 5px #3088cd;
+        }
+    </style>
+</head>
+<body>
+<a href="par-1">段落11111111</a>
+<br>
+<a href="http://baidu.com">百度</a>
+<p>标题
+    <input type="text" name="title">
+</p>
+<p>标题
+    <input type="text" name="content">
+</p>
+</body>
+</html>

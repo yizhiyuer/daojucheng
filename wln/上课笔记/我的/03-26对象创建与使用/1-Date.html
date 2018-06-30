@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-Date.html</title>
+</head>
+<body>
+<h2>时间戳:1970-1-1 0:0:0 到现在所经过的秒数或毫秒数</h2>
+<script>
+    var dd = new Date();//new 实例化对象
+    document.write("<br>日期时间：",dd);
+    //yyyy,mth,dd,hh,mm,ss
+    dd = new Date(2016,(5-1),1,16,16,16);//月份是从0开始
+    document.write("<br>指定日期时间-1：",dd);
+    //时间戳,单位是毫秒（ms）：1522028476(10位,秒)
+    dd = new Date(1522028476 * 1000);
+    document.write("<br>指定日期时间-时间戳：",dd);
+
+    /*1.将时间戳转化成 yyyy-mm-dd h:m:s ，1522029145 转成 2018-03-26 09:52:25*/
+    function dateformat(timestamp){
+        if(timestamp.toString().length==10){
+            timestamp = timestamp*1000;
+        }
+        var df = new Date(timestamp);
+        console.log(df);
+        var year = df.getFullYear(); //年
+        var month = df.getMonth(); //月 0~11
+        var date = df.getDate(); //日 1~31
+        var hour = df.getHours(); //时
+        var mins = df.getMinutes();//分
+        var sec = df.getSeconds();//秒
+        return (year+"-"+(month+1)+"-"+date+" "+hour+":"+mins+":"+sec);
+    }
+    document.write("<br/>1522029145 转成:",dateformat(1522029145));
+    /*2.获取当前时间的时间戳*/
+    document.write("<br/>当前时间戳:",new Date().getTime());
+    document.write("<br/>周:",new Date().getDay());//0: 周日
+    var dset = new Date();
+    dset.setDate(28);
+    document.write("<br/>设置setDate(31):",dset);
+    dset.setMonth(3);
+    document.write("<br/>设置setMonth(3):",dset);
+
+    /*第二题：
+    1.将时间戳转化成 yyyy-mm-dd h:m:s ，1522029145 转成 2018-03-26 09:52:25
+    * 要求：月份，天数，小时，分钟，秒 如果是个位，应该显示两位数字；
+    * 1 => 01 ,...,9=> 09 */
+
+    //作业
+    function Tm(time){
+        if(time.toString().length==10){
+            time = time*1000;
+        }
+        var df = new Date(time);
+        console.log(df);
+        var year = df.getFullYear(); //年
+
+        var month = String(df.getMonth()+1); //月 0~11
+        if(month.length<=1){month = "0"+month}
+
+        var date = df.getDate(); //日 1~31
+        if(date.length<=1){date = "0"+date}
+
+        var hour = String(df.getHours()); //时
+        if(hour.length<=1){hour = "0"+hour}
+
+        var mins = String(df.getMinutes());//分
+        if(mins.length<=1){mins = "0"+mins}
+
+        var sec = String(df.getSeconds());//秒
+        if(sec.length<=1){sec = "0"+sec}
+        return (year+"-"+month+"-"+date+" "+hour+":"+mins+":"+sec);
+    }
+    var dateTime = new Date().getTime();
+    document.write("<br/><br/>作业二:",Tm(dateTime));
+</script>
+</body>
+</html>

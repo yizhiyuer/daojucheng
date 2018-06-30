@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-事件流.html</title>
+</head>
+<body>
+
+<button>点击触发</button>
+
+<script>
+    btn = document.querySelector("button");
+    //冒泡事件：有绑定相同事件类型的元素，事件触发顺序从里(子标签)到外(父标签)
+    // btn.addEventListener("click",function () { alert("这是按钮点击事件") });
+    // document.addEventListener("click",function () { alert("这是文档对象点击事件") });
+    // window.addEventListener("click",function(){ alert("这是窗口对象点击事件") });
+
+    //捕获事件：有绑定相同事件类型的元素，事件触发顺序从外(父标签)到里(子标签)
+    btn.addEventListener("click",function () { alert("这是按钮点击事件") } ,true);
+    document.addEventListener("click",function () { alert("这是文档对象点击事件") },true);
+    window.addEventListener("click",function(){ alert("这是窗口对象点击事件") },true);
+</script>
+
+</body>
+</html>

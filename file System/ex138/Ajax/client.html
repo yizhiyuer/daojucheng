@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+<button id="btn">»ñÈ¡ÄÚÈÝ</button>
+<div id="con"></div>
+<script src="./jquery-1.7.2.min.js"></script>
+<script>
+$(function(){
+	$("#btn").click(function(){
+		$.ajax({
+			url:"./server.php",
+			type:"POST",
+			data:"",
+			dataType:"json",
+			success:function(data,status,XHR){
+				alert(XHR.status);
+				Str="";
+				for($v in XHR){
+					Str+=$v+"=>"+XHR[$v]+"<br/>";
+					}
+				$("#con").html(Str);
+}
+
+});
+
+});
+
+});
+</script>
+</body>
+</html>

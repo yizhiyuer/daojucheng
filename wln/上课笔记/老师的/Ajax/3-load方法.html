@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-load方法.html</title>
+</head>
+<body>
+<h2>通过ajax 载入页面 page.html</h2>
+<h2>ajax 载入内容的路径必须是http/https协议的,否则会报错</h2>
+<h2>常见的网络状态码：
+    0.403：未授权访问；
+    1.404：找不到页面；
+    2.500：后端代码错误；
+    3.502：没有该主机，断网；
+    4.200：请求成功；
+    5.304：加载缓存；
+</h2>
+<div class="loadbox"></div>
+
+<script src="./jq/jquery.js"></script>
+<script>
+//http://localhost:63342/Ajax/3-load%E6%96%B9%E6%B3%95.html
+    $(function(){
+        $(".loadbox").load("./page/page1.html");
+        // ./page/page1.html 相对路径
+    })
+</script>
+</body>
+</html>

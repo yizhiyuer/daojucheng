@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css绝对定位.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+<h1>sbsolute:是相对于父级容器坐标点进行偏移</h1>
+<h2>1.当父级标签没有设置位置属性时,
+    子块向上层容器找坐标,一直找到顶层窗口位置</h2>
+<h2>2.当父级标签设置位置属性(absolute,relative,fixed)时,
+    子块是相对父级窗口位置偏移</h2>
+<div style="height: 200px;width: 200px;
+border:#e43200 solid 5px;margin: 50px auto"><!--第一层父级
+    -->
+    <div style="height: 100px; width: 100px;
+border: black solid 5px; margin: 50px auto;
+position: relative"><!--第二层父级-->
+        <div class="abs"></div>
+    </div>
+</div>
+<br>
+<hr>
+<style>
+    .rel {
+        width: 100px;
+        height: 100px;
+        background: #516d51;
+        position: relative;
+        margin: 0 auto;
+        left: 50px;
+        /*相对定位*/
+    }
+</style>
+<h2>relative:相对于元素自身已经设定好的位置进行偏移</h2>
+<div class="rel"></div>
+<hr>
+<h2>fixed:固定在窗口的坐标点位置,不跟随滚动条滚动</h2>
+<style>
+   .totop{
+       display: block;
+       background: black;
+       color: #fff;
+       width: 50px;
+       line-height: 50px;
+       text-align: center;
+       position: fixed;
+       right: 20px;
+       bottom: 50px;
+       text-decoration: none;/*去掉下划线*/
+   }
+</style>
+<a href="#" class="totop">top</a>
+<style>
+    .nav{
+       height: 55px;
+        width: 100px;
+        background: #efbcde;
+        position: fixed;
+        top:0;
+    }
+    body{
+        margin-top: 55px;
+    }
+</style>
+<div class="nav"></div>
+<style>
+    .leftabs{
+        width: 200px;
+        height: 300px;
+        background: #eee;
+        position: fixed;
+        left: 0;
+        top:150px;
+    }
+</style>
+<div class="leftabs">
+    <div style="position: absolute;right: 0">关闭</div>
+</div>
+</body>
+</html>

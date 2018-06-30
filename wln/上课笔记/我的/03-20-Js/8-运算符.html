@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-运算符.html</title>
+</head>
+<body>
+<h2>三目(元)只有一个: 判断表达式 ?真值 : 假值</h2>
+<h2>typeof: 一目运算符，用于检测变量的值，返回是检测的类型值</h2>
+<h2>instanceof: 二目运算符，用于比较对象之间是否存在联系，返回是真假值</h2>
+<a href="javascript:void(0)">点击无效果</a>
+<script>
+    var sanmu = (3>2 && "99"==99)?"真":"假";
+    console.log("三目运算结果：",sanmu);
+    var num2= 66 ; //选择两个变量中最大的值
+    var num3= 66 ;
+    var chosenum = num2>num3 ? num2 : num3;
+    console.log("三目运算结果：",chosenum);
+    var a,b,c,d=10;
+    x=2*8,x*4;
+    console.log("x的值:",x);
+    console.log("表达式的值:",(x=2*8,x*4));
+    console.log("typeof检测类型:", typeof num3);
+    var arr=[]; //Object
+    console.log("instanceof比较对象的类型:", arr instanceof Object);
+    var numobj=new Number(999);
+    console.log("instanceof比较对象的类型:",numobj, numobj instanceof Number);
+    var strobj=new String("Hello");
+    console.log("instanceof比较对象的类型:",strobj, strobj instanceof String);
+</script>
+</body>
+</html>>

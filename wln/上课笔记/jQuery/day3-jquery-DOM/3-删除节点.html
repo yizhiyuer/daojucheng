@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-删除节点.html</title>
+</head>
+<body>
+<button onclick="doremove()">remove删除</button>
+<button onclick="dodetach()">detach删除</button>
+<button onclick="doempty()">empty清空后代节点</button>
+<h3>remove 和 detach 都有删除功能，detach会保留事件和附加数据</h3>
+<ul id="ulist">
+</ul>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        ulist = $("#ulist");
+        for(var i=0;i<=30;i++){
+            li=$("<li>无序列表内容(jq)："+i+"</li>");
+            if(i%2){
+                li.css({"color":"green"});
+            }else{
+                //偶数
+                li.css({"background":"#eee"});
+            }
+            ulist.append(li);//追加
+        }
+        //为第15个li标签添加点击事件：
+        $("li:eq(15)").click(function(){
+            alert("点击第15！！！");
+        });
+        $("li:eq(0)").click(function(){
+            alert("点击第0个！！！");
+        });
+    });
+
+    function doremove(){
+        var rmnode = $("li:nth-child(1)").remove();
+        console.log("删除的节点：",rmnode,"节点内容：",rmnode.html());
+        //练习：将每次删除的节点追加到结尾
+        ulist.append(rmnode);
+    }
+    function dodetach(){
+        var detnode = $("li:eq(15)").detach();
+        //将每次删除的节点追加到结尾
+        ulist.append(detnode);
+    }
+
+    function doempty(){
+        ulist.empty();
+        // ulist.html("");
+    }
+
+    /*
+    * 作业：新闻滚动效果,利用定时器去操作：
+    * 1.获取删除的对象：detach()；
+    * 2.将删除的对象追加到父级容器结尾；
+    * */
+
+</script>
+
+</body>
+</html>

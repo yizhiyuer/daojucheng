@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-其他事件.html</title>
+</head>
+<body>
+<h2>
+    文档已经完全加载:所有html标签被浏览器解析成节点对象，
+    所有资源(src引入的内容：图片、音视频、iframe的路径)
+    全部载入完毕</h2>
+<h3>oninput:监听输入,类似双向数据绑定的作用</h3>
+输入内容: <input type="text" oninput="writeinh2(this)"
+             onfocus="inpfoc()" onblur="inpblur()"
+             onselect="myselect(event)">
+<h2 id="myh2"></h2>
+<script>
+    myh2 = document.getElementById("myh2");
+    function writeinh2(obj){
+        myh2.innerHTML += obj.value;
+    }
+    function inpfoc(){
+        myh2.innerHTML+=",获取焦点时触发,";
+    }
+    function inpblur(){
+        myh2.innerHTML+=",失去焦点时触发,";
+    }
+    function  myselect(event){
+        console.log(event);
+        alert("选中文字");
+    }
+    window.onload =function(){
+        console.log("文档已经完全加载");
+    }
+    console.log("文档没有完全加载");
+</script>
+</body>
+</html>

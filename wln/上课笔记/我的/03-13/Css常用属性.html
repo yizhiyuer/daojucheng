@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Css常用属性.html</title>
+    <style>
+        .upcase{text-transform: uppercase; /*字母全部大写*/}
+        .lwcase{text-transform:lowercase;/*字母全部小写*/}
+        .cap{text-transform: capitalize;  /*首字母全部大写*/}
+    </style>
+</head>
+<body>
+<p class="upcase">How are you</p>
+<p class="lwcase">I am Fine,And You?</p>
+<p class="cap">I am fine too!</p>
+<hr>
+<style>
+  .mybtn{
+   height: 30px;
+      width: 50px;
+      text-align: center;
+      line-height: 30px;
+      color: #fc510e;
+      border: 1px solid #00a5ff;
+      border-radius: 20px;/*圆角属性*/
+  }
+    body{
+        height: 2000px;
+        /*background-image: url("../../作业/images/lunbo1.jpg");*/
+        background: url("../../作业/images/lunbo1.jpg")
+        no-repeat fixed;
+        /*background-repeat: no-repeat;*/
+        /*background-attachment: fixed;*/
+        background-position: 50px 50px;/*X轴  y轴*/
+        /*代表相对容器的左上角(坐标原点)的位置;(x:自左往右  y:自上往下)*/
+    }
+</style>
+<div class="mybtn">
+    登录
+</div>
+<style>
+  .myimg{
+      width: 100px;
+      height: 100px;
+      background: #4a674a;
+      margin: 0 auto;
+      border-top: 5px solid #4c4145;
+      border-right: 5px dashed #b48095;
+      border-bottom: 5px double #fd78be;
+      border-left: 5px dotted #0c7abc;
+      /* 字体颜色 0-9  a-f(10-15)  15*15(0-255)*/
+  }
+</style>
+<div class="myimg"></div>
+<hr>
+<hr>
+<style>
+   .sps li{
+      width: 103px;
+       height: 103px;
+background: url("./css.jpg");
+   }
+    #sps-1{
+       background-position: -2px -6.5px;
+    }
+    #sps-2{
+        background-position:-150px -166px ;
+    }
+    #sps-3{
+        background-position:-445px -166px ;
+    }
+</style>
+<h2>
+    使用css  sprite(图片精灵/雪碧图)的好处:
+    <ol>
+        <li>浏览器只需要加载一张图片,重复利用,
+        加快网页加载速度</li>
+        <li>节约网络资源</li>
+        <li>节约工作量,加快开发效率</li>
+    </ol>
+</h2>
+<ul class="sps">
+    <li id="sps-1"></li>
+    <li id="sps-2"></li>
+    <li id="sps-3"></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-过滤选择器.html</title>
+</head>
+<body>
+
+<ul>
+    <li>内容1</li>
+    <li>内容2</li>
+    <li>内容3</li>
+    <li>内容4</li>
+    <li>内容5</li>
+    <li>内容6</li>
+</ul>
+
+<ul>
+    <li>内容21</li>
+    <li>内容22</li>
+    <li>内容23</li>
+    <li id="con24">内容24</li>
+    <li>内容25</li>
+    <li>内容26</li>
+</ul>
+<div id="content">
+    <h1>&nbsp;空格&nbsp;空格&nbsp;空格</h1>
+    <h2>&gt;&gt;&gt;&gt;&gt;</h2>
+    <h3>&lt;&lt;&lt;&lt;&lt;&lt;</h3>
+</div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        content = $("#content");
+        // var lis = $("li");
+        var li_first = $("li:first");
+        // console.log(li_first);
+        content.append(li_first.html()+"<br>");
+
+        var li_last = $("li:last");
+        content.append(li_last.html()+"<br>");
+
+        var lis_not = $("li:not(:first):not(:last):not(#con24)");
+        lis_not.css({"background":"#eee"});
+
+        $("li:even").css({"color":"#f00"});
+        $("li:odd").css({"fontSize":"42px"});//fontSize == font-size
+        var text3 = $("li:eq(3)").html();
+        content.append(text3+"<br>");
+
+        var lengt6  = $("li:gt(6)").length;
+        content.append("li数组下标大于6的个数："+lengt6+"<br>");
+        var lenlt2  = $("li:lt(2)").length;
+        content.append("li数组下标小于2的个数："+lenlt2);
+        console.log($("li:gt(6):lt(10)"));//注意：gt和lt不能连在一起使用
+
+        $(":header:not(h2,h3)").css({"font-size":"12px","color":"red"});
+    });
+</script>
+</body>
+</html>

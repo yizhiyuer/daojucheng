@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-ajax的应用.html</title>
+</head>
+<body>
+<script src="./jq/jquery.js"></script>
+<script>
+    $(function(){
+        $.ajax({ // ajax是异步，但是也可以同步
+            url:"./test.js",
+            data:{},
+            type:"get",
+            dataType:"script",
+            async:false,//ajax设置同步
+            success:function(){
+                // test();
+            }
+        });
+        test();
+    })
+</script>
+</body>
+</html>

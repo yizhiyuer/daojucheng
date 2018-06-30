@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-Event事件对象常用属性.html</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background: #2E74BD;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background: #bd348a;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body onclick="alert('body冒泡')">
+<h2>点击事件 click 监听的是鼠标左键单击事件</h2>
+<div id="box1"></div>
+
+<div id="box2" onmousedown="getbutton(event)">测试鼠标按键所对应的值</div>
+
+<script>
+    box1 = document.getElementById("box1");
+    box1.onclick = function(ev){
+        if(window.event){ //兼容写法
+            ev = window.event;
+        }
+        // console.log(ev);
+        console.log("鼠标左键，ev.button的值:",ev.button);
+        console.log("鼠标点击所在的窗口的位置:",
+            "X坐标："+ev.clientX,
+            "Y坐标："+ev.clientY);
+        console.log("鼠标点击所在的屏幕的位置:",
+            "X坐标："+ev.screenX,
+            "Y坐标："+ev.screenY);
+        console.log("获取产生鼠标点击事件的对象:",ev.target);
+        console.log("事件的名称:",ev.type);
+        ev.cancelBubble = true;//IE下的取消冒泡
+        ev.stopPropagation(); //IE9 以上统一使用
+    }
+
+    function getbutton(ev) {
+        alert("鼠标按键的值："+ev.button);
+    }
+</script>
+
+</body>
+</html>

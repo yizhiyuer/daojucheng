@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+    <meta charset="UTF-8">
+    <title>3-window对象常用函数.html</title>
+</head>
+<body style="width:300%;height: 300%">
+<h2>scrollBy , scrollTo</h2>
+<div style="position: fixed;top:50px">
+    <button onclick="doscroll(window)">点击设定滚动条的位置</button>
+    <button onclick="chgescroll(window)">点击改变滚动条的位置</button>
+    <div id="small"
+         style="width: 200px;height: 200px;background: #3d48ff;overflow: scroll">
+        <div style="width: 1000%;height: 1000%;"></div>
+    </div>
+    <button onclick="doscroll(document.getElementById('small'))">
+        点击设定滚动条的位置-2</button>
+    <button onclick="chgescroll(document.getElementById('small'))">
+        点击改变滚动条的位置-2</button>
+    <hr>
+    <h2>setInterval定时器</h2>
+    <h3 id="showtime">10</h3>
+    <h2>setTimeout定时器</h2>
+    <h3 id="showtime2">60</h3>
+    <h2>setInterval是不断重复的过程，需要手动终止；</h2>
+    <h2>setTimeout 在规定的时间内只执行一次,如果需要重复需要涉及递归函数；</h2>
+    <h2>递归：在函数内部调用本身函数</h2>
+</div>
+<script>
+    function doscroll(obj){
+        obj.scrollTo(200,200);
+    }
+    function chgescroll(obj){
+        obj.scrollBy(50,50);
+    }
+    showtime = document.getElementById("showtime");
+    num = parseInt(showtime.innerHTML) ;//1.获取内容；2.转换成数字
+    seti = window.setInterval(function () {  //setInterval调用后返回计时器对象
+        num--;//计算
+        showtime.innerHTML = num; //将计算后结果显示到标签中
+        if(num==0){ //终止条件
+            window.clearInterval(seti);//删除定时器
+        }
+    },1000);
+    ////////////////////setTimeout///////////////////////////////
+    showtime2 = document.getElementById("showtime2");
+    num2 = parseInt(showtime2.innerHTML);
+
+    chage = function(){
+        var setout = window.setTimeout(function(){
+            num2--;
+            showtime2.innerHTML = num2;
+            if(num2>0){
+                window.clearTimeout(setout);//删除定时器
+                chage(); //递归：在函数内部调用本身函数
+            }
+        },1000);
+    }
+    chage(); //启动递归函数
+
+</script>
+</body>
+</html>

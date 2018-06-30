@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7-元素的增删改.html</title>
+</head>
+<body>
+
+<script>
+    //创建新的节点对象；
+    div = document.createElement("div");
+    div.innerHTML="利用js新创建的div节点对象";
+    console.log(div);
+    body = document.querySelector("body");
+    body.appendChild(div);//在body节点中追加子节点
+
+    /* 练习：使用createElement创建节点函数，在body创建一个10行10列的表格，并显示*/
+    /* 两层循环：1.创建的是行 tr ; 2.创建的是列 td
+    * */
+    table = document.createElement("table");
+    for(i=0;i<10;i++){
+        tr = document.createElement("tr");
+        for(j=0;j<10;j++){
+            td = document.createElement("td");
+            td.innerHTML="单元格-"+i+"行"+j+"列";
+            tr.appendChild(td);//行内追加列
+        }
+        table.appendChild(tr);//表格内追加行
+    }
+    body.appendChild(table);
+
+</script>
+</body>
+</html>

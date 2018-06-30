@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业1.html</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style-type: none;
+        }
+
+        .wrapper {
+            width: 1200px;
+            height: 350px;
+           margin: 0 auto;
+        }
+
+        .wrapper ul li {
+            float: left;
+            width: 350px;
+            height: 120px;
+            list-style-type: none;
+            padding: 20px 10px 10px 30px;
+        }
+
+        .wrapper span {
+            display: inline-block;
+            width: 130px;
+            height: 150px;
+            float: left;
+        }
+
+        .wrapper span img {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #b3b3b3;
+            padding: 5px;
+            /*margin-top: 7px;*/
+        }
+
+        /*.lll {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border-top-color: #ffa8d0;
+            border-right-color: #7e7e7e;
+            border-bottom-color: #5dbc4c;
+            border-left-color: #0c7abc;
+            border-style: solid double dotted dashed;
+        }
+*/
+        .title {
+            width: 200px; /*设定的宽度 内容超出↓*/
+            height: 45px;
+            margin-top: 5px;
+            float: left;
+            font-size: 20px;
+            color: #207ae4;
+            overflow: hidden; /* 内容溢出隐藏 */
+            text-overflow: ellipsis; /* 文本溢出隐藏...代替 */
+            white-space: nowrap; /* 内容不换行 */
+        }
+
+        .content {
+            width: 200px;
+            height: 30px;
+            float: left;
+            font-size: 17px;
+            color: #9b9b9b;
+        }
+
+        .border-r {
+            border-right: 1px dashed #bfbfbf;
+        }
+
+        .border-bm {
+            border-bottom: 1px dashed #bfbfbf;
+        }
+
+        .demo {
+            width: 980px;
+            height: 100px;
+            border: 2px solid #dfdfdf;
+            background: #F9F9F9;
+            margin: 0 auto;
+        }
+
+        .demo-box {
+            width: 300px;
+            height: 80px;
+            float: left;
+            margin-left: 20px;
+            margin-top: 10px;
+            border-right: 2px groove #fefefe;
+        }
+
+        .demo-box img {
+            width: 90px;
+            height: 80px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .demo-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2b74e6;
+        }
+
+        .demo-content {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #7e7e7e;
+        }
+
+        .zuoye3 {
+            width: 400px;
+            height: 550px;
+            background-color: #e7efea;
+            margin: 0 auto;
+            border: 2px solid #cdcdc3;
+
+        }
+
+        .zuoye3 ul li {
+            width: 380px;
+            line-height: 50px;
+            border-bottom: 1px dashed silver;
+            padding-left: 15px;
+        }
+
+        .zuoye3 h3 {
+            height: 50px;
+            line-height: 55px;
+            padding-left: 18px;
+        }
+
+        h3 span {
+            color: #fefaf7;
+        }
+
+        .disc {
+            width: 28px;
+            height: 30px;
+            background: #7e7e7e;
+            color: #fefaf7;
+            display: inline-block;
+            text-align: center;
+            border-radius: 30px;
+            line-height: 30px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="lll"></div>-->
+<div class="wrapper">
+    <ul>
+        <li class="border-r border-bm">
+            <span><img src="k1.png"></span>
+            <p class="title">风景狙击手</p>
+            <p class="content">成员: 985</p>
+            <p class="content">作品: 123</p>
+        </li>
+        <li class="border-r border-bm">
+            <span><img src="k1.png"></span>
+            <p class="title">风景狙击手</p>
+            <p class="content">成员: 985</p>
+            <p class="content">作品: 123</p>
+        </li>
+        <li class="border-bm">
+            <span><img src="k1.png"></span>
+            <p class="title">风景狙击手</p>
+            <p class="content">成员: 985</p>
+            <p class="content">作品: 123</p>
+        </li>
+        <li class="border-r">
+            <span><img src="k1.png"></span>
+            <p class="title">风景狙击手</p>
+            <p class="content">成员: 985</p>
+            <p class="content">作品: 123</p>
+        </li>
+        <li class="border-r">
+            <span><img src="k1.png"></span>
+            <p class="title">《卡帕》欧美剧集,耐卡影音</p>
+            <p class="content">成员: 985</p>
+            <p class="content">作品: 123</p>
+        </li>
+        <li>
+            <span><img src="k1.png"></span>
+            <p class="title">风景狙击手</p>
+            <p class="content">成员: 985</p>
+            <p class="content">作品: 123</p>
+        </li>
+    </ul>
+</div>
+<br>
+<br>
+<br>
+<div class="demo">
+    <div class="demo-box"><img src="y.png" alt="">
+        <p class="demo-title">花卉网</p>
+        <p class="demo-content">观花花卉频道</p></div>
+    <div class="demo-box"><img src="y2.png" alt="">
+        <p class="demo-title">花卉网</p>
+        <p class="demo-content">观花花卉频道</p></div>
+    <div class="demo-box"><img src="v.png" alt="">
+        <p class="demo-title">花卉网</p>
+        <p class="demo-content">观花花卉频道</p></div>
+</div>
+<br>
+<br>
+<br>
+<div class="zuoye3">
+    <h3 style="background: #e9185a"><span>大家都喜欢买的美容品</span></h3>
+    <ul>
+        <li><span class="disc">1</span>雅诗兰黛即时修复眼部精华霜15ml</li>
+        <li><span class="disc">2</span>雅诗兰黛即时修复眼部精华霜15ml</li>
+        <li><span class="disc">3</span>雅诗兰黛即时修复眼部精华霜15ml</li>
+        <li><span class="disc">4</span>雅诗兰黛即时修复眼部精华霜15ml</li>
+        <li><span class="disc">5</span>雅诗兰黛即时修复眼部精华霜15ml</li>
+        <li><span class="disc">6</span>雅诗兰黛即时修复眼部精华霜15ml</li>
+        <li><span class="disc">7</span>雅诗兰黛即时修复眼部精华霜15ml</li>
+        <li><span class="disc">8</span>雅诗兰黛即时修复眼部精华霜15ml</li>
+        <li><span class="disc">9</span>雅诗兰黛即时修复眼部精华霜15ml</li>
+
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-结构伪类选择器.html</title>
+    <style>
+        li:only-child{
+          font-style: italic;
+            /*父级标签中只有唯一一个元素 ,并且是li*/
+        }
+        p:only-of-type,li:only-of-type{
+            /*按照标签类型分组,且组内只有唯一的一个标签*/
+            background: #fef2b3;
+        }
+        div:empty{
+            width: 100px;
+            height: 200px;
+            background: #ffc9fe;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>子标签-1</li>
+    <p>子标签-2</p>
+    <p>子标签-3</p>
+</ul>
+<h5>在html中,空格和文字都属于(文本)节点</h5>
+<div class="empty"></div>
+</body>
+</html>

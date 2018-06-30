@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-CSS操作.html</title>
+    <style>
+        .div1{
+            width: 300px;height: 150px;border: solid #eeaf8d 5px;margin: 0 auto
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+</div>
+
+
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        bdvalue = $(".div1").css("border");
+        div1_height = $(".div1").css("height");
+        div1_width = $(".div1").css("width");
+        // alert( bdvalue );
+        $("body").append("<br>1-获取.div1的border样式属性的值："+bdvalue);
+        $("body").append("<br>2-获取.div1的宽 X 高："+div1_width+" X "+div1_height);
+        //注意：height()获取元素高度；css("height")获取元素height样式的值，所以是有单位
+        div1_height = $(".div1").height();
+        div1_width = $(".div1").width();
+        $("body").append("<br>2-1-获取.div1的宽 X 高："+div1_width+" X "+div1_height);
+
+        //获取window对象 宽 X 高
+        winhigh = window.innerHeight;
+        winwidth = window.innerWidth;
+        $("body").append("<br>3-window对象 宽 X 高："+winwidth+" X "+winhigh);
+        //jq 方式获取window对象 宽 X 高
+        winhigh = $(window).height();
+        winwidth = $(window).width();
+        $("body").append("<br>4-jq 方式获取window对象 宽 X 高："+winwidth+" X "+winhigh);
+
+        /*利用height() ,width() 设置宽高*/
+        $(".div1").height(300); $(".div1").width(600);
+
+    });
+</script>
+</body>
+</html>

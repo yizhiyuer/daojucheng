@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-下拉列表控件节点对象.html</title>
+</head>
+<body>
+
+<form action="">
+
+    <select name="city" id="cityselect"
+            multiple onchange="getvalue()">
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+        <option value="nanning" selected>南宁</option>
+        <option value="guangzhou">广州</option>
+        <option value="shenzhen">深圳</option>
+    </select>
+
+</form>
+<script>
+    cityselect = document.querySelector("#cityselect");
+    console.log("获取下拉列表对象：",cityselect);
+    console.log("获取下拉列表的表单对象：",
+        cityselect.form);
+    document.write("<br>获取下拉列表的类型：",
+        cityselect.type);
+    document.write("<br>获取下拉列表选项个数：",
+        cityselect.length);
+    console.log("<br>获取下拉列表选项对象数组：",
+        cityselect.options);
+    function getvalue(){ //onchange事件触发的函数
+        // alert(9090);
+        console.log("<br>下拉列表选中项下标：",
+            cityselect.selectedIndex);
+        for(i=0; i<ops.length; i++){
+            console.log(ops[i].index,"---",
+                "选项内容:",ops[i].text,
+                "是否被选中：",ops[i].selected);
+        }
+    }
+    /////////////////////////////////
+    ops = cityselect.options;
+    for(i=0; i<ops.length; i++){
+        document.write("<br>",ops[i].index,"---");
+        document.write("选项内容:",ops[i].text,"，选项值:",ops[i].value);
+        document.write(",是否默认选中：",ops[i].defaultSelected);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-手风琴效果.html</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+.box{
+    width: 800px;
+    height: 320px;
+    background: #e2e2e2;
+    margin: 0 auto;
+    position: relative;
+}
+    .box ul li{
+        width: 160px;
+        height: 320px;
+        background: #b5e525;
+        float: left;
+        transition: all 2s;
+    }
+        .box ul li:nth-child(2n){
+            background: #b5e525;
+        }
+        .box ul li:nth-child(2n+1){
+            background: #e58eb9;
+        }
+        .box:hover li{
+            width: 40px;
+        }
+        .box li:hover{
+            width: 640px;
+        }
+.title{
+    line-height: 55px;
+    padding-left: 20px;
+    width: 640px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    bottom: 0;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li><img src="img/img1.jpg">
+            <div class="title">功夫熊猫</div>
+        </li>
+        <li><img src="img/img2.jpg">
+            <div class="title">玩具总动员</div></li>
+        <li><img src="img/img3.jpg">
+            <div class="title">功夫熊猫</div></li>
+        <li><img src="img/img4.jpg">
+            <div class="title">功夫熊猫</div></li>
+        <li><img src="img/img5.jpg">
+            <div class="title">功夫熊猫</div></li>
+    </ul>
+</div>
+</body>
+</html>

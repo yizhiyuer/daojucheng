@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-元素增删改-todolist.html</title>
+</head>
+<body>
+<ul id="fruit">
+    <li>苹果</li>
+    <li>香蕉</li>
+    <li>菠萝</li>
+</ul>
+<form action="http://baidu.com"  onsubmit="return false">
+    <p>
+        追加的内容：<input type="text" name="">
+        <button onclick="cli4append(this)">点击追加</button>
+    </p>
+    <p>
+        插入的内容：<input type="text" name="instext">
+        插入的位置：<input type="number" min="0" name="inspos">
+        <button onclick="cli4insert(this)">点击插入</button>
+        <!--this代表当前对象-->
+    </p>
+    <p>
+        替换的内容：<input type="text" name="reptext">
+        替换的位置：<input type="number" min="0" name="reppos">
+        <button onclick="cli4replace(this)">点击替换</button>
+    </p>
+    <p>
+        删除的位置：<input type="number" min="0">
+        <button onclick="cli4remove(this)">点击删除</button>
+    </p>
+</form>
+<script src="./hw_9.js"></script>
+<script>
+    /*作业1：补充上方 todolist 的功能，完成元素节点的增删改*/
+    /*作业2: 设计一个定时器，实现每2秒钟为body改变一种背景颜色*/
+</script>
+</body>
+</html>

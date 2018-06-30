@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-过渡动画.html</title>
+    <style>
+       .ball{
+           width: 100px;
+           height: 100px;
+           background: #f2a9fe;
+           margin-top: 10px;
+           margin-left: 0;
+           border-radius: 100px;
+           transition: margin-left 5s;
+       }
+        .container:hover div{
+          margin-left: 1300px;
+        }
+        .ball:nth-child(2){
+            transition-timing-function: linear;
+        }
+        .ball:nth-child(3){
+            transition-timing-function: ease-in;
+        }
+       .ball:nth-child(4){
+           transition-timing-function: ease-out;
+       }
+       .ball:nth-child(5){
+           transition-timing-function: ease-in-out;
+       }
+       .ball:nth-child(6){
+           transition-timing-function: cubic-bezier(0.68,-0.68);
+       }
+    </style>
+</head>
+<body>
+<div class="container">
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-内容过滤.html</title>
+</head>
+<body>
+
+<ul>
+    <li>内容1</li>
+    <li><span class="hasclass">内容2</span></li>
+    <li>内容3</li>
+    <li><span class="hasclass">内容4</span></li>
+    <li>内容5</li>
+    <li>内容6</li>
+</ul>
+
+<ul>
+    <li>内容21</li>
+    <li><span class="hasclass">内容22</span></li>
+    <li>内容23</li>
+    <li id="con24">内容24</li>
+    <li>内容25</li>
+    <li><span class="hasclass">内容26</span></li>
+    <li></li>
+</ul>
+<ul></ul>
+<div id="content">
+</div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        content = $("#content");
+        var ct4 =$("li:contains('4')");
+        // content.append(ct4.html());
+        for(var i=0;i<ct4.length;i++){
+            // content.append(ct4[i].innerHTML+"<br>"); //ct4[i]不是一个jquery对象
+            content.append($(ct4[i]).html()+"<br>");//$(ct4[i])是一个jquery对象
+        }
+        $("li:empty").html("li为空标签");
+        // $("li:not(.hasclass)").css({"color":"#ffc438"});
+
+        console.log("hasclass",$("li:has(.hasclass)"));
+        //注意：has获取拥有子标签元素(class="hasclass")的li
+        $("li:has(.hasclass)").css({"font-size":"36px"});
+        var hasclass = $("li:has(.hasclass)");
+        // for(var pos in hasclass){
+        //     content.append(hasclass[pos].innerHTML+"<br>");
+        // }
+        hasclass.each(function(){
+            console.log("子对象",this);
+            // content.append(this.innerHTML+"<br>");//this是原生js对象
+            content.append($(this).html()+"<br>");
+        });//each()对象属性遍历
+
+        var uls = $("ul:parent");//:parent 与 :empty的作用是相反的
+        console.log("$(\"ul:parent\")选中的对象：",uls);
+        uls.each(function(i){
+            // alert(i);
+            // console.log(this.children);
+            if(i==0){
+                $(this).css({"background":"#ffc4cd"});
+            }else{
+                $(this).css({"background":"#d6ffdd"});
+            }
+        });
+    });
+</script>
+</body>
+</html>

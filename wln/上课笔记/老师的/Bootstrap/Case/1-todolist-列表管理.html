@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-todolist-列表管理.html</title>
+    <style>
+        #cart,#account{
+            width: 60%;
+            border: solid 1px #aaa;
+            margin: 0 auto
+        }
+        #account{
+            text-align: right;
+        }
+        #cart td,#cart th{
+            text-align: center;
+            border: solid 1px #aaa;
+        }
+        #cart input[type='number']{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<table id="cart">
+    <thead>
+    <th>
+        <input type="checkbox" id="selall" checked>
+    </th>
+    <th>编号</th>
+    <th>商品名称</th>
+    <th>商品单价</th>
+    <th>商品数量</th>
+    <th>商品小计</th>
+    <th>操作</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="checkbox" checked></td>
+            <td>1</td>
+            <td>可乐</td>
+            <td>￥2.5</td>
+            <td>
+                <button>-</button>
+                <input type="number"  min="1" value="1">
+                <button>+</button>
+            </td>
+            <td>￥2.5</td>
+            <td>
+                <button>删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked></td>
+            <td>2</td>
+            <td>红牛</td>
+            <td>￥5.5</td>
+            <td>
+                <button>-</button>
+                <input type="number"  min="1" value="2">
+                <button>+</button>
+            </td>
+            <td>￥11</td>
+            <td>
+                <button>删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked></td>
+            <td>3</td>
+            <td>牛栏山</td>
+            <td>￥15</td>
+            <td>
+                <button>-</button>
+                <input type="number"  min="1" value="3">
+                <button>+</button>
+            </td>
+            <td>￥45</td>
+            <td>
+                <button>删除</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div id="account">
+    <hr>
+    <b></b>
+    <b></b>
+</div>
+
+<script src="../jq/jquery.js"></script>
+<script>
+    $(function(){
+        doaccount(); //计算总价
+        $chbox = $("tbody input[type='checkbox']");
+        //$chbox：表格中每行的checkbox
+        $("#selall").click(function(){
+            //alert( $(this).prop("checked") );//true false
+            /*prop vs attr
+            prop:常用于操作浏览器能识别的标签属性；
+            attr:常用于操作自定义的标签属性；*/
+            // console.log($("tbody input[type='checkbox']"))
+            if($(this).prop("checked")){
+                //todo:获取所有的 checkbox 对象
+                // 进行操作：勾选
+                $chbox.prop("checked",true);
+            }else{
+                //todo:获取所有的 checkbox 对象
+                // 进行操作：不勾选
+                $chbox.prop("checked",false);
+            }
+            doaccount();
+        });
+        $chbox.click(function(){
+            /*判断 tbody 中所有的 checkbox是否被选上*/
+            // alert($chbox.filter(":checked").length);
+            if($chbox.length ==
+                $chbox.filter(":checked").length){
+                //todo:全选
+                $("#selall").prop("checked",true);
+            }else{
+                //todo:不全选
+                $("#selall").prop("checked",false);
+            }
+            doaccount();
+        });
+        // alert($("td>input[type='number']").length)
+        $("td>input[type='number']").each(function(){
+            // var $that = $(this);
+            $(this).next("button").click(function(){
+                /*alert($that.val());
+                alert($(this).prev("input").val());*/
+                var curnum = $(this).prev("input").val();
+                $(this).prev("input").val( ++curnum );
+                var price = $(this).parent("td").prev("td").text();
+                // alert(  parseFloat(price.substr(1)) )
+                var xiaoji = parseFloat(price.substr(1))*curnum;
+                $(this).parent("td").next("td").text("￥"+xiaoji.toFixed(2));
+                doaccount();
+            });
+            $(this).prev("button").click(function(){
+                /*alert($that.val());
+                alert($(this).prev("input").val());*/
+                var curnum = $(this).next("input").val();
+                if((--curnum) <1){
+                    curnum=1;
+                }
+                $(this).next("input").val( curnum );
+                var price = $(this).parent("td").prev("td").text();
+                // alert(  parseFloat(price.substr(1)) )
+                var xiaoji = parseFloat(price.substr(1))*curnum;
+                $(this).parent("td").next("td").text("￥"+xiaoji.toFixed(2));
+                doaccount();
+            });
+            this.oninput=function(){ //手动填入数量值的触发
+                // alert(this.value);
+                var curnum = this.value;
+                var price = $(this).parent("td").prev("td").text();
+                var xiaoji = parseFloat(price.substr(1))*curnum;
+                $(this).parent("td").next("td").text("￥"+xiaoji.toFixed(2));
+                doaccount();
+            }
+        });
+        /*删除操作*/
+        $("button:contains('删除')").click(function(){
+            // alert(999);
+            $(this).parents("tr").remove();
+            doaccount();
+        });
+        /*练习：手动填入数量值的触发：oninput */
+    })
+    function doaccount(){
+        sum = 0;
+        accountPrice=0.00;
+        $("td>input[type='number']").each(function(){
+            $ischeck =$(this).parents("tr").find("td").find("input[type='checkbox']").is(":checked");
+            // alert($ischeck);
+            if($ischeck){
+                sum+=parseInt($(this).val());
+            }
+        })
+        // alert($("td:nth-child(6)").length);
+        $("td:nth-child(6)").each(function(){
+            $ischeck =$(this).parents("tr").find("td").find("input[type='checkbox']").is(":checked");
+            if($ischeck) {
+                accountPrice += parseFloat($(this).text().substr(1));
+            }
+        })
+        $("#account>b:nth-of-type(1)").text("商品总数量："+sum+";");
+        $("#account>b:nth-of-type(2)").text("商品总价格：￥ :"+accountPrice.toFixed(2));
+    }
+</script>
+</body>
+</html>

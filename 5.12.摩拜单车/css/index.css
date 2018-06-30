@@ -1,0 +1,121 @@
+.container {
+    outline: 2px solid red;
+}
+
+.row {
+    outline: 2px solid #ff8a27;
+}
+
+.row > div {
+    outline: 2px solid #0055ff;
+}
+/****************************************************/
+.mb20 {
+     margin-bottom: 20px;
+ }
+.mb50 {
+     margin-bottom: 50px;
+ }
+.mb150 {
+     margin-bottom: 150px;
+ }
+/****************************************************/
+
+.main {
+    height: 240px;
+    background: url("../images/mobike-home-bg.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.logo img {
+    width: 200px;
+    height: 55px;
+}
+
+.header-nav ul {
+    float: right;
+    margin-bottom: 0;
+}
+
+.header-nav ul li {
+    float: left;
+    height: 55px;
+    margin-right: 50px;
+    list-style-type: none;
+    line-height: 55px;
+}
+
+.header-nav ul li a {
+    color: white;
+    font-weight: bold;
+}
+
+.word {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+.content {
+    width: 100%;
+    background: white;
+    margin-bottom: 50px;
+    float: left;
+}
+.content-title {
+    font-size: 28px;
+}
+.content img {
+    border-radius: 5px;
+}
+.content p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    font-size: 15px;
+}
+
+.content span {
+    color: red;
+}
+
+.right-wrap p {
+    line-height: 20px;
+}
+.right-wrap-img {
+    height: 60px;
+}
+.right-wrap-img img {
+    width: 100%;
+    height: 60px;
+}
+.right-wrap-title {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    margin-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.bottom-wrap {
+    background: #f05b48;
+    height: 400px;
+}
+.bottom-logo {
+    max-height: 120px;
+    margin-left: calc(50% - (134.39px/2) );
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.bottom-logo-2 {
+    margin-left: calc(50% - 184px/2);
+}
+.bottom-logo-2 a {
+    float: left;
+    margin-left: 40px;
+    opacity: .6;
+}
+.bottom-text {
+    margin-top: 50px;
+    color: white;
+    opacity: .6;
+}

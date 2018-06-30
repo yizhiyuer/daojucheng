@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-右下角消息弹出小窗.html</title>
+    <style>
+        .msgbox{
+            height: 300px;
+            width: 250px;
+            background: #F37A04;
+            position: fixed;
+            right: 0;
+            bottom: -300px;
+            transition: bottom 2s linear;
+        }
+        .msgshow{
+            bottom:0;
+        }
+    </style>
+</head>
+<body>
+<h2>
+/*练习：实现浏览器右下角消息框弹出效果，
+* 要求：
+* 1.在打开网页3秒后弹出;
+* 2.有一定的动画效果；
+* 3.点击后以动画的形式隐藏；
+* */
+</h2>
+    <div class="msgbox">
+    </div>
+<script>
+    msgbox = document.querySelector(".msgbox")
+    var origin = msgbox.getAttribute("class");
+    setTimeout(function(){
+        //获取原来class属性的值
+        msgbox.setAttribute("class",origin+"  msgshow");
+    },3000);
+    msgbox.onclick=function(){
+        msgbox.setAttribute("class",origin);
+    }
+</script>
+</body>
+</html>

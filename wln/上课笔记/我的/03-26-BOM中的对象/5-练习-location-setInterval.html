@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">3秒后跳转</title>
+</head>
+<body style="background: #2E74BD">
+<script>
+    i=0; //计时变量
+    title = document.getElementById("title");
+    num = parseInt(title.innerHTML);
+    ds = window.setInterval(function () {
+        i++;
+        num--;
+        title.innerHTML=num+"秒后跳转";
+        if(i==3){
+            window.clearInterval(ds);
+            //跳转：
+            location.href="http://taobao.com";
+        }
+    },1000);
+</script>
+
+</body>
+</html>

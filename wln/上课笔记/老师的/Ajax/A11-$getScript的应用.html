@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A11-$getScript的应用.html</title>
+</head>
+<body>
+<script src="./jq/jquery.js"></script>
+<script>
+    $(function(){
+        $.getScript("./test.js",function(){
+            test();
+        })
+    })
+</script>
+</body>
+</html>

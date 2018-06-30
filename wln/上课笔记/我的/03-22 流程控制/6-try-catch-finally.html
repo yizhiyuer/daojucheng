@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-try-catch-finally.html</title>
+</head>
+<body>
+
+<script>
+    var arrs = ["壹",2,3.01,"four"];
+    arrs[5]="V";
+    for(pos=0;pos<arrs.length;pos++){
+        try{
+            if(arrs[pos]==undefined){
+                //抛出异常;
+                throw new Error("异常:该元素未定义<br>");
+            }
+            document.write(pos+":"+arrs[pos]+"<br>");
+        }catch(error){
+            document.write(error.message);
+        }finally{
+            console.log("结束");
+        }
+    }
+
+    with(document){
+        write("输出数据-1<br>");
+        write("输出数据-2<br>");
+        write("输出数据-3<br>");
+    }
+    document.write("输出数据-4<br>");
+
+</script>
+
+</body>
+</html>

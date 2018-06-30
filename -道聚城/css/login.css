@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    outline: 2px solid red;
+}
+
+.row {
+    outline: 2px solid #ff8a27;
+}
+
+.row > div {
+    outline: 2px solid #0055ff;
+}
+/****************************************************/
+.head {
+    height: 50px;
+    background: #ff8698;
+
+}
+.head ul{
+    float: right;
+}
+.head ul li{
+    float: left;
+    height: 55px;
+    margin-right: 50px;
+    list-style-type: none;
+    line-height: 55px;
+}
+.form_wrap {
+    /*width: 310px;*/
+    height: 500px;
+    background: #f9f9f9;
+    margin: 50px auto;
+}
+
+.title {
+    font-size: 23px;
+}
+
+.title_2 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.title_2 span {
+    font-size: 14px;
+    float: right;
+    color: #00a5ff;
+}
+
+.nickname {
+    /*width: 270px;*/
+    height: 30px;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-left: 15px;
+    border: 1px solid #e0696c;
+    padding-left: 10px;
+}
+
+.form p {
+    font-size: 12px;
+    margin-left: 17px;
+}
+
+.number {
+    /*width: 160px;*/
+    height: 30px;
+    border-radius: 4px;
+    margin-top: 15px;
+    border: 1px solid #e0696c;
+    padding-left: 10px;
+}
+
+.prompt {
+    color: #e0696c;
+    margin-top: 2px;
+}
+.buttons {
+    /*width: 260px;*/
+    height: 35px;
+    background: #378aff;
+    color: #f8f8f8;
+    border: 1px solid #378aff;
+    margin-top: 15px;
+    margin-left: 24px;
+    border-radius: 4px;
+}
+
+.terms {
+    font-size: 10px;
+    color: #8f9d9c;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+.footnote{
+
+    text-align: center;
+}

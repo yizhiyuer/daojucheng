@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-jsobj-copy.html</title>
+</head>
+<body>
+
+<script>
+    var obj_1={
+        name:"jackwang",
+        myfunc:function(flag){
+            document.write(flag+".访问name属性："+ this.name+"<br/>");
+        }}
+    var obj_22 = obj_1;
+    //对象赋值是引用赋值，赋值后，某一个对象中值变化会影响所有的对象
+    var obj_333 = obj_22;
+    obj_1.name="cavinkang";
+    console.log(obj_1.name);
+    obj_1.myfunc("obj_1");
+    console.log(obj_22.name);
+    obj_22.myfunc("obj_22");
+    obj_1.name="jackwang";
+    console.log(obj_333.name);
+    obj_333.myfunc("obj_333");
+    console.log(obj_22.name);
+    obj_22.myfunc("obj_22");
+    console.log(obj_1.name);
+
+
+</script>
+</body>
+</html>

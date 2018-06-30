@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>触摸侧滑</title>
+    <style>
+        *{margin:0;padding: 0}
+        #slider{
+            width: 260px;
+            height: 1000px;
+            background: #000;
+            position: absolute;
+            top:0;
+            left:-260px;
+        }
+        body{height: 1000px;}
+    </style>
+</head>
+<body>
+<div id="slider"></div>
+fdsgdfg
+<script src="./jquery.js"></script>
+<script>
+    var startX= 0,dir=0;
+    $(function(){
+        $("body").mousedown(function(myEvt0){
+            startX=myEvt0.pageX;//获取鼠标点击时的坐标
+        });
+        $("body").mousemove(function(myEvt1){
+            dir=myEvt1.pageX-startX;
+            //通过滑动坐标计算，判断方向
+        });
+        $("body").mouseup(function(){
+            if(dir>0){
+                $("#slider").animate({"left":"0px"},1000);
+            }else{
+                $("#slider").animate({"left":"-260px"},1000);
+            }
+            startX=0;
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-form元素表单.html</title>
+</head>
+<body>
+<h5>常用表单元素：input,textarea,select{option},button</h5>
+<h5>HTML5中 如果属性名称=属性值，可以值写属性名称</h5>
+<hr>
+<form action="">
+    <p>隐藏输入框1：<input placeholder="" type="hidden" name="hideinput" value="隐藏输入框"></p>
+    <p>隐藏输入框2：<input placeholder="" type="text" hidden name="hideinput2" value="隐藏输入框"></p>
+    <p>只读输入框：<input placeholder="" type="text" readonly name="read" value="只读输入框"></p>
+    <p>禁用输入框：<input placeholder="" type="text" disabled name="disable" value="禁用输入框"></p>
+    <p><button>提交</button></p>
+</form>
+<hr>
+<form action="http://qq.com">
+    <p>
+        性别：
+        <input placeholder="提示文字" type="radio" name="gender" value="0">男
+        <input placeholder="提示文字" type="radio" name="gender" value="1">女
+    </p>
+<p>
+    兴趣爱好：
+    <input placeholder="提示文字" type="checkbox" name="hobby[0]" value="football">足球
+    <input placeholder="提示文字" type="checkbox" name="hobby[1]" value="bascketball">篮球
+    <input placeholder="提示文字" type="checkbox" name="hobby[2]" value="film">电影
+</p>
+    <p><button>提交</button></p>
+</form>
+<hr>
+<h5>input type="image"图像域，自带提交功能
+会获取鼠标在图片上点击位置的坐标点作为参数提交</h5>
+<form action="http://baidu.com">
+    <p><input type="file" name="files[0]"></p>
+    <p><input type="file" name="files[1]"></p>
+    <p><input type="file" name="files[2]"></p>
+    <p><input type="image" src="../img/jie.jpg" height="20px"></p>
+</form>
+
+<hr>
+<h5>校验表单元素</h5>
+<form action="http://taobao.com">
+    <p>邮箱：<input type="email" name="email" required></p>
+    <p>电话：<input type="tel" name="tel" required></p>
+    <p>url:<input type="url" name="url" required></p>
+    <p>调色版：<input type="color" name="color"></p>
+    <p>搜索框：<input type="search" name="search"></p>
+    <p>数字框：<input type="number" name="number"></p>
+    <p>滑动条：<input type="range" name="range"></p>
+    <p>时间选择：<input type="datetime-local" name="datetime"></p>
+    <p><buttoon>提交</buttoon></p>
+</form>
+</body>
+</html>

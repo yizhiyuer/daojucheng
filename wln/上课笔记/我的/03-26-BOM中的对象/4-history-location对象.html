@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-history-location对象.html</title>
+</head>
+<body>
+<a href="http://baidu.com">百度</a>
+<a href="./back.html">back</a>
+<br>
+<button onclick="history.forward()">前进1个页面</button>
+<button onclick="history.go(2)">go(2)前进2个页面</button>
+<button onclick="window.location.href='http://qq.com'">点击按钮跳转QQ</button>
+<h2>location.href=url 操作地址栏跳转到指定的url</h2>
+<button onclick="location.reload()">点击刷新页面</button>
+<!-- 练习：设计广告页，三秒后自动跳转到其他页面 -->
+<script>
+    console.log(location);
+    document.write("<br>主机名："+location.hostname);
+    document.write("<br>主机地址(主机名+端口号)："+location.host);
+    document.write("<br>端口号："+location.port);
+    document.write("<br>文件地址："+location.pathname);
+    document.write("<br>协议(http,https,file,ftp,ws,smb)："+location.protocol);
+    document.write("<br>hash锚点信息："+location.hash);
+    document.write("<br>路径参数信息："+location.search);
+    //location.reload() 刷新当前页
+</script>
+
+</body>
+</html>

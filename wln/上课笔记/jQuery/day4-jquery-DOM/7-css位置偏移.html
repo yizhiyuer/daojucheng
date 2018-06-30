@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #cont{
+            width: 300px;height: 300px;
+            margin: 0 auto;background: #eee;
+            overflow: scroll;
+            position: relative;
+            top: 300px;
+            left: 300px;
+        }
+        #child{
+            width: 500%;height: 500%;
+            background: #ffbacb;
+        }
+    </style>
+</head>
+<body>
+<div id="cont">
+    <div id="child"></div>
+</div>
+<h2>offset的设置是强制元素做绝对定位的偏移</h2>
+<h2>offset的获取偏移值是相对与父级容器的偏移</h2>
+
+
+<script src="../jq/jquery.js"></script>
+<script>
+    $(function(){
+       // $("#cont").offset({left:"300",top:"300"});
+       var offset= $("#cont").offset();
+        alert(offset.left+","+offset.top);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A13-获取天数据.html</title>
+</head>
+<body>
+<div class="box"></div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        city="南宁";
+        $.ajax({
+            url:"https://free-api.heweather.com/v5/now",
+            data:"city="+city+"&key=99e7b51df6c54601883361ba8535c245",
+            type:"get",
+            dataType:"json",
+            success:function(res){
+                console.log("当前天气数据：",res);
+                console.log(res.HeWeather5[0].basic.city);
+                console.log(res.HeWeather5[0].now.cond.txt);
+                console.log(res.HeWeather5[0].now.tmp);
+            }
+        });
+
+        $.getJSON(
+            "https://free-api.heweather.com/v5/forecast",
+            "city="+city+"&key=99e7b51df6c54601883361ba8535c245",
+            function(res){
+                console.log("未来3天天气数据：",res);
+                console.log(res.HeWeather5[0].basic.city);
+                console.log(res.HeWeather5[0].daily_forecast[1].tmp.max);
+                console.log(res.HeWeather5[0].daily_forecast[1].tmp.min);
+            }
+        )
+
+    })
+
+    //作业一：利用给定的接口实现在线翻译；
+    //https://translate.yandex.net/api/v1.5/tr.json/translate
+    // ?text=你好&lang=en&key=trnsl.1.1.20171012T074239Z.b5c28c71eeb84871.d7fb94392f8420c8178c67a8b1d1effbbbea6d44
+
+    //作业二：利用给定的接口实现当前天气及未来三天天气插件；
+    //https://free-api.heweather.com/v5/now?city=北海&key=99e7b51df6c54601883361ba8535c245
+    //https://free-api.heweather.com/v5/forecast?city=北海&key=99e7b51df6c54601883361ba8535c245
+</script>
+</body>
+</html>

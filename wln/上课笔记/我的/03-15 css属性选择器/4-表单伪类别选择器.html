@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-表单伪类别选择器.html</title>
+    <style>
+      ipout:enabled{
+          color: #fe312c;
+      }
+        input:disabled{
+            background: black;
+        }
+        input:read-write{
+            border: solid 1px palegreen;
+        }
+        input:read-only{
+            border: solid 1px #fef2b3;
+        }
+        input[name="email"]:required{
+            background: #5ea6eb;
+        }
+        input::selection{
+            background: #2252cd;
+            color: white;
+        }
+        input:checked+span{
+            background: white;
+            color: #bac652;
+            border: solid 1px palegreen;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <p>账号:<input type="text" name="account"></p>
+    <p>密码:<input type="text" name="passwd" disabled></p>
+    <p>手机:<input type="text" name="phone" value="18577993253" readonly></p>
+    <p>邮箱:<input type="text" name="email" required></p>
+    <p>课程:
+        <input type="checkbox" name="lesson[]"><span>h5</span>
+        <input type="checkbox" name="lesson[]"><span>php</span>
+        <input type="checkbox" name="lesson[]"><span>mysql</span>
+    </p>
+</form>
+</body>
+</html>

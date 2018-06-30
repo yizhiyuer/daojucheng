@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-box-盒模型.html</title>
+    <style>
+        .box{
+            border: black solid 5px;
+            padding: 20px;/*内边距:*/
+            margin: 30px;/*外边距*/
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">块级标签</div>
+<b>行级标签</b>
+<hr>
+<h5>padding用法:内容与边框间的距离</h5>
+<style>
+  .pd1{
+      padding: 10px 30px 50px 100px;/*上右下左四个方向*/
+      border: solid 2px #000;
+      width: 200px;
+      height: 50px;
+  }
+    .pd2{
+        border: solid 2px #000;
+        padding: 20px 0;/*上下 左右*/
+    }
+    .pd3{
+        border: solid 2px #000;
+        padding: 20px 0 50px;/*上 左右 下*/
+    }
+    .pd4{
+        border: solid 2px #000;
+        padding-top: 10px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+    }
+</style>
+<div class="pd1">4个参数时</div>
+<div class="pd2">2个参数时</div>
+<div class="pd3">3个参数时</div>
+<div class="pd4">分开设置</div>
+
+<hr>
+<h5>margin外边距:元素与元素之间的距离</h5>
+<style>
+    .mg1{
+      height: 50px;
+        width: 100px;
+      border: 1px solid #0c7abc;
+        margin-bottom: 20px;
+    }
+    .mg2{
+        height: 50px;
+        width: 50px;
+        border: 1px solid #fd78be;
+        margin-top: 50px;
+    }
+    .meleft{
+        height: 50px;
+        width: 100px;
+        border: 1px solid #fd78be;
+       display:  block;/*将行级元素转换为块级元素*/
+    }
+    .meright{
+        height: 50px;
+        width: 50px;
+        border: 1px solid #fd78be;
+       display: inline;/*将块级元素转换为行级元素*/
+        /*display: block; 将行级元素转换为块级元素*/
+        /*display: inline-block;同时具有行级
+        标签和块级标签的特性,允许一行多个;允许设置宽高*/
+
+    }
+</style>
+<div class="mg1"></div>
+<div class="mg2"></div>
+<hr>
+<div class="meleft"></div>
+<div class="meright"></div>
+</body>
+</html>

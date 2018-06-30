@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-节点基本访问方式.html</title>
+</head>
+<body>
+<ul id="unlist">
+    <li id="item1">列表1</li>
+    <li class="item">列表2</li>
+    <li>列表3</li>
+    <li class="item">列表4</li>
+    <li>列表5</li>
+</ul>
+<script>
+    //获取id="unlist"的对象;
+    unlist = document.getElementById("unlist");
+    console.log("获取id=\"unlist\"的对象:",unlist);
+    //获取id="item1"的对象;
+    item1 = document.getElementById("item1");
+    console.log("获取id=\"item1\"的对象:",item1);
+    //获取所有li的对象数组; 使用时必须用中括号与数字下标
+    lis = document.getElementsByTagName("li");
+    console.log("获取所有li的对象数组:",lis);
+    //获取class="item"的对象数组;使用时必须用中括号与数字下标
+    item = document.getElementsByClassName("item");
+    console.log("获取class=\"item\"的对象数组:",item);
+
+    unl = document.querySelector("#unlist");//通过选择器去获取元素对象
+    console.log("querySelector(\"#unlist\"):",unl);
+    class_item = document.querySelector(".item"); //获取的是单数
+    console.log("querySelector(\".item\"):",class_item);
+    class_item_all = document.querySelectorAll(".item");//获取的是复数
+    console.log("querySelectorAll(\".item\"):",class_item_all);
+
+</script>
+</body>
+</html>

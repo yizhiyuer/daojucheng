@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-类型的转换.html</title>
+</head>
+<body>
+<h2>任何基本类型用+号与字符串相连接,最后都会变成字符串类型</h2>
+<h2>typeof 变量:检测变量类型</h2>
+<h2>字符串转换为数字:字符串必须以数字开头,否则会报 NaN(非数字)错误</h2>
+<h2>toFixed(n):让数字保持n为小数</h2>
+<h2>boolean类型在参与计算时可以自动转化为数值类型:true(1),fase(0)</h2>
+<h2>null空值在计算时也可以转换为 数值 0</h2>
+<h2>nudefined 类型  不能参与运算</h2>
+<script>
+    var mystr = "99";//字符串
+    mystr = 100;//数值类型
+    //int mynum=50;//整形 mynum="";编译错误
+    //string mystr="50020";//字符串类型
+    mynum = mynum + "字符串";//字符串
+    //mynum = mynum.tostring();
+    mastr = parseInt(mystr);
+    console.log("值:", mastr);
+    console.log("类型:", typeof mynum);
+    myfloatvar = "99.99元";
+    myfloatvar = parseFloat(myfloatvar);
+    console.log("值:", mastr);
+    console.log("类型:", typeof mynum);
+
+    num1 = 100;
+    num2 = parseInt("300");
+    num3 = false;//boolean类型
+    console.log("计算结果:",num1 * num3);
+
+
+</script>
+</body>
+</html>

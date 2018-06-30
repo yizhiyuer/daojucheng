@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A10-延时动画-判断动画执行.html</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background: #6642ff;
+            color:#fff;
+            /*transition:all 5s linear;*/
+        }
+    </style>
+</head>
+<body>
+<button id="get_ani">获取动画元素</button>
+<div id="box">
+</div>
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+        $("#box").click(function(){
+            $(this).delay(2000)
+                .animate({width:"500px",height:"500px"},3000)
+                .delay(2000)
+                .animate({"margin-left":"600px"},3000)
+        })
+        $("#get_ani").click(function(){
+            $(":animated").css({border:"solid #f00 10px"});
+            console.log("该元素是否正在执行动画：",$("#box").is(":animated"));
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-旋转摩天轮.html</title>
+    <style>
+        body {
+            background: url("./assets/2.jpg") no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .wheel {
+            width: 650px;
+            height: 650px;
+            /*background: #e58eb9;*/
+            /*margin: 0 auto;*/
+            background-size: cover;
+            position: absolute;
+            background-image: url("./assets/fsw.png");
+            background-repeat:no-repeat;
+
+            left: calc(50% - 325px); /*!*计算属性  运算符的两边要留空格*/
+            bottom: calc(50% - 325px); /*!*计算属性  运算符的两边要留空格*/
+            /*left: calc(50vw - 250px); */
+            /*vw  :窗口宽度单位-----vh :窗口高度单位*/
+            animation: whrota 20s linear infinite;
+        }
+
+        @keyframes whrota {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .wheel div:nth-child(1) {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 65px);
+        }
+
+        .wheel div:nth-child(2) {
+            position: absolute;
+            top: calc(50% - 85px);
+            right: 0;
+        }
+
+        .wheel div:nth-child(3) {
+            position: absolute;
+            top: calc(50% - 85px);
+            left: 0;
+        }
+        .wheel div:nth-child(4) {
+            position: absolute;
+            bottom: 0;
+            right: calc(50% - 65px);
+        }
+
+        .wheel div {
+            animation: carrota 20s linear infinite;
+        }
+
+        @keyframes carrota {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wheel">
+    <div>
+        <img src="./assets/girl.png" alt="">
+    </div>
+    <div>
+        <img src="./assets/hairboy.png" alt="">
+    </div>
+    <div>
+        <img src="./assets/hairboy.png" alt="">
+    </div>
+    <div>
+        <img src="./assets/girls.png" alt="">
+    </div>
+
+</div>
+</body>
+</html>

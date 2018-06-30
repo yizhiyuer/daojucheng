@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin-top: 50px;
+        }
+        div{
+            float: right;
+        }
+    </style>
+</head>
+<body onload="body()">
+<div onclick="one()"  style="background:#e49cf0; width: 100px; height: 60px;">单击</div>
+<div ondblclick="two()"  style="background: #b882c3; width: 100px; height: 60px;">双击</div>
+<div onmousedown="three()"  style="background: #b171cd; width: 100px; height: 60px;">单击任意一个按键</div>
+<div onmouseout="four()"  style="background: yellowgreen; width: 100px; height: 60px;">指针移除时触发</div>
+<div onmousemove="five()"  style="background: #6cd860; width: 100px; height: 60px;">在元素上持续移动时触发</div>
+<div onmouseup="six()"  style="background: #72bf93; width: 100px; height: 60px;">松开鼠标任意按键</div>
+<div onmouseover="seven()"  style="background: #4bca62; width: 100px; height: 60px;">移动到某元素上时触发</div>
+
+<input type="text" onkeydown="a()">按下一个键
+<input type="text" onkeyup="aa()">按下一个键
+<input type="text" value="选择了文本框中的字符时触发" onselect="onselct()">
+<script>
+    function one() {
+        alert("onclick：单击");
+    }
+    function two() {
+        alert("ondblclick：双击");
+    }
+    function three() {
+        alert("onmousedown：单击任意一个按键");
+    }
+    function four() {
+        alert("onmouseout：指针移除时触发");
+    }
+    function five() {
+        alert("onmousemove：鼠标在元素上持续移动时触发");
+    }
+    function six() {
+        alert("onmouseup：松开鼠标任意按键");
+    }
+    function seven() {
+        alert("onmouseover：移动到一个元素时触发");
+    }
+    function a() {
+        alert("onkeydown:在键盘按另一个键时触发");
+    }
+    function aa() {
+        alert("onkeyup:在键盘松键时触发");
+    }
+    function body(){
+        alert("页面加载完成");
+    }
+    function onselct()
+    {
+        alert("选中该文本");
+    }
+</script>
+</body>
+</html>

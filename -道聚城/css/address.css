@@ -1,0 +1,46 @@
+.r-box {
+    width: 950px;
+    height: 850px;
+    background: #b5b5b5;
+    margin-left: 10px;
+    float: left;
+}
+
+.add-box {
+    width: 800px;
+    height: 40px;
+    background: #ffc162;
+    margin: 10px 20px;
+    line-height: 40px;
+    font-size: 15px;
+}
+
+.add-butt {
+    width: 100px;
+    height: 26px;
+    background: #cee4b8;
+    display: inline-block;
+    line-height: 26px;
+    border: solid 1px #71b247;
+}
+
+.add-butt:hover {
+    background: #71b247;
+    color: #ffffff;
+}
+
+.add-box span {
+    margin-left: 10px;
+}
+
+.green {
+    color: #71b247;
+}
+
+.addr-list {
+    width: 908px;
+    height: 284px;
+    /*background: #71b2a5;*/
+    margin-left: 20px;
+    border: 1px solid #e6e9ef;
+}

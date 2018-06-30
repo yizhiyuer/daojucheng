@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-ajax的应用.html</title>
+</head>
+<body>
+<div class="box"></div>
+<script src="./jq/jquery.js"></script>
+<script>
+    $(function(){
+        var box = $(".box");//容器
+        //ajax
+        $.ajax( {  //url可以直接配置到options中
+            url:"./page/page1.html",//请求路径
+            // data:{name:"web04",start:"2018-03-05"},
+            data:"name=web04&start=2018-03-05&member=39",
+            type:"post", //请求方式
+            dataType:"html", //响应的数据类型：html,xml,json,script,text
+            //以上参数是发送请求必须的；
+            //发送后，需要得到响应；
+            success:function(response,textStatus, jqXHR){ //回调函数自动触发
+                //todo:自定义功能
+                box.append(response);//response响应结果
+                console.log(textStatus,jqXHR);
+            }
+        } )
+    })
+</script>
+</body>
+</html>

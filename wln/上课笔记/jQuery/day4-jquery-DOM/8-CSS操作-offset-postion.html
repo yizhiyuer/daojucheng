@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-CSS操作-offset-postion.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 600px;height: 600px;
+            margin: 0 auto;
+            border: solid 10px #6642ff;
+            padding: 50px;
+            /*position: relative;*/
+        }
+        .child{
+            height: 100px;width: 100px;
+            background: linear-gradient(#be5eff, #6642ff);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="child"></div>
+</div>
+<h2>offset的设置是相对于窗口偏移</h2>
+<h2>offset的获取偏移值是相对窗口的偏移</h2>
+<h2>position只能获取，不能设置</h2>
+<h2>在父级容器没有位置属性的时候：$(".child").position() == $(".child").offset()</h2>
+<h2>在父级容器有位置属性(postion:relative)的时候,
+    position()获取的位置偏移是相对父容器坐标原点</h2>
+
+<script src="../day1-jquery/jq/jquery.js"></script>
+<script>
+    $(function(){
+       // $(".child").offset({left:50,top:50});//相对于 窗口 window
+       //  $(".child").offset({left:50});
+       //  $(".child").position({left:150,top:150});//position只能获取，不能设置
+        pos = $(".child").position();
+        console.log("pos:",pos.left,pos.top);
+        offset = $(".child").offset();
+        console.log("offset:",offset.left,offset.top);
+    })
+</script>
+</body>
+</html>

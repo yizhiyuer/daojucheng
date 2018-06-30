@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-表单控件节点对象.html</title>
+</head>
+<body>
+
+<form action="http://baidu.com" id="myform" method="post" target="_parent">
+    <p><input type="text" name=""  value="值-1"></p>
+    <p><input type="text" name=""  value="值-2"></p>
+    <p><input type="text" name="input_3"  value="值-3"></p>
+    <p><input type="text" name=""  value="值-4"></p>
+    <p><input type="text" name=""  value="值-5"></p>
+    <!--<button>提交</button>-->
+    <input type="submit" value="提交">
+</form>
+<button onclick="subm()">提交</button>
+<button onclick="rest()">重置</button>
+<script>
+    myform = document.querySelector("#myform");// myform.action = "http://qq.com";
+    document.write("<br>获取表单的action值:",myform.action);
+    document.write("<br>获取表单的method值:",myform.method);
+    document.write("<br>获取表单的target值:",myform.getAttribute("target"));
+    //myform.target
+    document.write("<br>获取表单元素个数:",myform.length);
+    document.write("<br>获取所有表单元素:",myform.elements);
+    console.log("<br>获取所有表单元素:",myform.elements);
+    for(i=0;i<myform.length;i++){
+         myform.elements[i].value=  myform.elements[i].value +"-"+ Math.random()
+    }
+    myform.elements["input_3"].style.cssText="color:red";
+    myform.input_3.style.cssText += "background:#0f0"; //多个样式属性分开写（ += ）
+    //  myform.elements["input_3"] === myform.input_3
+    function subm(){
+        myform.submit();
+    }
+    function rest(){
+        myform.reset();
+    }
+</script>
+
+</body>
+</html>

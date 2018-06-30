@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-Css3-变形.html</title>
+    <style>
+        .box{
+            width: 200px;height: 200px;
+            background: #b171cd;
+            margin: 50px auto;
+            border-top:solid 2px ;
+            border-bottom:dotted 2px ;
+        }
+        .taans-rotate:hover{
+            transform: rotate(40deg);
+            /*顺时针逆时针旋转*/
+        }
+        .tans-scale:hover{
+            transform: scale(0.8);
+        }
+        .tans-translate:hover{
+            transform: translateY(-100px);
+        }
+        .trans-skew:hover{
+            transform: skew(45deg);
+            /*transform:skewX(45deg);*//*上下边框(X轴)保持不变,左右边框(Y轴)变形*/
+            /*transform:skew(45deg);*//*左右边框(Y轴)保持不变,上下边框(X轴)变形*/
+        }
+        .trans-matrix:hover{
+            transform: matrix(1,2,2,1,30,30);
+        }
+        .trans-origin:hover{
+            transform: rotate(90deg);
+            transform-origin: left;
+        }
+    </style>
+</head>
+<body>
+<div class="box taans-rotate">
+    transform: rotate(45deg);</div>
+<hr>
+<div class="box tans-scale"></div>
+<hr>
+<div class="box tans-translate"></div>
+<hr>
+<div class="box trans-skew"></div>
+<hr>
+<div class="box trans-matrix"></div>
+<hr>
+<div class="box trans-origin"></div>
+</body>
+</html>
