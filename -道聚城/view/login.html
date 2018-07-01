@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../dist/css/bootstrap-theme.css">
     <script src="../dist/js/jquery.js"></script>
     <script src="../dist/js/bootstrap.js"></script>
+    <script src="../js/register.js"></script>
 </head>
 <body>
 
@@ -26,27 +27,56 @@
 </div>
 <div class="container form_wrap">
     <div class="row">
-        <p class="title">欢迎注册道具城</p>
-        <p class="title_2">每一天，乐在购。 <span>QQ快速注册</span></p>
-        <form class="form">
-            <input class="nickname" placeholder="昵称">
-            <p class="prompt"><img src="../images/error.png">昵称不能为空</p>
-            <input class="nickname" placeholder="密码">
-            <p class="prompt"><img src="../images/error.png">密码不能为空</p>
-            <p>
-                <input class="number" style="width: 80px" placeholder="+86">
-                <input class="number" style="margin-left: 8px" placeholder="手机号码">
-            </p>
-            <p class="prompt">填写手机号码</p>
-            <p>
-                <input class="number" style="width: 80px" placeholder="短信验证码">
-                <input class="number" style="margin-left: 8px" placeholder="发送短信验证码">
-            </p>
-        </form>
-        <button class="buttons">立即注册</button>
-        <p class="terms"><input type="checkbox">我已阅读并同意相关服务条款和相关隐私政策</p>
+        <div class="col-md-4 col-md-offset-4">
+            <p class="title">欢迎注册道具城</p>
+            <p class="title_2">每一天，乐在购。 <span>QQ快速注册</span></p>
+            <form class="form">
+
+                <div class="form-content">
+                    <input id="user-name" type="text" placeholder="昵称">
+                    <div class="register-tip">
+                        <p><i></i><span>昵称不能为空</span></p>
+                        <p><i></i><span>昵称不能包含特殊符号</span></p>
+                    </div>
+                </div>
+
+                <div class="form-content">
+                    <input id="user-password" type="text" placeholder="密码">
+                    <div class="register-tip">
+                        <p><i></i><span>tip</span></p>
+                    </div>
+                </div>
+
+                <div class="form-content">
+                    <input id="user-password-two" type="text" placeholder="确认密码">
+                    <div class="register-tip">
+                        <p><i></i><span>tip</span></p>
+                    </div>
+                </div>
+
+                <div class="form-content user-phone">
+                    <input class="phone-number" type="text" placeholder="手机号">
+                    <input class="phone-code" type="text" placeholder="验证码">
+                    <div class="register-tip">
+                        <p><i></i><span>tip</span></p>
+                        <p><i></i><span>tip</span></p>
+                    </div>
+                </div>
+
+            </form>
+            <button class="buttons">立即注册</button>
+            <p class="terms"><input type="checkbox">我已阅读并同意相关服务条款和相关隐私政策</p>
+        </div>
+
+    </div>
+
+</div>
+<div class="container footnote">
+    <div class="row">
+        <div class="col-md-12 col-sm-9 col-xs-12">
+            Copyright © 1998-2018Tencent All Rights Reserved
+        </div>
     </div>
 </div>
-Copyright © 1998-2018Tencent All Rights Reserved
 </body>
 </html>
