@@ -26,15 +26,15 @@ $(function () {
             case 'user-password':
                 tipShow(input);
                 break;
-            case 'user-password-two':
-                tipShow(input);
-                break;
-            default:
-                break;
-        }
-    });
+    case 'user-password-two':
+        tipShow(input);
+        break;
+    default:
+        break;
+    }
+});
 
-    function tipShow(input) {
+function tipShow(input) {
         $('.register-tip').slideUp();
         $('#'+input).siblings('.register-tip').stop(true, false).slideDown();
     }
