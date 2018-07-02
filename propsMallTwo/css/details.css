@@ -2,7 +2,7 @@
     width: 1100px;
     height: 1500px;
     margin: 0 auto;
-    background: #ffe0fb;
+    /*background: #ffe0fb;*/
 }
 
 .main_top {
@@ -19,7 +19,18 @@
     float: left;
     margin-top: 20px;
 }
-
+.big_picture{
+    width: 280px;
+    height: 280px;
+    background: #e25926;
+    margin: 10px auto 0;
+}
+.small_picture{
+    width: 280px;
+    height: 80px;
+    background: #e25926;
+    margin: 10px auto 0;
+}
 .right-info {
     width: 750px;
     height: 400px;
@@ -38,7 +49,7 @@
 .gifts {
     width: 720px;
     height: 32px;
-    background: #54ecb6;
+    /*background: #54ecb6;*/
     border-bottom: 1px #8f9d9c dotted;
     padding-top: 50px;
     font-size: 15px;
@@ -58,12 +69,75 @@
 .sold {
     width: 720px;
     height: 60px;
-    background: #ec99e6;
+    /*background: #ec99e6;*/
     border-bottom: 1px #8f9d9c dotted;
     line-height: 60px;
 }
 .sold span{
     display: inline-block;
     width: 300px;
+}
+.quantity{
+    width: 720px;
+    height: 60px;
+    /*background: #ec818e;*/
+    line-height: 60px;
+}
+.quantity span{
+    width: 60px;
+    height:35px;
+    text-align: center;
+    border: solid 1px #9ba9a8;
+    display: inline-block;
+    line-height: 35px;
+}
+.buy{
+    width: 180px;
+    height: 50px;
+    background: #ec4828;
+    margin: 10px 10px;
+    color: #ffffff;
 
+}
+.order span{
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    width: 90px;
+    border: 2px solid #8f9d9c;
+    border-radius: 20px;
+}
+.details_page_box{
+    width: 1100px;
+    height: 1500px;
+    background: #ffffff;
+}
+.details_nav{
+    width: 1020px;
+    height: 50px;
+    background: #cee4b8;
+    border-bottom: 1px solid #9ba9a8;
+    margin: 10px auto 0;
+}
+.details_nav ul li{
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    margin-left: 160px;
+    list-style-type: none;
+}
+.information{
+    width: 1020px;
+    height: 150px;
+    background: #bfafe7;
+    margin: 10px auto;
+}
+.information ul li{
+   list-style-type: none;
+    float: left;
+    width: 240px;
+    height: 50px;
 }
