@@ -1,32 +1,41 @@
 * {
     padding: 0;
     margin: 0;
+    color: #444;
 }
 
 .container {
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
 }
 
 .row {
-    outline: 2px solid #ff8a27;
+    /*outline: 2px solid #ff8a27;*/
 }
 
 .row > div {
-    outline: 2px solid #0055ff;
+    /*outline: 2px solid #0055ff;*/
 }
 
 /****************************************************/
-.head {
-    height: 50px;
-    background: #ff8698;
-
+.register-logo {
+    background: url("../images/bg.png")no-repeat;
+    background-size: 80%;
+    height: 55px;
+}
+.register-head {
+    height: 55px;
+    /*background: #ff8698;*/
+    border-bottom: 1px solid #e1e1e1;
 }
 
-.head ul {
+.register-head ul {
     float: right;
+    height: 55px;
+    margin-bottom:0;
+
 }
 
-.head ul li {
+.register-head ul li {
     float: left;
     height: 55px;
     margin-right: 50px;
@@ -37,7 +46,7 @@
 .form_wrap {
     /*width: 310px;*/
     height: 500px;
-    background: #f9c2f1;
+    /*background: #f9c2f1;*/
     margin-top: 50px;
 }
 .title {
@@ -60,17 +69,21 @@
 }
 /*表单样式*/
 .form-content {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 .form-content input {
     width: 100%;
     height: 40px;
     border-radius: 4px;
-    border: 1px solid #ff5b5b;
+    /*border: 1px solid #ff5b5b;*/
+    border: 1px solid #b9b9b9;
     outline: none;
     text-indent: .5em;
-    font-size: 16px;
+    font-size: 14px;
     color: #666;
+}
+.form-content input::-webkit-input-placeholder{
+    color: #bebebe;
 }
 .register-tip {
     margin-top: 4px;
@@ -97,22 +110,26 @@
     float: right;
 }
 
-.buttons {
-    /*width: 260px;*/
-    height: 35px;
-    background: #378aff;
+.goRegister {
+    width: 100%;
+    height: 50px;
+    background: #3487ff;
     color: #f8f8f8;
-    border: 1px solid #378aff;
+    border: 1px solid #3487ff;
     margin-top: 15px;
-    margin-left: 24px;
     border-radius: 4px;
+    font-size: 20px;
 }
-
 .terms {
-    font-size: 10px;
-    color: #8f9d9c;
-    margin-left: 25px;
-    margin-top: 15px;
+    margin-top: 10px;
+}
+.terms label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 6px;
+    margin-left: 4px;
+    font-weight: normal;
+    color: #666;
 }
 
 .footnote {
