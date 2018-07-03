@@ -1,7 +1,7 @@
 <?php
 class DBModel
 {
-    const DSN = 'mysql:dbname=myshop2;host=127.0.0.1';
+    const DSN = 'mysql:dbname=myshop;host=127.0.0.1';
     const USER = 'root';
     const passwd = 'root';
     private $dblink;//私有权限的数据库连接对象；
