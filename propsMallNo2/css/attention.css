@@ -1,0 +1,40 @@
+.attention_box {
+    width: 950px;
+    height: 550px;
+    background: #ffffff;
+}
+
+.info {
+    width: 870px;
+    height: 50px;
+    /*background: #5aaaec;*/
+    border-top: 1px solid #dee1e7;
+    margin-left: 20px;
+    font-size: 13px;
+}
+
+.info ul li {
+    height: 50px;
+    list-style-type: none;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+}
+
+.info img {
+    width: 50px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 27px;
+}
+
+.info span {
+    color: #5aaaec;
+}
+
+.like {
+    width: 950px;
+    height: 260px;
+    /*background: #ee8ddb;*/
+    margin-top: 20px;
+}
