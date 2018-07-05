@@ -38,7 +38,7 @@ if (preg_match("#^data:image/(\w+);base64,(.*)$#", $src, $matches)) {
         $_SERVER['HTTP_HOST'],
         $_SERVER['REQUEST_URI']
     );
-    $previewUrl = str_replace("preview.php", "", $previewUrl);
+    $previewUrl = str_replace("preview.htlm", "", $previewUrl);
 
 
     $base64 = $matches[2];

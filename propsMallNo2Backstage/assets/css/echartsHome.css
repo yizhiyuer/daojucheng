@@ -22,7 +22,7 @@ body p {
     margin-left:0;
 }
 .navbar a.navbar-brand {
-    background:url('../img/echarts-logo.png') no-repeat 0 10px;
+    /*background:url('../img/echarts-logo.png') no-repeat 0 10px;*/
     padding-left: 48px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 25px;
@@ -392,7 +392,7 @@ table.full {width:100%;}
     *margin-right: .3em;
     line-height: 25px;
     vertical-align: middle;
-    background-image: url("../img/icon-bar.png");
+    /*background-image: url("../img/icon-bar.png");*/
     background-repeat: no-repeat;
 }
 .ec-icon-line {

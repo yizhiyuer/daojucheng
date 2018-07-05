@@ -1172,7 +1172,7 @@
 					tip:"默认显示的提示文字",
 					altercss:"gray",
 					ignore:"ignore",
-					ajaxurl:"valid.php",
+					ajaxurl:"valid.htlm",
 					recheck:"password",
 					plugin:"passwordStrength"
 				},{},{},...]
@@ -1263,7 +1263,7 @@
 		config:function(setup){
 		/*
 			config={
-				url:"ajaxpost.php",//指定了url后，数据会提交到这个地址;
+				url:"ajaxpost.htlm",//指定了url后，数据会提交到这个地址;
 				ajaxurl:{
 					timeout:1000,
 					...
