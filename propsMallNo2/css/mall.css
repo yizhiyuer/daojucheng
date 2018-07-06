@@ -3,11 +3,11 @@
     width: 1190px;
     height: 365px;
     background: #ffffff;
-    margin: 10px auto;
+    margin: 10px 195px;
 }
 
 .main-01 {
-    width: 1090px;
+    width: 1190px;
     height: 67px;
     /*background: #cdf6dc;*/
     margin: 0 auto;
@@ -31,7 +31,7 @@
 }
 
 .main-02 {
-    width: 1090px;
+    width: 1190px;
     height: 73px;
     /*background: #6dd2f6;*/
     margin: 0 auto;
@@ -71,7 +71,7 @@
 }
 
 .main-03 {
-    width: 1090px;
+    width: 1190px;
     height: 75px;
     /*background: #86f658;*/
     margin: 0 auto;
@@ -107,7 +107,7 @@
 }
 
 .main-04 {
-    width: 1090px;
+    width: 1190px;
     height: 42px;
     /*background: #d6ab77;*/
     margin: 0 auto;
