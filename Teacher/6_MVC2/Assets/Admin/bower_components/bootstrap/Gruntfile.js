@@ -31,7 +31,7 @@ module.exports = function (grunt) {
 
   Object.keys(configBridge.paths).forEach(function (key) {
     configBridge.paths[key].forEach(function (val, i, arr) {
-      arr[i] = path.join('./docs/assets', val);
+      arr[i] = path.join('./docs/Assets', val);
     });
   });
 
@@ -74,7 +74,7 @@ module.exports = function (grunt) {
         src: 'js/tests/unit/*.js'
       },
       assets: {
-        src: ['docs/assets/js/src/*.js', 'docs/assets/js/*.js', '!docs/assets/js/*.min.js']
+        src: ['docs/Assets/js/src/*.js', 'docs/Assets/js/*.js', '!docs/Assets/js/*.min.js']
       }
     },
 
@@ -137,11 +137,11 @@ module.exports = function (grunt) {
       },
       customize: {
         src: configBridge.paths.customizerJs,
-        dest: 'docs/assets/js/customize.min.js'
+        dest: 'docs/Assets/js/customize.min.js'
       },
       docsJs: {
         src: configBridge.paths.docsJs,
-        dest: 'docs/assets/js/docs.min.js'
+        dest: 'docs/Assets/js/docs.min.js'
       }
     },
 
@@ -194,7 +194,7 @@ module.exports = function (grunt) {
         src: 'dist/css/<%= pkg.name %>-theme.css'
       },
       docs: {
-        src: ['docs/assets/css/src/docs.css']
+        src: ['docs/Assets/css/src/docs.css']
       },
       examples: {
         expand: true,
@@ -220,7 +220,7 @@ module.exports = function (grunt) {
           ids: false,
           'overqualified-elements': false
         },
-        src: 'docs/assets/css/src/docs.css'
+        src: 'docs/Assets/css/src/docs.css'
       }
     },
 
@@ -244,11 +244,11 @@ module.exports = function (grunt) {
       },
       docs: {
         src: [
-          'docs/assets/css/ie10-viewport-bug-workaround.css',
-          'docs/assets/css/src/pygments-manni.css',
-          'docs/assets/css/src/docs.css'
+          'docs/Assets/css/ie10-viewport-bug-workaround.css',
+          'docs/Assets/css/src/pygments-manni.css',
+          'docs/Assets/css/src/docs.css'
         ],
-        dest: 'docs/assets/css/docs.min.css'
+        dest: 'docs/Assets/css/docs.min.css'
       }
     },
 
@@ -269,8 +269,8 @@ module.exports = function (grunt) {
         dest: 'docs/examples/'
       },
       docs: {
-        src: 'docs/assets/css/src/docs.css',
-        dest: 'docs/assets/css/src/docs.css'
+        src: 'docs/Assets/css/src/docs.css',
+        dest: 'docs/Assets/css/src/docs.css'
       }
     },
 
@@ -503,7 +503,7 @@ module.exports = function (grunt) {
   grunt.registerTask('docs-css', ['autoprefixer:docs', 'autoprefixer:examples', 'csscomb:docs', 'csscomb:examples', 'cssmin:docs']);
   grunt.registerTask('lint-docs-css', ['csslint:docs', 'csslint:examples']);
   grunt.registerTask('docs-js', ['uglify:docsJs', 'uglify:customize']);
-  grunt.registerTask('lint-docs-js', ['jshint:assets', 'jscs:assets']);
+  grunt.registerTask('lint-docs-js', ['jshint:Assets', 'jscs:Assets']);
   grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-js', 'lint-docs-js', 'clean:docs', 'copy:docs', 'build-glyphicons-data', 'build-customizer']);
   grunt.registerTask('docs-github', ['jekyll:github', 'htmlmin']);
 
