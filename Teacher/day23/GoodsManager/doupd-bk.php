@@ -14,5 +14,5 @@ $res = $dbm->mkexe($sql);
 if(!$res){
     die("修改失败");
 }
-header("Location:./index.php");
+header("Location:./main.php");
 

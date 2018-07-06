@@ -10,8 +10,8 @@ if($view==="index"){
     $gcm = new GoodsCateModel();
     include display();
 //    display();//产生视图路径
-    //display()默认不写参数，则去找Views/index/index.php
-    //display("goods/index")写参数，则去找Views/goods/index.php
+    //display()默认不写参数，则去找Views/index/main.php
+    //display("goods/index")写参数，则去找Views/goods/main.php
 }
 
 if($view==="addform"){

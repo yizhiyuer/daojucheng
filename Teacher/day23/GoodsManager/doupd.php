@@ -8,5 +8,5 @@ $res = $dbm->mkexe($sql);//3.执行更新
 if(!$res){
     die("修改失败");
 }
-header("Location:./index.php");
+header("Location:./main.php");
 

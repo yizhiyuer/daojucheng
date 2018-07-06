@@ -22,7 +22,7 @@ if(!$resArr){
 $_SESSION["uid"] = $resArr["id"];
 $_SESSION["uname"] = $resArr["uname"];
 //跳转之前
-header("Location:../index.php");
+header("Location:../main.php");
 
 
 //练习:

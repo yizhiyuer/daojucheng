@@ -7,7 +7,7 @@ $res = $dbm->mkexe($sql);
 if(!$res){
     die("删除失败");
 }
-header("Location:./index.php");
+header("Location:./main.php");
 
 //练习：尝试实现编辑功能：
 /*1.<a href="showinfo.php?id=<?php echo $val["id"] ?>">编辑</a>*/

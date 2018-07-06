@@ -4,4 +4,4 @@ session_start();
 //setcookie("PHPSESSID","",time()-1);
 unset($_SESSION);
 session_destroy();//删除当前会话在服务端保留session文件中内容
-header("Location:../index.php");
+header("Location:../main.php");
