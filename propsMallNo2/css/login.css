@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.login_page{
+  width: 600px;
+    height: 400px;
+    background: #b6c8c7;
+    margin: 20px auto;
+}
