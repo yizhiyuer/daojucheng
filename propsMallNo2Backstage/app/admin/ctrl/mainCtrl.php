@@ -6,12 +6,11 @@
  * Time: 10:33
  */
 require_once "./app/admin/models/autoDetection.php";
-session_start();
 
 $name = 'wln';
 $password = '956555';
 //session::set($name, $password);
-echo "未过期".session::get('wln'); // 未过期，输出
+echo session::get('wln'); // 未过期，输出
 
 
 if($view=="main"){

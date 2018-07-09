@@ -44,3 +44,6 @@ html{-webkit-text-size-adjust:none;}
 .rem_sub input.sub_button:hover{ background-position:-153px -882px; cursor:pointer;}
 .rem_sub .rem_sub_l{ float:left; font-size:12px; height:33px; line-height:33px;}
 .rem_sub input#checkbox{ margin-right:5px; vertical-align:middle;}
+.Reg_log_style .frame_style .vCode  {
+	width: 160px;
+}
