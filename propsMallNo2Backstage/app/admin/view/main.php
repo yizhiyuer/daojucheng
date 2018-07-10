@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -42,6 +42,7 @@
     <script src="./assets/lib/laydate/laydate.js" type="text/javascript"></script>
     <script src="./assets/js/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="./assets/js/index.js" type="text/javascript"></script>
+
 </head>
 <body>
 <div class="navbar navbar-default" id="navbar">
@@ -346,8 +347,9 @@
                     <li class="active" id="parentIfour"><span class="parentIfour iframeurl"></span></li>
                 </ul>
             </div>
+            <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;" name="iframe" frameborder="0" src="<?PHP echo $page_url; ?>">
 
-            <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;" name="iframe" frameborder="0" src="<?PHP echo $page_url; ?>"></iframe>
+            </iframe>
 
             <!-- /.page-content -->
         </div><!-- /.main-content -->
