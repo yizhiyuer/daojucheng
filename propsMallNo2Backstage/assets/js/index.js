@@ -149,8 +149,8 @@ $( document).ready(function(){
                 icon:2,
             },
             function(){
-                location.href="login.htlm";
-
+                // location.href="../../index.php?act_view=signOut";
+                location.href="../../app/admin/ctrl/loginCtrl.php?act_view=signOut";
             });
     });
 });

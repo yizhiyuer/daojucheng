@@ -5,6 +5,7 @@
  * Date: 2018/7/6
  * Time: 10:29
  */
+
 session_start();
 $ctrl = isset($_SESSION["act"]) ? $_SESSION["act"] : $_SESSION["act"] = "login";
 //$ctrl= isset($_GET["act"])?$_GET["act"]:"login";
