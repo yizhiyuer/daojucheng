@@ -1,3 +1,4 @@
+<link rel="icon" href="./assets/images/icon-1.png"/>
 <?php
 /**
  * Created by PhpStorm.

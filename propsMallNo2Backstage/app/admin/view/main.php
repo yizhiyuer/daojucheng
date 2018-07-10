@@ -188,6 +188,7 @@
                     <li><a href="#" class="dropdown-toggle"><i class="icon-desktop"></i><span
                                     class="menu-text"> 商品管理 </span><b class="arrow icon-angle-down"></b></a>
                         <ul class="submenu">
+<!--                            <li class="home"><a href="./index.php?page=productsList"  title="商品类表"-->
                             <li class="home"><a href="./index.php?page=productsList"  title="商品类表"
                                                 class="iframeurl"><i class="icon-double-angle-right"></i>商品类表</a></li>
                             <li class="home"><a href="javascript:void(0)" name="Brand_Manage.html" title="品牌管理"

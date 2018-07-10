@@ -71,6 +71,9 @@ class user
                 case 'vCode':
                     echo "<script>alert('\\n请确认：\\n\\n★验证码错误★')</script>";
                     break;
+                case 'timeOut':
+                    echo "<script>alert('\\n★长时间未操作，请重新登录★')</script>";
+                    break;
                 default:
                     echo "<script>alert('\\n请确认：\\n\\n★意外的错误，请联系管理员★')</script>";
             }

@@ -6,15 +6,22 @@
  * Time: 10:33
  */
 
+require_once "./app/admin/models/autoDetection.php";
+session::get('user');
 
 
-if($view=="main"){
+
+if ($view === "main") {
+    $page = isset($_GET["page"]) ? $_GET["page"] : "home";
+    $page_url = "../app/" . app . "/view/$page.php";
+    $page_ctrl = "./app/" . app . "/ctrl/" . $page . "Ctrl.php";
+    include $page_ctrl;
+
     //todo:操作相关代码；
     include $view_url;
 
-//    $sss = $_SESSION["user"];
-//    echo "<pre>";
-//    print_r($sss);
-//    echo "</pre>";
+    echo "<script>console.log('Main')</script>";
+
 }
+
 
