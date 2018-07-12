@@ -150,7 +150,7 @@ $( document).ready(function(){
             },
             function(){
                 // location.href="../../index.php?act_view=signOut";
-                location.href="../../app/admin/ctrl/loginCtrl.php?act_view=signOut";
+                location.href="./app/admin/ctrl/loginCtrl.php?act_view=signOut";
             });
     });
 });

@@ -74,7 +74,7 @@
                         <li><a href="javascript:void(0)" name="admin_info.html" title="个人信息" class="iframeurl"><i
                                         class="icon-user"></i>个人资料</a></li>
                         <li class="divider"></li>
-                        <li><a href="javascript:ovid(0)" id="Exit_system"><i class="icon-off"></i>退出</a></li>
+                        <li><a href="javascript:void(0)" id="Exit_system"><i class="icon-off"></i>退出</a></li>
                     </ul>
                 </li>
                 <li class="purple">
