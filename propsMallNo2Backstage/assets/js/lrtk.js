@@ -5,122 +5,135 @@
 // Url: 
 // Data : 2012-03-30
 //
-// ²ÎÊý : float --> Ðü¸¡·½Ïò[left or right]
-//		  minStatue --> ×îÐ¡×´Ì¬£¬Ö»ÓÐshow_btn
-//		  skin      --> Æ¤·ô¿ØÖÆ
-//		  durationTime --> Íê³ÉÊ±¼ä
+// ï¿½ï¿½ï¿½ï¿½ : float --> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[left or right]
+//		  minStatue --> ï¿½ï¿½Ð¡×´Ì¬ï¿½ï¿½Ö»ï¿½ï¿½show_btn
+//		  skin      --> Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		  durationTime --> ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 //
 // =================================================*/
 
-;(function($){
-    $.fn.fix = function(options){
+;(function ($) {
+    $.fn.fix = function (options) {
         var defaults = {
-            float : 'left',
-			minStatue : false,
-			skin : 'blue',
-			durationTime : 1000	,
-			stylewidth:'220',
-			spacingw:30,
-			window_height:30,
-			spacingh:40,
-			content:'.side_content',
-			close_btn:'.close_btn',
-			show_btn:'.show_btn',			
-			side_list:'.side_list',
-			close_btn_width:25,
-			side_title:'.side_title',
-			set_scrollsidebar:'.page_right_style',
-			table_menu:'.table_menu_list',
-			widgetbox:'.widget-box',
-			left_css:null,
-			right_css:null,
-			da_height:null,
+            float: 'left',
+            minStatue: false,
+            skin: 'blue',
+            durationTime: 1000,
+            stylewidth: '220',
+            spacingw: 30,
+            window_height: 30,
+            spacingh: 40,
+            content: '.side_content',
+            close_btn: '.close_btn',
+            show_btn: '.show_btn',
+            side_list: '.side_list',
+            close_btn_width: 25,
+            side_title: '.side_title',
+            set_scrollsidebar: '.page_right_style',
+            table_menu: '.table_menu_list',
+            widgetbox: '.widget-box',
+            left_css: null,
+            right_css: null,
+            da_height: null,
         }
-        var options = $.extend(defaults, options);		
+        var options = $.extend(defaults, options);
 
-        this.each(function(){			
-            //»ñÈ¡¶ÔÏó
-			var thisBox = $(this),
-				closeBtn = thisBox.find(options.close_btn ),
-				showbtn = thisBox.find(options.show_btn ),
-				sideContent = thisBox.find(options.content),
-				sideList = thisBox.find(options.side_list),
-				sidetitle = thisBox.find(options.side_title),
-				scrollsidebar=thisBox.find(options.set_scrollsidebar),
-				stylespacing=thisBox.find(options.table_menu),
-				widget_box=thisBox.find(options.widgetbox),
-				leftcss=thisBox.find(options.left_css),
-				rightcss=thisBox.find(options.right_css),
-				outer_height=thisBox.find(options.da_height);
-			var defaultTop = thisBox.offset().top;	//¶ÔÏóµÄÄ¬ÈÏtop		
-			
-			
-					
-			thisBox.css(options.float, 0);	
-			sidetitle.height($(sidetitle).height()); 
-		    //var heights=widget_box.height($(widget_box).height()); 
-		   var showheight=sideList.height($(sideList).height()); 	
-			//sideList.height($(window).height()-(options.window_height));	
-			//µ±´°¿Ú·¢Éú¸Ä±äÊÇ´¥·¢
-			 $(window).resize(function(){				   	
-			    // outerheight.height($(window).height()-58+(options.window_height));
-			 });
-			if(options.minStatue){
-				$(options.show_btn ).css("float", options.float);				
-				sideContent.css('width', 0);			
-				showbtn.css('width', (options.close_btn_width));	
-			}
-			//Æ¤·ô¿ØÖÆ
-			if(options.skin) thisBox.addClass('side_'+options.skin);
-				
-						
-			//ºËÐÄscrollÊÂ¼þ			
-			//$(window).bind("scroll",function(){
+        this.each(function () {
+            //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+            var thisBox = $(this),
+                closeBtn = thisBox.find(options.close_btn),
+                showbtn = thisBox.find(options.show_btn),
+                sideContent = thisBox.find(options.content),
+                sideList = thisBox.find(options.side_list),
+                sidetitle = thisBox.find(options.side_title),
+                scrollsidebar = thisBox.find(options.set_scrollsidebar),
+                stylespacing = thisBox.find(options.table_menu),
+                widget_box = thisBox.find(options.widgetbox),
+                leftcss = thisBox.find(options.left_css),
+                rightcss = thisBox.find(options.right_css),
+                outer_height = thisBox.find(options.da_height);
+            var defaultTop = thisBox.offset().top;	//ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½top
+
+
+            thisBox.css(options.float, 0);
+            sidetitle.height($(sidetitle).height());
+            //var heights=widget_box.height($(widget_box).height());
+            var showheight = sideList.height($(sideList).height());
+            //sideList.height($(window).height()-(options.window_height));
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½Ç´ï¿½ï¿½ï¿½
+            $(window).resize(function () {
+                // outerheight.height($(window).height()-58+(options.window_height));
+            });
+            if (options.minStatue) {
+                $(options.show_btn).css("float", options.float);
+                sideContent.css('width', 0);
+                showbtn.css('width', (options.close_btn_width));
+            }
+            //Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            if (options.skin) thisBox.addClass('side_' + options.skin);
+
+
+            //ï¿½ï¿½ï¿½ï¿½scrollï¿½Â¼ï¿½
+            //$(window).bind("scroll",function(){
 //				var offsetTop = defaultTop + $(window).clientHeight()+ "px";
 //	            showbtn.animate({
 //	                top: offsetTop
 //	            },
 //	            {
 //	                duration: options.durationTime,	
-//	                queue: false    //´Ë¶¯»­½«²»½øÈë¶¯»­¶ÓÁÐ
+//	                queue: false    //ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¶¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //	            });
 //			});	
-			//closeÊÂ¼þ
-			closeBtn.bind("click",function(){
-			   
-				sideContent.animate({width: '0px'},"fast").addClass('active');
-            	showbtn.stop(true, true).delay(300).animate({ width:+(options.close_btn_width)+'px'},"fast");
-				sideList.css({"display":"none"});
-				var heights=59+(options.window_height); 
-				outer_height.outerHeight($(window).outerHeight(true)-heights); 
-				leftcss.outerHeight($(window).outerHeight(true)-heights-2);
-				sidetitle.css("display","none");				
-				showbtn.css("display","block");
-				scrollsidebar.addClass("Widescreen");
-				scrollsidebar.width($(window).width()-(options.spacingw));
-				stylespacing.width($(window).width()-(options.spacingw)).addClass("Widescreen");
-				
-				
-			});
-			//showÊÂ¼þ
-			 showbtn.click(function() {
-	            $(this).animate({width: '0px',border:'1px solid #ddd'},"fast").css('display','none');
-	            sideContent.stop(true, true).delay(0).animate({ width:+(options.stylewidth)+'px'},"fast");
-				sideList.css({"display":"block"})
-				sidetitle.css("display","block");
-				scrollsidebar.removeClass("Widescreen")
-				scrollsidebar.width($(window).width()-(options.stylewidth));
-				stylespacing.width($(window).width()-(options.spacingh)).removeClass("Widescreen");
-				
-				var heights=$(sideList).outerHeight(true)+42+(options.window_height); 
-				outer_height.outerHeight($(window).outerHeight(true)-heights); 
-				if($('.centent_style').offsetHeight=leftcss.outerHeight($(window).outerHeight(true)-heights)){
-					
-					leftcss.outerHeight($(window).outerHeight(true)-heights-2); 
-					}
-	        });
-			
-				
+            //closeï¿½Â¼ï¿½
+            function consoleSidebar() {
+                sideContent.animate({width: '0px'}, "fast").addClass('active');
+                showbtn.stop(true, true).delay(300).animate({width: +(options.close_btn_width) + 'px'}, "fast");
+                sideList.css({"display": "none"});
+                var heights = 59 + (options.window_height);
+                outer_height.outerHeight($(window).outerHeight(true) - heights);
+                leftcss.outerHeight($(window).outerHeight(true) - heights - 2);
+                sidetitle.css("display", "none");
+                showbtn.css("display", "block");
+                scrollsidebar.addClass("Widescreen");
+                scrollsidebar.width($(window).width() - (options.spacingw));
+                stylespacing.width($(window).width() - (options.spacingw)).addClass("Widescreen");
+            }
+
+            closeBtn.bind("click", function () {
+
+                sideContent.animate({width: '0px'}, "fast").addClass('active');
+                showbtn.stop(true, true).delay(300).animate({width: +(options.close_btn_width) + 'px'}, "fast");
+                sideList.css({"display": "none"});
+                var heights = 59 + (options.window_height);
+                outer_height.outerHeight($(window).outerHeight(true) - heights);
+                leftcss.outerHeight($(window).outerHeight(true) - heights - 2);
+                sidetitle.css("display", "none");
+                showbtn.css("display", "block");
+                scrollsidebar.addClass("Widescreen");
+                scrollsidebar.width($(window).width() - (options.spacingw));
+                stylespacing.width($(window).width() - (options.spacingw)).addClass("Widescreen");
+
+
+            });
+            //showï¿½Â¼ï¿½
+            showbtn.click(function () {
+                $(this).animate({width: '0px', border: '1px solid #ddd'}, "fast").css('display', 'none');
+                sideContent.stop(true, true).delay(0).animate({width: +(options.stylewidth) + 'px'}, "fast");
+                sideList.css({"display": "block"})
+                sidetitle.css("display", "block");
+                scrollsidebar.removeClass("Widescreen")
+                scrollsidebar.width($(window).width() - (options.stylewidth));
+                stylespacing.width($(window).width() - (options.spacingh)).removeClass("Widescreen");
+
+                var heights = $(sideList).outerHeight(true) + 42 + (options.window_height);
+                outer_height.outerHeight($(window).outerHeight(true) - heights);
+                if ($('.centent_style').offsetHeight = leftcss.outerHeight($(window).outerHeight(true) - heights)) {
+
+                    leftcss.outerHeight($(window).outerHeight(true) - heights - 2);
+                }
+            });
+
+
         });	//end this.each
 
     };

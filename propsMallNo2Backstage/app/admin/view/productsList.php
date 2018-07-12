@@ -1,4 +1,4 @@
-<?PHP include '../ctrl/productsListCtrl.php'; ?>
+
 <!DOCTYPE html >
 <html>
 <head>

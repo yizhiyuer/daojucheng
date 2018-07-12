@@ -164,7 +164,7 @@ $(function(){
 	w		弹出层宽度（缺省调默认值）
 	h		弹出层高度（缺省调默认值）
 */
-function layer_show(title,url,w,h){
+function layer_show(title,url, act, goods_id,w,h){
 	if (title == null || title == '') {
 		title=false;
 	};
@@ -177,6 +177,7 @@ function layer_show(title,url,w,h){
 	if (h == null || h == '') {
 		h=($(window).height() - 50);
 	};
+	// console.log();
 	layer.open({
 		type: 2,
 		area: [w+'px', h +'px'],
@@ -184,8 +185,10 @@ function layer_show(title,url,w,h){
 		maxmin: true,
 		shade:0.4,
 		title: title,
-		content: url
-	});
+		content: url+"?goods_act="+act+"&goods_id="+goods_id,
+        resize:true,
+        offset: '30px'
+    });
 }
 /*关闭弹出框口*/
 function layer_close(){

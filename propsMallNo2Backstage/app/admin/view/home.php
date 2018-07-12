@@ -179,7 +179,7 @@
     <div class="clearfix">
         <div class="home_btn">
             <div>
-                <a href="picture-add.html" title="添加商品" class="btn  btn-info btn-sm no-radius">
+                <a href="goodsEditAdd.php" title="添加商品" class="btn  btn-info btn-sm no-radius">
                     <i class="bigger-200"><img src="../../../assets/images/icon-addp.png"/></i>
                     <h5 class="margin-top">添加商品</h5>
                 </a>
@@ -199,7 +199,7 @@
                     <i class="bigger-200"><img src="../../..//assets/images/icon-gwcc.png"/></i>
                     <h5 class="margin-top">商品订单</h5>
                 </a>
-                <a href="picture-add.html" title="添加广告" class="btn  btn-pink btn-sm no-radius">
+                <a href="goodsEditAdd.php" title="添加广告" class="btn  btn-pink btn-sm no-radius">
                     <i class="bigger-200"><img src="../../..//assets/images/icon-ad.png"/></i>
                     <h5 class="margin-top">添加广告</h5>
                 </a>

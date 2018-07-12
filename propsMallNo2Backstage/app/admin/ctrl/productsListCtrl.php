@@ -35,4 +35,4 @@ $goodsList = $dbAct->gets($sql);//数据库执行语句 并返回结果
 //$page = isset($_GET["page"]) ? $_GET["page"] : "home";
 //$page_url = "../app/" . app . "/view/$page.php";
 
-echo "<script>console.log('productsListCtrl')</script>";
+echo "<script>console.log('productsListCtrl----1')</script>";

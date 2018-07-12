@@ -190,8 +190,8 @@
                                     class="menu-text"> 商品管理 </span><b class="arrow icon-angle-down"></b></a>
                         <ul class="submenu">
 <!--                            <li class="home"><a href="./index.php?page=productsList"  title="商品类表"-->
-                            <li class="home"><a href="./index.php?page=productsList"  title="商品类表"
-                                                class="iframeurl"><i class="icon-double-angle-right"></i>商品类表</a></li>
+                            <li class="home"><a href="./index.php?page=goodsList"  title="商品列表"
+                                                class="iframeurl"><i class="icon-double-angle-right"></i>商品列表</a></li>
                             <li class="home"><a href="javascript:void(0)" name="Brand_Manage.html" title="品牌管理"
                                                 class="iframeurl"><i class="icon-double-angle-right"></i>品牌管理</a></li>
                             <li class="home"><a href="javascript:void(0)" name="Category_Manage.html" title="分类管理"
