@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="text/html; charset=utf-8"/>
     <link href="../../../assets/lib/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../../../assets/css/style.css"/>
     <link rel="stylesheet" href="../../../assets/lib/css/ace.min.css"/>
