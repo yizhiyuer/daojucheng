@@ -37,7 +37,7 @@
             <?PHP if (isset($goodsInfo) && $goodsInfo) {
                 foreach ($goodsInfo as $val) { ?>
                     <div class="clearfix cl">
-                        <label class="form-label col-2"><span class="c-red">*</span>商品名称：</label>
+                        <label class="form-label col-2"><span class="c-red">*</span>商品ID：</label>
                         <div class="formControls col-5">
                             <input type="text" class="input-text"
                                    value="<?PHP echo isset($val['id']) ? $val['id'] : ""; ?>" placeholder=""
@@ -91,28 +91,8 @@
                     </div>
                     <div class="clearfix cl">
                         <?php //$picname="pic";
-                        include "common/imagesUpload.php"; ?>
+                        include "common/imagesUpload.php";?>
 
-                        <!--<label class="form-label col-2">图片上传：</label>
-                        <div class="formControls col-10">
-                            <div class="uploader-list-container">
-                                <div class="queueList">
-                                    <div id="dndArea" class="placeholder">
-                                        <div id="filePicker-2"></div>
-                                        <p>或将照片拖到这里，单次最多可选300张</p>
-                                    </div>
-                                </div>
-                                <div class="statusBar" style="display:none;">
-                                    <div class="progress"><span class="text">0%</span> <span class="percentage"></span>
-                                    </div>
-                                    <div class="info"></div>
-                                    <div class="btns">
-                                        <div id="filePicker2"></div>
-                                        <div class="uploadBtn">开始上传</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
                     </div>
                     <div class="clearfix cl">
                         <label class="form-label col-2">详细内容：</label>
@@ -182,6 +162,8 @@
 </script>
 <script type="text/javascript">
     $(function () {
+
+
 
     });
 
