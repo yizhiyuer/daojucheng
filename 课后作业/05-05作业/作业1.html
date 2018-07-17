@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>作业1.html</title>
+    <title>作业1</title>
     <style>
         .box {
             width: 800px;
@@ -51,7 +51,7 @@
         zhtext = $("#zh").val();
         //2.ajax
         var url = "https://translate.yandex.net/api/v1.5/tr.json/translate";
-        var data = "text" + zhtext + "&lang=en&key=trnsl.1.1.20171012T074239Z.b5c28c71eeb84871.d7fb94392f8420c8178c67a8b1d1effbbbea6d44;
+        var data = "text" + zhtext + "&lang=en&key=trnsl.1.1.20171012T074239Z.b5c28c71eeb84871.d7fb94392f8420c8178c67a8b1d1effbbbea6d44";
 $.getJSON(url,data,function (res) {
   console.log(res,text[0]);
   $(".show").html(res.text[0]);

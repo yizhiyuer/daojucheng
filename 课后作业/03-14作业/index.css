@@ -1,13 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    //text-decoration: none
+    /* text-decoration: none */
 }
 
 .wrapper {
     width: 780px;
     height: 950px;
-/ / background-color: #efbcde;
+    /* background-color: #efbcde; */
     margin: 0 auto;
 }
 
