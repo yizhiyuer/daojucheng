@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="__AM__css/base.css" />
+<link rel="stylesheet" type="text/css" href="__AM__css/jquery.dialog.css" />
+    <link rel="stylesheet" href="__AM__css/index.css" />
+    <link rel="stylesheet" href="__AM__css/info-reg.css" />
+    <link rel="stylesheet" href="__AM__css/WdatePicker.css" />
+<title>移动办公自动化系统</title>
+</head>
+
+<body>
+<div id="container">
+    <!--头部导航部分-->
+    {include file="common/header" /}
+    <!--/头部导航部分-->
+    <div id="bd">
+    	<div class="wrap ue-clear">
+            <!--左边菜单部分-->
+            {include file="common/leftside" /}
+            <!--/左边菜单部分-->
+            <div class="content" style="overflow-x: hidden">
+                <!--右边主体部分内容-->
+                <div class="title"><h2>信息登记</h2></div>
+                <div class="main">
+                    <p class="short-input ue-clear">
+                        <label>来文时间：</label>
+                        <input type="text" placeholder="来文时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+                        <span><em>*</em>请输入正确的时间格式</span>
+                    </p>
+                    <p class="short-input ue-clear">
+                        <label>收文时间：</label>
+                        <input type="text" placeholder="收文时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+                    </p>
+                    <p class="long-input ue-clear">
+                        <label>来文单位：</label>
+                        <input type="text" placeholder="来文单位" />
+                    </p>
+                    <p class="long-input ue-clear">
+                        <label>文件编号：</label>
+                        <input type="text" placeholder="请输入编号" />
+                    </p>
+                    <p class="long-input ue-clear">
+                        <label>文件标题：</label>
+                        <input type="text" placeholder="请输入标题" />
+                    </p>
+                    <p class="short-input ue-clear">
+                        <label>分类号：</label>
+                        <input type="text" placeholder="分类号" />
+                    </p>
+                    <div class="short-input select ue-clear">
+                        <label>密级：</label>
+                        <div class="select-wrap">
+                            <div class="select-title ue-clear"><span>平件</span><i class="icon"></i></div>
+                            <ul class="select-list">
+                                <li>平件</li>
+                                <li>保密</li>
+                                <li>高级保密</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="short-input ue-clear">
+                        <label>归档时间：</label>
+                        <input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+                    </p>
+                    <p class="short-input ue-clear">
+                        <label>保管期限：</label>
+                        <input type="text" />
+                    </p>
+                    <p class="short-input ue-clear">
+                        <label>备注：</label>
+                        <textarea placeholder="请输入内容"></textarea>
+                    </p>
+                </div>
+                <div class="btn ue-clear">
+                    <a href="javascript:;" class="confirm">确定</a>
+                    <a href="javascript:;" class="clear">清空内容</a>
+                </div>
+                <!--/右边主体部分内容-->
+            </div>
+        </div>
+    </div>
+    <!--脚注部分-->
+    {include file="common/foot" /}
+    <!--/脚注部分-->
+</div>
+<div class="exitDialog">
+	<div class="dialog-content">
+    	<div class="ui-dialog-icon"></div>
+        <div class="ui-dialog-text">
+        	<p class="dialog-content">你确定要退出系统？</p>
+            <p class="tips">如果是请点击“确定”，否则点“取消”</p>
+            
+            <div class="buttons">
+                <input type="button" class="button long2 ok" value="确定" />
+                <input type="button" class="button long2 normal" value="取消" />
+            </div>
+        </div>
+        
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="__AM__js/jquery.js"></script>
+<script type="text/javascript" src="__AM__js/common.js"></script>
+<script type="text/javascript" src="__AM__js/core.js"></script>
+<script type="text/javascript" src="__AM__js/jquery.dialog.js"></script>
+<script type="text/javascript" src="__AM__js/index.js"></script>
+<script type="text/javascript" src="__AM__js/WdatePicker.js"></script>
+<script type="text/javascript" src="__AM__js/jquery.pagination.js"></script>
+<script type="text/javascript">
+    $(".select-title").on("click",function(){
+        $(".select-list").toggle();
+        return false;
+    });
+    $(".select-list").on("click","li",function(){
+        var txt = $(this).text();
+        $(".select-title").find("span").text(txt);
+    });
+
+
+    showRemind('input[type=text], textarea','placeholder');
+</script>
+</html>

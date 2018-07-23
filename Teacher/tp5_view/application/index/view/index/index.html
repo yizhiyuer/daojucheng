@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="PROJ__PC__css/style.css">
+</head>
+<body>
+<h1 style="color:red">首页</h1>
+<h2>输出替换：PC__ , ADM__ ,JQ__</h2>
+<h2 class="bdblack">{$key}</h2>
+<h2>手机号：{$phoneNo | hideNo}</h2>
+<h2>身份证：{$cardNo | hideNo}</h2>
+<h2>九宫格循环案例</h2>
+    <div class="homebox">
+        <div class="leftbox" >
+            <a href="{$pcads['adslink']}" target="_blank">
+                <img src="{$pcads['adspic']}" style="width: 100%" alt="">
+            </a>
+        </div>
+        <div class="rightbox" >
+            {volist name="plist" id="pvo" key="k"}
+                {if condition="($k%4) != 0"}
+                    <div class="grid mb" >
+                        <div class="innerbox">
+                            <img src="{$pvo.pic}"
+                                 style="width: 75%" alt="">
+                            <p class="fs16">{$pvo.gname}</p>
+                            <p class="fs12 fcaaa">{$pvo.intro | test}</p>
+                            <p class="fs16 fcred">{$pvo.price_new}元
+                                <del class="fs12 fcaaa">{$pvo.price_old}元</del></p>
+                        </div>
+                    </div>
+                {else /}
+                    <div class="grid mb mr0" >
+                        <div class="innerbox">
+                            <img src="{$pvo.pic}"
+                                 style="width: 75%" alt="">
+                            <p class="fs16">{$pvo.gname}</p>
+                            <p class="fs12 fcaaa">{$pvo.intro | test2}</p>
+                            <p class="fs16 fcred">{$pvo.price_new}元
+                                <del class="fs12 fcaaa">{$pvo.price_old}元</del></p>
+                        </div>
+                    </div>
+                {/if}
+            {/volist}
+            <!--<div class="grid mb mr0" ></div>-->
+        </div>
+    </div>
+<script src="PROJ__JQ__"></script>
+<script>
+    console.log($);
+</script>
+</body>
+</html>
