@@ -21,6 +21,25 @@ if ($act === 'edit') {
     $goodsId = $_GET['goods_id'];
     $sql = "select * from goods WHERE id='$goodsId'";// 查询数据库语句
     $goodsInfo = $dbAct->gets($sql);//数据库执行语句 并返回结果
+    $imgSrcList = s($goodsId);
+}
+
+function s($goodsId){
+    $goodsImgSrc = "../../../uploads/" . $goodsId;
+    if (is_dir($goodsImgSrc) !== true) {
+        return null;
+    } else {
+        $file = scandir($goodsImgSrc);
+        $imgSrcList = array();
+        foreach ($file as $key => $img) {
+            if ($img != "." && $img != "..") {
+                $imgSrcList[$key - 2]["name"] = $img;
+                $imgSrcList[$key - 2]["src"] = $goodsImgSrc . "/" . $img;
+            }
+        }
+
+    }
+    return $imgSrcList;
 }
 
 /* *
@@ -42,6 +61,52 @@ if ($act === 'add') {
     ));
 }
 
+/*
+ * 上传图片
+ * */
+if ($act === "image_upload") {
+    $goods_id = $_GET['goods_id']; /*获取商品的ID*/
 
-echo "<script>console.log('goodsEditAddCtrl')</script>";
+    /*1.创建存放上传文件的[主目录]*/
+    $mainDir = "../../../uploads";
+    if (!file_exists($mainDir)) {
+        mkdir($mainDir);
+    }
+
+    /*2.创建[商品]目录；*/
+    /*date_default_timezone_set("Asia/Shanghai");*/
+    /*$dateDir = date("Y-m-d");*/
+    if (!file_exists("./$mainDir/$goods_id")) {
+        mkdir("./$mainDir/$goods_id");
+    }
+
+    /*3.用时间戳加随机数命名文件;*/
+    $houzui = explode('.', $_FILES["files"]["name"]);
+    $houzui = $houzui[count($houzui) - 1];
+
+    $filename = $goods_id . "_" . rand(10000, 99999) . ".$houzui";
+    /*4.转移文件：将临时的文件转移到指定的文件夹中；*/
+
+    $issuc = move_uploaded_file($_FILES["files"]["tmp_name"], "./$mainDir/$goods_id/$filename");
+
+    /*5.返回数据接口*/
+    if ($issuc) {
+//        $dir = dirname("$mainDir/$goods_id/$filename");
+//        $file = scandir($dir);
+//        $imgSrc = array();
+//        foreach ($file as $key => $img) {
+//            if ($img != "." && $img != "..") {
+//                $imgSrc[$key - 2]["name"] = $img;
+//                $imgSrc[$key - 2]["src"] = "./$mainDir/$goods_id/" . $img;
+//            }
+//        }
+        $imgSrc = s($goods_id);
+        echo json_encode(["code" => 1, "msg" => "文件上传成功", "filepath" => "./$mainDir/$goods_id/$filename", "goods_id" => "$goods_id", "file" => $imgSrc]);
+    } else {
+        echo json_encode(["code" => 0, "msg" => "文件上传失败", "filepath" => "./$mainDir/$goods_id/$filename"]);
+    }
+}
+
+
+//echo "<script>console.log('goodsEditAddCtrl')</script>";
 

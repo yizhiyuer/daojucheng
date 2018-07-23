@@ -59,13 +59,13 @@
                             <fieldset>
                                 <ul class="login-form-box">
                                     <li class="frame_style form_error"><label class="user_icon"></label><input
-                                                name="user_name" type="text" id="user_name" placeholder="用户名"/></li>
+                                                name="user_name" type="text" id="user_name" placeholder="用户名" autocomplete="off"/></li>
                                     <li class="frame_style form_error"><label class="password_icon"></label><input
                                                 name="user_password" type="password" id="user_password"
-                                                placeholder="密码" /></li>
+                                                placeholder="密码" autocomplete="off"/></li>
                                     <li class="frame_style form_error"><label class="Codes_icon"></label><input
                                                 style="width: 160px;" name="codes_text" type="text" id="codes_text"
-                                                placeholder="验证码"/>
+                                                placeholder="验证码" autocomplete="off"/>
                                         <div class="Codes_region">
                                             <img id="vCode" src="./app/admin/models/vcode/vcodeImg.php"
                                                  onclick="this.src='./app/admin/models/vcode/vcodeImg.php?v='+Math.random()">
