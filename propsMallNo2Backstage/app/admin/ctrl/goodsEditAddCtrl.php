@@ -24,7 +24,8 @@ if ($act === 'edit') {
     $imgSrcList = s($goodsId);
 }
 
-function s($goodsId){
+function s($goodsId)
+{
     $goodsImgSrc = "../../../uploads/" . $goodsId;
     if (is_dir($goodsImgSrc) !== true) {
         return null;
@@ -33,6 +34,7 @@ function s($goodsId){
         $imgSrcList = array();
         foreach ($file as $key => $img) {
             if ($img != "." && $img != "..") {
+                $imgSrcList[$key - 2]["id"] = $goodsId . "-" . ($key - 2);
                 $imgSrcList[$key - 2]["name"] = $img;
                 $imgSrcList[$key - 2]["src"] = $goodsImgSrc . "/" . $img;
             }
@@ -61,7 +63,7 @@ if ($act === 'add') {
     ));
 }
 
-/*
+/* *
  * 上传图片
  * */
 if ($act === "image_upload") {
@@ -91,22 +93,31 @@ if ($act === "image_upload") {
 
     /*5.返回数据接口*/
     if ($issuc) {
-//        $dir = dirname("$mainDir/$goods_id/$filename");
-//        $file = scandir($dir);
-//        $imgSrc = array();
-//        foreach ($file as $key => $img) {
-//            if ($img != "." && $img != "..") {
-//                $imgSrc[$key - 2]["name"] = $img;
-//                $imgSrc[$key - 2]["src"] = "./$mainDir/$goods_id/" . $img;
-//            }
-//        }
-        $imgSrc = s($goods_id);
-        echo json_encode(["code" => 1, "msg" => "文件上传成功", "filepath" => "./$mainDir/$goods_id/$filename", "goods_id" => "$goods_id", "file" => $imgSrc]);
+        $imgSrcList = s($goods_id);
+        echo json_encode(["code" => 1, "msg" => "文件上传成功", "filepath" => "./$mainDir/$goods_id/$filename", "goods_id" => "$goods_id", "file" => $imgSrcList]);
     } else {
         echo json_encode(["code" => 0, "msg" => "文件上传失败", "filepath" => "./$mainDir/$goods_id/$filename"]);
     }
 }
+/* *
+ * 删除图片
+ * */
+if ($act === "image_delete") {
+    $deleteData = $_POST['deleteData'];
 
+    $goods_id = $deleteData['goodsId'];
+    $deleteImgSrc = $deleteData['deleteImgSrc'];
+    if (file_exists($deleteImgSrc)) {
+        if (!unlink($deleteImgSrc)) {
+            echo json_encode(["code" => 0, "msg" => "未知原因，删除失败"]);
+        } else {
+            $imgSrcList = s($goods_id);
+            echo json_encode(["code" => 1, "msg" => "文件删除成功", "goods_id" => "$goods_id", "file" => $imgSrcList]);
+        }
+    } else {
+        echo json_encode(["code" => 0, "msg" => "文件不存在"]);
+    }
+}
 
 //echo "<script>console.log('goodsEditAddCtrl')</script>";
 
